@@ -1,0 +1,24 @@
+﻿@using SkfCore.Web.Mvc.Helpers;
+@model System.Collections.Generic.IList<DAS.UI.Models.Application.ApplicationCategory>
+   <table style="width:720px;border:0px solid; margin-left:45px">
+   <tbody>
+
+    
+        @{int i = 0;}
+    @foreach (var category in Model)  {
+        string st = "width:200px; background-color:#fff;height:20px";
+        if (i  == 0) {
+            st = "width:200px; background-color:#dbd8d8;height:20px";
+        }
+        <tr style="@st">
+
+        <td style="width:300px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT,c=>category.Category, new Dictionary<string, object>() { { "id", "category_" + i}, { "style", "width:220px"}})</td>
+        <td style="width:300px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT, c=>category.TotalPermanent, new Dictionary<string, object>() {{"onkeypress","return NumberOnly()"},{"onfocusout", "sumTotalP()"},{"id", "totalPermanent_" + i}, { "style", "width:220px"}})</td>
+        <td style="width:300px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT, c=>category.TotalTemporary, new Dictionary<string, object>() {{"onkeypress","return NumberOnly()"},{"onfocusout",  "sumTotalT()"},{"id", "totalTemporary_" + i}, { "style", "width:220px"}})</td>
+    </tr>
+        i++;
+        }
+
+
+    </tbody>
+                  </table>

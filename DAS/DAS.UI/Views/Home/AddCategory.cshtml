@@ -1,0 +1,15 @@
+﻿@model DAS.UI.Models.Application.ApplicationCategory
+
+   <table style="width:480px;border:0px solid; ">
+        <tr>
+        <td style="width:160px"><b>@Html.PTPLabel("ApplicationForm", "CategoryDescription")</b></td>
+        <td style="width:160px"><b>@Html.PTPLabel("ApplicationForm", "TotalPermanent")</b></td>
+        <td style="width:160px"><b>@Html.PTPLabel("ApplicationForm", "TotalTemporary")</b></td>
+         </tr>
+        </table>
+
+  @Html.SKFTextBoxFor(TextBoxType.TEXT,k => k.Category, new Dictionary<string, object>() { { "id", "text" },{"style","width:140px"} })
+  @Html.SKFTextBoxFor(TextBoxType.TEXT,k => k.TotalPermanent, new Dictionary<string, object>() {{"onkeypress","return NumberOnly()"},{"onfocusout", "sumTotalP()"},{ "id", "tp" },{"style","width:140px"} })
+  @Html.SKFTextBoxFor(TextBoxType.TEXT,k => k.TotalTemporary,  new Dictionary<string, object>() {{"onkeypress","return NumberOnly()"},{"onfocusout",  "sumTotalT()"},{ "id", "tt" },{"style","width:140px"} })
+
+@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnSave"), new Dictionary<string, string>() { { "onclick", "addCategory('" + Url.Action("AddCategory", "Home") + "'); return false;" } })

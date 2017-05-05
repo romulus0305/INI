@@ -1,0 +1,88 @@
+﻿@model DAS.Backoffice.Models.Application.ApplicationsModel
+
+@{
+    
+        ViewBag.Title = Html.PTPLabel("Home", "lblApplication");
+        Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+@* <table id="section1" runat="server" width="810"  border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">*@
+<div style="width:810px;background-color:white;margin: 0 auto; overflow:auto; ">
+        <div style="width:600px;background-color:white;display:block;text-align:left; float:left; padding-top:1em;padding-bottom:1em; margin-top:5px;">
+                    @Html.Partial("AppListFilters", Model.Filters)
+            
+                <div id="divApplicationForm" style="float:left; width:720px; max-width:720px; margin:15px">
+                        @Html.Partial("ApplicationList", Model.Applications)
+
+                  </div>
+          </div>
+           
+@*     </table>*@
+</div>
+
+<script type="text/javascript">
+
+    function OpenApplicationDetails(ApplicationId) {
+        ini.ajax.post('@(Url.Action("OpenApplicationDetails", "Home"))', ini.ajax.contentType.Json, {
+            ApplicationId: ApplicationId
+        },
+          function (result) {
+              $("#container-attachment").html(result);
+              $("#container-attachment").dialog({
+                  height: 1000,
+                  width: 1200,
+                  modal: true,
+                  closeText: "",
+              });
+          });
+    }
+   
+    function findApp() {
+
+        var $form = $('#form-search-filters');
+        _applyFilters('divApplicationForm', $form.serializeObject());
+
+    }
+    _RegisterGrid('divApplicationForm', '@(Url.Action("FindApplication", "Home"))', '@(Model.Applications.Descriptor.Sort.PropertyName)', @((int)Model.Applications.Descriptor.Sort.Order));
+
+
+    
+    function deleteApplication(elem, applicationId) {
+        showConfirm(elem.id, 'Confirm', '@Html.PTPLabel("Application","RemoveApplication")', '@Html.PTPLabel("ApplicationForm","Yes")', function () { deleteApplicationFunction(applicationId); }, '@Html.PTPLabel("ApplicationForm","No")')
+    }
+
+
+
+    function deleteApplicationFunction(applicationId) {
+    
+        ini.ajax.post('@(Url.Action("DeleteApplication", "Home"))', ini.ajax.contentType.Json, { applicationId: applicationId },
+                   function (result) {
+                       hideProgressIndicator();
+                       findApp();
+                       shouldRefreshList = true;
+                   },
+                   function (error) {
+
+                   });
+     }
+
+</script>
+
+<div id="container-attachment" style="display:none"></div>
+           
+<script type="text/javascript">
+
+    $('body').on('keypress', function (event) {
+        if (event.keyCode == 13) {
+            event.preventDefault();
+            $("#btn-search-App").click();
+        }
+    });
+
+</script>
+
+
+
+
+

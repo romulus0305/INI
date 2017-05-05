@@ -1,0 +1,340 @@
+﻿@model DAS.Backoffice.Models.Home.ClientsModel
+
+@{
+    ViewBag.Title = Html.PTPLabel("Home", "lblClients");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div style="width:810px;background-color:white;margin: 0 auto; overflow:auto; ">
+    <div style="width:600px;background-color:white;display:block;text-align:left; float:left; padding-top:1em;padding-bottom:1em; margin-top:5px;">
+    
+     <div id="divAdd" style="float:left; width:550px; max-width:550px; margin:15px">
+             <div style="float:left">@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","lblNewClient"), new Dictionary<string, string>()  { { "onclick", "addClientPopup('" + Url.Action("AddClientEditor", "Home") + "'); return false;"} })</div>
+     </div>
+   
+         @Html.Partial("Filters", Model.Filters)
+    
+<div id="divClients" style="float:left; width:550px; max-width:550px; margin:15px">
+        @Html.Partial("ClientList", Model.Clients)
+
+    </div>
+    </div>
+    <div style="width:200px;background-color:white;text-align:left; float:left; padding-top:2em;padding-bottom:2em">
+    <table style="width:200px;background-color:#FFCC00;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;font-size:95%;vertical-align:text-top;padding:10px;">
+         <tr><td>@Html.Raw(Html.PTPLabel("Clients","ContentRight"))</td></tr> 
+         <tr><td>@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Home","lblEdit"), new Dictionary<string, string>() { {"onclick", "editText('Clients','ContentRight');"}})</td></tr>
+
+    </table>
+
+        </div>
+    </div>
+<div id="dialog"></div>
+<div id="container-attachment" style="display:none"></div>
+<script type="text/javascript">
+   
+    var shouldRefreshList=false;
+    
+    function OpenClientDetails(ClientId) {
+        ini.ajax.post('@(Url.Action("OpenClientDetails","Home"))', ini.ajax.contentType.Json, {
+            ClientId: ClientId
+        },
+        function (result) {
+            $("#container-attachment").html(result);
+            $("#container-attachment").dialog({
+                height: 400,
+                width: 1050,
+                modal: true,
+                closeText: "",
+                close: function () {                 
+                    if (shouldRefreshList) {
+                        _UpdateGrid('divClients', null, null, null, ActionType.Page, function () {
+                            shouldRefreshList = false;
+                        });
+                    }
+                },
+                title: '@Html.PTPLabel("Clients", "lblDetailsTitle")'
+            });
+        });
+    }
+
+    function findClients() {
+
+        var $form = $('#form-search-filters');
+        _applyFilters('divClients', $form.serializeObject());
+
+    }
+
+    _RegisterGrid('divClients', '@(Url.Action("FindClients", "Home"))', '@(Model.Clients.Descriptor.Sort.PropertyName)', @((int)Model.Clients.Descriptor.Sort.Order));
+
+
+
+
+
+   
+    $('body').on('keypress', function (event) {
+        if (event.keyCode == 13) {
+            $("#btn-search").click();
+        }
+    });
+
+    function editText(viewId, elementId) {
+       
+        ini.ajax.post('@(Url.Action("EditText", "Home"))', ini.ajax.contentType.Json, { viewId: viewId, elementId: elementId },
+   function (result) {
+       $("#dialog").html(result.html);
+       $("#dialog").dialog({
+           height: 600,
+           width: 900,
+           maxwidth:800,
+           modal: true,
+           closeText: "",
+           title: ""
+       });
+   });
+    }
+
+
+
+
+  
+    addClientPopup = function (actionURL) {
+        var $container = $('#container-attachment');
+        ini.ajax.get(actionURL, null,
+            function (result) {
+                $container.html(result);
+                showAddClientPopup();
+             
+            },
+            function (error) {
+                showAlert('Error', error);
+            }
+        );
+    }
+
+
+    showAddClientPopup = function () {
+        var $container = $('#container-attachment');
+        $container.dialog({
+            width: 'auto',
+            modal: true,
+            position: 'center',
+            closeText: "",
+       
+        });
+
+    }
+
+    addClient = function (actionURL) 
+    {
+     
+        var $form=$('#form-add-client');
+        if ($form.valid()) 
+        {
+            showProgressIndicator('form-add-client');
+            ini.ajax.post(actionURL,ini.ajax.contentType.UrlEncoded,
+                $form.serialize(),
+                function(result)
+                {
+                    $('#container-attachment').dialog('close');
+                    findClients();
+                    hideProgressIndicator();
+                    shouldRefreshList=true;
+                },
+                function(error)
+                {
+                    hideProgressIndicator();
+                    showAlert('Error',error);
+                }
+                );
+    
+        }
+
+    
+    }
+      
+
+
+
+    function saveClient(){
+     
+      
+        var clientId = $('#clientId').val();
+        
+        var clientName = $('#clientName').val();
+  
+        var adress = $('#adress').val();
+        var description =  $('#description').val();
+        if(document.getElementById('DateChange').checked == true)
+        {
+            var date = true;
+        }else{
+            date=false;
+       }
+       
+        ini.ajax.post('@(Url.Action("SaveClient", "Home"))', ini.ajax.contentType.Json, { clientId:clientId, clientName:clientName, adress:adress, description:description, date:date},
+         function (result) {
+             shouldRefreshList=true;
+             //$('#container-attachment').dialog('close');
+             window.location.href = '@Url.Action("Clients", "Home")';
+         },
+        function (error) {
+                      
+        });
+    }
+
+
+    
+    closeClientPopup = function () {
+        $('#container-attachment').dialog('close');
+    }
+
+
+
+    function cerftificatePopup(certId) {
+
+        var $container = $('#dialogCerftificate');
+        if ($container.length == 0) {
+            $container = $('<div id="dialogCerftificate"></div>');
+            $('body').append($container);
+        }
+
+        ini.ajax.post('@(Url.Action("EditCertificate", "Home"))', ini.ajax.contentType.Json, { certId: certId },
+        function (result) {
+      
+            $container.html(result.html);
+            $container.dialog({
+                width: 'auto',
+                heigt:50,
+                modal: true,
+                position: 'center',
+                closeText: "",
+            });
+        });
+    }
+
+
+
+
+
+    function saveCertificate(certId){
+      
+        var certId = $('#certificateEditId').val();
+        var certName = $('#certificateEditText').val();
+        var standard = $('#standardEditText').val();
+        var statusId =  $('#ddlStatuses :selected').val();
+        ini.ajax.post('@(Url.Action("SaveCerftificate", "Home"))', ini.ajax.contentType.Json, { certId:certId, certName:certName, standard:standard, statusId: statusId },
+        function (result) {
+            shouldRefreshList=true;
+            $('#dialogCerftificate').dialog('close');
+            $('#divCertificates').html(result.html);
+        },
+        function (error) {
+                      
+        });
+    }
+
+
+
+    function deleteCertificate(elem, certId) {
+        showConfirm(elem.id, 'Confirm', '@Html.PTPLabel("Clients","RemoveCertificate")', 'Yes', function () { deleteCertificateForClient(certId); }, 'No')
+    }
+
+    
+
+    function deleteCertificateForClient(certId){
+        var clientId = $('#clientId').val();
+        ini.ajax.post('@(Url.Action("DeleteCertificate", "Home"))', ini.ajax.contentType.Json, { clientId : clientId, certId : certId },
+                   function (result) {
+                       hideProgressIndicator();
+                       $('#divCertificates').html(result.html);
+                       shouldRefreshList=true;
+                   },
+                   function (error) {
+                      
+                   });
+    }
+
+
+
+    function deleteClient(elem, clientId) {
+        showConfirm(elem.id, 'Confirm', '@Html.PTPLabel("Clients","RemoveClient")', 'Yes', function () { deleteClientFunction(clientId); }, 'No')
+    }
+
+
+
+    function deleteClientFunction(clientId) {
+     
+        ini.ajax.post('@(Url.Action("DeleteClient", "Home"))', ini.ajax.contentType.Json, { clientId: clientId },
+                function (result) {
+                    hideProgressIndicator();
+                    shouldRefreshList=true;
+                    $('#container-attachment').dialog('close');
+                    findClients();
+                },
+                function (error) {
+
+                });
+            }
+
+
+    addCertificatePopup = function (actionURL) {
+       
+        var $container = $('#container-certificate');
+        if ($container.length == 0) {
+            $container = $('<div id="container-certificate></div>');
+            $('body').append($container);
+        }
+        ini.ajax.get(actionURL, null,
+            function (result) {
+                $container.html(result);
+                showAddCertificatePopup();
+            },
+            function (error) {
+                showAlert('Error', error);
+            }
+        );
+  
+    }
+
+
+    showAddCertificatePopup = function () {
+        var $container = $('#container-certificate');
+        if ($container.length == 0) {
+            $container = $('<div id="container-certificate></div>');
+            $('body').append($container);
+        }
+
+        $container.dialog({
+            width: 'auto',
+            modal: true,
+            position: 'center',
+            closeText: "",
+            title: '@Html.PTPLabel("Clients","AddCertificate")'
+        });
+
+    }
+    
+    function addCertificate(){
+     
+      
+        var clientId = $('#clientId').val();
+        
+        var certName = $('#nameCertificate').val();
+  
+        var standard = $('#nameStandard').val();
+        var statusId =  $('#idStatus').val();
+        
+
+        ini.ajax.post('@(Url.Action("AddCertificate", "Home"))', ini.ajax.contentType.Json, { clientId:clientId, certName:certName, standard:standard, statusId: statusId },
+         function (result) {
+             shouldRefreshList=true;
+             $('#container-certificate').dialog('destroy');
+             $('#divCertificates').html(result.html);
+         },
+        function (error) {
+                      
+        });
+    }
+    
+       </script>
+

@@ -1,0 +1,11 @@
+﻿@model DAS.Backoffice.Models.Home.CertModel
+@using SkfCore.Web.Mvc.Helpers;
+
+
+@using (Html.BeginForm("AddCertificate", "Home", FormMethod.Post, new { id = "form-add-certificate" }))
+{
+    @Html.Partial("CertificateEditor", Model)
+    <div style="clear:both; height:10px"></div>
+}
+
+@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnSave"), new Dictionary<string, string>() { { "onclick", "addCertificate('" + Url.Action("AddCertificate", "Home") + "'); return false;" } })

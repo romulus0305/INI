@@ -1,0 +1,11 @@
+﻿@model DAS.UI.Models.Application.ApplicationLocationActivities
+
+   <table style="width:480px;border:0px solid; ">
+        <tr>
+        <td style="width:160px"><b>@Html.PTPLabel("ApplicationForm", "lblAllSites")</b></td>
+         </tr>
+        </table>
+  @Html.SKFTextBoxFor(TextBoxType.TEXT,k => k.location, new Dictionary<string, object>() { { "id", "loc" },{ "style", "width:200px"} })
+  @Html.SKFTextBoxFor(TextBoxType.TEXT,k => k.activity, new Dictionary<string, object>() { { "id", "act" },{ "style", "width:200px"} })
+ 
+@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnSave"), new Dictionary<string, string>() { { "onclick", "addLocationActivity('" + Url.Action("AddLocationActivity", "Home") + "'); return false;" } })

@@ -1,0 +1,47 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.UI", "DAS.UI\DAS.UI.csproj", "{5DFED231-A875-4870-9FEE-D7BC7A957D64}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.Domain", "DAS.Domain\DAS.Domain.csproj", "{317B8F57-D7BA-4C58-9230-C10120B2ACDF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAS.Backoffice", "DAS.Backoffice\DAS.Backoffice.csproj", "{67706506-F1FA-46DB-ABD3-541AB035415F}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 4
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://minsk:8080/tfs/otherprojects
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = DAS.Domain\\DAS.Domain.csproj
+		SccProjectName1 = DAS.Domain
+		SccLocalPath1 = DAS.Domain
+		SccProjectUniqueName2 = DAS.UI\\DAS.UI.csproj
+		SccProjectName2 = DAS.UI
+		SccLocalPath2 = DAS.UI
+		SccProjectUniqueName3 = DAS.Backoffice\\DAS.Backoffice.csproj
+		SccProjectName3 = DAS.Backoffice
+		SccLocalPath3 = DAS.Backoffice
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5DFED231-A875-4870-9FEE-D7BC7A957D64}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5DFED231-A875-4870-9FEE-D7BC7A957D64}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5DFED231-A875-4870-9FEE-D7BC7A957D64}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5DFED231-A875-4870-9FEE-D7BC7A957D64}.Release|Any CPU.Build.0 = Release|Any CPU
+		{317B8F57-D7BA-4C58-9230-C10120B2ACDF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{317B8F57-D7BA-4C58-9230-C10120B2ACDF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{317B8F57-D7BA-4C58-9230-C10120B2ACDF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{317B8F57-D7BA-4C58-9230-C10120B2ACDF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{67706506-F1FA-46DB-ABD3-541AB035415F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{67706506-F1FA-46DB-ABD3-541AB035415F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{67706506-F1FA-46DB-ABD3-541AB035415F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{67706506-F1FA-46DB-ABD3-541AB035415F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

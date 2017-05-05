@@ -1,0 +1,28 @@
+﻿@model DAS.Backoffice.Models.Home.ApplicationListFilterModel
+@using SkfCore.Web.Mvc.Helpers
+@using (Html.BeginForm("FindApplication", "Home", FormMethod.Post, new { id = "form-search-filters" }))
+{
+<div style="margin-left:20px">
+<div style="height:5px"></div>
+<div style="height:30px"></div>
+<table>
+    <tr>
+        <td>@Html.Raw(Html.PTPLabel("Clients","lblNaziv")):</td>
+        <td>@Html.SKFTextBoxFor(TextBoxType.TEXT, mod => mod.Name, new Dictionary<string, object>() { { "style", "width:160px;"}, {"id", "CompanyNameSearch" }})</td>
+        <td>@Html.SKFButtonPrimary(ButtonType.BUTTON, @Html.PTPLabel("Clients","btnSearch"), new Dictionary<string, string>() { { "onclick", "findApp();" }, { "id", "btn-search-App" } })</td>
+
+        </tr>
+  
+   
+</table>
+     </div>
+}
+@*<script>
+     $("#CompanyNameSearch").keyup(function (event) {
+         if (event.keyCode == 13) {
+             $("#btn-search-App").click();
+         }
+     });
+
+    
+ </script>*@

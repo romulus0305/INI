@@ -1,0 +1,15 @@
+﻿@using SkfCore.Web.Mvc.Helpers;
+@model DAS.Backoffice.Models.Home.ClientModel
+
+
+@using (Html.BeginForm("AddClient", "Home", FormMethod.Post, new { id = "form-add-client" }))
+
+{
+    @Html.Partial("ClientEditor", Model)
+    <div style="clear:both; height:10px"></div>
+}
+
+
+@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnSave"), new Dictionary<string, string>() { { "onclick", "addClient('" + Url.Action("AddClient", "Home") + "'); return false;" } })
+@Html.HiddenFor( model => model.ClientId, new { id = "clientId" })
+@*@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnClose"), new Dictionary<string, string>() { { "onclick", "closeClientPopup(); return false;" } })*@

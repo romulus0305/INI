@@ -1,0 +1,42 @@
+﻿@{
+    ViewBag.Title = Html.PTPLabel("Home", "lblMain"); ;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{  int lngId = 1;
+    if (HttpContext.Current.Session["lngId"] != null){
+        lngId = (int)HttpContext.Current.Session["lngId"];
+    } 
+    }
+<div style="width:810px;background-color:white;margin: 0 auto; overflow:auto; ">
+    <div style="width:590px;background-color:white;display:block;text-align:left; float:left; padding-top:2em;padding-bottom:2em;">
+        <table style="text-align:left;vertical-align:text-top;padding-left:10px;">
+             <tr><td>@Html.Raw(Html.PTPLabel("Home","ContentLeft"))</td></tr>
+            @*<tr><td><a href="~/Home/Offers" class="link">@Html.Raw(Html.PTPLabel("Home","LeftLink"))</a></td></tr>*@
+        </table>
+        </div>
+    <div style="width:200px;background-color:white;text-align:left; float:left; padding-top:2em;padding-bottom:2em">
+    <table style="width:200px;background-color:#FFCC00;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;font-size:95%;vertical-align:text-top;padding:10px;">
+         <tr><td>@Html.Raw(Html.PTPLabel("Home","ContentRight"))</td></tr>
+        
+        <tr>
+            <td>
+              @*  <ul id="rightlist" > 
+                 <li>*@ 
+                      @*<a href="@Url.Content("~/Content/Download/Download" + lngId + "/InfoUpitnikWeb.DOC")" target="_blank">*@
+              @*  @Html.Raw(Html.PTPLabel("Home","ContentRightDoc"))*@
+                @*</a>*@
+             @*    </li>
+                </ul>*@
+            </td>
+        </tr>
+@*        <tr><td><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-9001s.jpg" title="DAS - Certification Approval"/></td></tr>
+        <tr><td><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-14001s.jpg" title="DAS - Certification Approval" /></td></tr>
+        <tr><td><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-18001s.jpg" title="DAS - Certification Approval"/></td></tr>
+        <tr><td><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-27001s.jpg" title="DAS - Certification Approval"/></td></tr>*@
+      @*<tr><td>@Html.Raw(Html.PTPLabel("Home","ContentRightBottom"))</td></tr>*@
+      @*  <tr><td><img src="~/Content/Images/navlogo1.jpg" /></td></tr>*@
+    </table>
+        </div>
+    </div>
+
+

@@ -1,0 +1,24 @@
+﻿@using SkfCore.Web.Mvc.Helpers;
+@model System.Collections.Generic.IList<DAS.Backoffice.Models.Application.ApplicationLocationActivities>
+   <table style="width:720px;border:0px solid; margin-left:45px">
+   <tbody>
+
+    
+        @{int i = 0;}
+    @foreach (var locAct in Model)  {
+        string st = "width:360px; background-color:#fff;height:20px";
+        if (i  == 0) {
+            st = "width:360px; background-color:#dbd8d8;height:20px";
+        }
+        <tr style="@st">
+        <td style="width:360px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT,l=>locAct.location, new Dictionary<string, object>() { { "id", "location_" + i}, { "style", "width:340px"} ,{"disabled","disabled"}})</td>
+        <td style="width:360px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT, l=>locAct.activity, new Dictionary<string, object>() {{"id", "activity_" + i}, { "style", "width:340px"} ,{"disabled","disabled"}})</td>
+
+       
+    </tr>
+        i++;
+        }
+
+
+    </tbody>
+                  </table>

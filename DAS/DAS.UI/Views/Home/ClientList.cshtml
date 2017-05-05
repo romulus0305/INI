@@ -1,0 +1,52 @@
+﻿@model DAS.UI.Models.Home.ClientList
+
+@using SkfCore.Web.Mvc.Helpers
+
+<div>
+    
+@using (Html.SKFTable(Model.Descriptor, new { style = "width:550px;max-width:550px;height:100%;" + (Model.ListOfClients.Count > 0 ? "visibility:visible" : "visibility:hidden;") }, new { style = "width:550px;max-width:550px;height:100%;" }))
+{
+   
+    <tr>
+        
+        @Html.SortHeader("<a style='color:#5e5e5e;text-decoration:none;' href='#'>" + Html.Raw(Html.PTPLabel("Clients","lblName")) + ", " + Html.Raw(Html.PTPLabel("Clients","lblAddress")) + "</a>","Name",Model.Descriptor.Sort)
+
+        <th>@Html.Raw(Html.PTPLabel("Clients","lblStandard"))</th>
+        <th>@Html.Raw(Html.PTPLabel("Clients","lblCertNr"))</th>
+        <th>@Html.Raw(Html.PTPLabel("Clients","lblStatus"))</th>  
+    </tr>
+    
+  foreach (var client in Model.ListOfClients) {
+    <tr>
+        <td><a href="#" onclick="OpenClientDetails((@client.ClientId)); return false;">@client.ClientName, @client.Address</a></td>      
+       <td style="white-space: nowrap;">@{
+            foreach(var cert in client.Certificates){
+                <text>@cert.Standard</text><br />
+            }
+            }
+        </td>
+        <td style="white-space: nowrap;">@{
+            foreach(var cert in client.Certificates){
+                <text>@cert.CertName</text><br />
+            }
+            }
+        </td>
+        <td style="white-space: nowrap;">@{
+            foreach(var cert in client.Certificates){
+                <text>@cert.Status</text><br />
+            }
+            }
+        </td>
+    </tr>
+    }
+    }
+ 
+ @if (Model.ListOfClients.Count == 0 && Model.Descriptor.RequestType!=0)
+  {
+    
+     <tr><td><div style="width:50%; margin:0 auto; vertical-align:top;">@Html.Raw(Html.PTPLabel("Clients","lblEmpty"))</div></td></tr>
+  }
+      
+    </div>
+<div id="dialog">
+</div>

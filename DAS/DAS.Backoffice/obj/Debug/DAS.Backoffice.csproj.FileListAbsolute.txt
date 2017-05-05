@@ -1,0 +1,15 @@
+D:\Projects\DAS\DAS.Backoffice\bin\DAS.Backoffice.dll
+D:\Projects\DAS\DAS.Backoffice\bin\DAS.Backoffice.pdb
+D:\Projects\DAS\DAS.Backoffice\bin\Aspose.Pdf.dll
+D:\Projects\DAS\DAS.Backoffice\bin\Aspose.Words.dll
+D:\Projects\DAS\DAS.Backoffice\bin\DAS.Domain.dll
+D:\Projects\DAS\DAS.Backoffice\bin\System.Net.Http.Formatting.dll
+D:\Projects\DAS\DAS.Backoffice\bin\System.Web.Http.dll
+D:\Projects\DAS\DAS.Backoffice\bin\System.Web.Http.WebHost.dll
+D:\Projects\DAS\DAS.Backoffice\bin\DAS.Domain.pdb
+D:\Projects\DAS\DAS.Backoffice\bin\System.Net.Http.Formatting.xml
+D:\Projects\DAS\DAS.Backoffice\bin\System.Web.Http.xml
+D:\Projects\DAS\DAS.Backoffice\bin\System.Web.Http.WebHost.xml
+D:\Projects\DAS\DAS.Backoffice\obj\Debug\DAS.Backoffice.csprojResolveAssemblyReference.cache
+D:\Projects\DAS\DAS.Backoffice\obj\Debug\DAS.Backoffice.dll
+D:\Projects\DAS\DAS.Backoffice\obj\Debug\DAS.Backoffice.pdb

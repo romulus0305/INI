@@ -1,0 +1,25 @@
+﻿@model DAS.Backoffice.Models.Home.CertModel
+@using SkfCore.Web.Mvc.Helpers;
+
+<table>
+ <tr>
+        <td>@Html.PTPLabel("Clients","lblStand"):</td>
+         <td> @Html.SKFTextBoxFor(TextBoxType.TEXT, m => m.Standard , new Dictionary<string, object>() { {"id", "nameStandard"}})</td>
+
+    
+    </tr>
+    <tr>
+        <td>@Html.PTPLabel("Clients","lblCertNr"):</td>
+         <td> @Html.SKFTextBoxFor(TextBoxType.TEXT, m => m.CertName, new Dictionary<string, object>() { { "id", "nameCertificate"}})</td>
+
+   </tr>
+    <tr>
+        <td>@Html.PTPLabel("Clients","lblStatus"):</td>
+        <td>@Html.DropDownListFor(m => m.StatusID,Model.Statuses.Select(j => new SelectListItem() { Value = j.StatusId.ToString(), Text = j.StatusName }), new Dictionary<string, object>() { { "id", "idStatus"} })
+</td>
+    </tr>
+
+
+
+ 
+</table>

@@ -1,0 +1,9 @@
+﻿@model DAS.UI.Models.Application.ApplicationCategory
+<table style="width:720px;border:0px solid; margin-left:45px">
+<tr>
+  <td style="width:300px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Category, new Dictionary<string, object>() {{"id","category"}, { "style", "width:220px"}})</td>
+        <td style="width:300px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT,  m=>m.TotalPermanent, new Dictionary<string, object>() {{"onkeypress","return NumberOnly()"},{"id","TotalPermanent"}, { "style", "width:220px"}})</td>
+        <td style="width:300px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT,  m=>m.TotalTemporary, new Dictionary<string, object>() { {"onkeypress","return NumberOnly()"},{"id","TotalTemporary"},{ "style", "width:220px"}})</td>
+
+<tr>
+    </table>

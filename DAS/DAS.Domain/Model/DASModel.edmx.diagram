@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="9e25a2e74dad4a79a22b5478730a71c8" Name="Diagram1">
+        <EntityTypeShape EntityType="DASModel.AppFormLocationActivity" Width="1.5" PointX="11" PointY="6.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.ApplicationForm" Width="1.5" PointX="8.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.ApplicationFormCatagory" Width="1.5" PointX="11" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Archive" Width="1.5" PointX="5.25" PointY="9.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Certificate" Width="1.5" PointX="6" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Client" Width="1.5" PointX="3.75" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Document" Width="1.5" PointX="3" PointY="3.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Label" Width="1.5" PointX="3" PointY="6.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Language" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.News" Width="1.5" PointX="3" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Status" Width="1.5" PointX="3.75" PointY="1" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.Status_Lng" Width="1.5" PointX="6" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.User" Width="1.5" PointX="5.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.vw_Clients" Width="1.5" PointX="10.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="DASModel.vw_ClientsBackoffice" Width="1.5" PointX="10.75" PointY="12" IsExpanded="true" />
+        <AssociationConnector Association="DASModel.FK_AppFormLocationCategory_ApplicationForm" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.ApplicationId" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_Certificate_Client" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_Certificate_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_Document_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_Labels_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_News_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_Status_Lng_Language" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.FK_Status_Lng_Status" ManuallyRouted="false" />
+        <AssociationConnector Association="DASModel.Archive_News" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

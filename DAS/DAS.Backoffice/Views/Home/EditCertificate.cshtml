@@ -1,0 +1,10 @@
+﻿@model DAS.Backoffice.Models.Home.CertModel
+@Html.HiddenFor(h => h.CertId, new Dictionary<string, object>() { { "id", "certificateEditId" } })
+ <b>@Html.PTPLabel("Clients","lblStand"):</b><br>
+@Html.SKFTextAreaFor(k => k.Standard, 30, 2, new Dictionary<string, object>() { { "id", "standardEditText" } }) <br>
+ <b>@Html.PTPLabel("Clients","lblCertNr"):</b><br>
+@Html.SKFTextAreaFor(k => k.CertName, 30, 2, new Dictionary<string, object>() { { "id", "certificateEditText" } })<br>
+ <b>@Html.PTPLabel("Clients","lblStatus"):</b><br>
+@Html.DropDownListFor(k => k.StatusID,Model.Statuses.Select(j => new SelectListItem() { Value = j.StatusId.ToString(), Text = j.StatusName }), new Dictionary<string, object>() { { "id", "ddlStatuses" } })<br><br>
+@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnSave"), new Dictionary<string, string>() { { "onclick", "saveCertificate(); return false;" } })
+@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnClose"), new Dictionary<string, string>() { { "onclick", "$('#dialogCerftificate').dialog('close'); return false;" } })

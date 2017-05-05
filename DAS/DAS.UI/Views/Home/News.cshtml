@@ -1,0 +1,99 @@
+﻿@model DAS.UI.Models.News.NewsListModel
+@{
+    ViewBag.Title = Html.PTPLabel("Home", "lblNews");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script>
+
+    function OpenArchive(ArchiveId) {
+        if (ArchiveId != 0) {
+            ini.ajax.post('@(Url.Action("OpenArchive","Home"))', ini.ajax.contentType.Json, {
+                ArchiveId: ArchiveId
+            }
+
+            ,
+              function (result) {
+                  $("#currentNews").html(result);
+                  $("#newsTitle").html('@Html.Raw(Html.PTPLabel("Home","lblArchive"))');
+              });
+        }
+        else {
+
+            ini.ajax.post('@(Url.Action("OpenCurrentNews","Home"))', ini.ajax.contentType.Json, {
+             
+            },
+              function (result) {
+                  $("#currentNews").html(result);
+                  $("#newsTitle").html('@Html.Raw(Html.PTPLabel("Home","lblNews"))');
+              });
+        }
+
+        $("a[id^='linkArch']").removeAttr("style");
+        $("a[id^='linkArch']").attr("style", "font-weight: bold;");
+        $("#linkArch_" + ArchiveId).attr("style", "text-decoration:underline; font-weight: bold;");
+
+    }
+    
+</script>
+
+<script>
+    function BuildArchList()
+    {
+        
+    }
+</script>
+<div  style="width:810px;background-color:white;margin: 0 auto; overflow:auto; ">   
+    <div id="currentNews" style="width:600px;background-color:white;display:block;text-align:left; float:left; padding-top:2em;padding-bottom:2em;">
+
+      @Html.Partial("OpenNews",Model.NewsList)
+
+        </div>
+
+    <div style="width:200px;background-color:white;text-align:left; float:left; padding-top:2em;padding-bottom:2em">
+    <table style="width:200px;background-color:#FFCC00;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;font-size:95%;vertical-align:text-top;padding:5px;">
+         <tr><td style="float:left; text-align:left;">
+
+
+             <tr><td><b><a id="linkArch_@Model.ArchiveList[Model.ArchiveList.Count-1].ArchiveId" href="#" style="text-decoration:underline;font-weight: bold;" onclick="OpenArchive(@Model.ArchiveList[Model.ArchiveList.Count-1].ArchiveId); return false;">@Html.Raw(@Model.ArchiveList[Model.ArchiveList.Count-1].Name)</a> </b></td></tr>
+                             
+            
+             @for (int i = 0; i < (Model.ArchiveList.Count-1); i++)
+             {               
+                                    
+            <tr><td><a id="linkArch_@Model.ArchiveList[i].ArchiveId" href="#" style="font-weight: bold;" onclick="OpenArchive(@Model.ArchiveList[i].ArchiveId); return false;">@Html.Raw(Model.ArchiveList[i].Name)</a> </td></tr> 
+              
+             }
+
+             @* @foreach (var arch in Model.ArchiveList)
+             {
+                 
+                 string st = "";
+                 if (arch.ArchiveId == 0) 
+                 {
+                     st = "text-decoration:underline";
+                 } 
+                    
+            <tr><td><a id="linkArch_@arch.ArchiveId" href="#" style="@st" onclick="OpenArchive(@arch.ArchiveId); return false;">@Html.Raw(arch.Name)</a> </td></tr> 
+            
+               }*@
+
+             </td>
+
+         </tr> 
+       @* <tr>
+            <td>
+            <div><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-9001s.jpg"/></div>
+            <div><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-14001s.jpg" /></div>
+            <div><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-18001s.jpg" /></div>
+            <div><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-27001s.jpg" /></div>
+             <div><img src="~/Content/Images/nav/Cert_Logo_DAS-UKAS-22301s.png" /></div> 
+           </td>
+
+        </tr>*@
+
+          <tr>
+                  <td>@Html.Raw(Html.PTPLabel("News","ContentRight"))</td> </tr>
+    </table>
+
+        </div>
+    </div>

@@ -1,0 +1,23 @@
+﻿@model DAS.Backoffice.Models.Home.UploadModel
+@{
+    ViewBag.Title = "Example";
+}
+
+
+@using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" })){
+<div class="col-md-12 main-button-container">
+    <div class="well center-block first-upload-container">
+    <input file="file" type="file" name="file" data-media-type="image" id="media-url" />
+  @Html.SKFTextBoxFor(TextBoxType.TEXT, m => m.tooltip, new Dictionary<string, object>() { { "id", "tooltip"}}) Tooltip &nbsp;
+   <button type="submit" value="Submit">Upload</button> 
+  
+    </div>
+</div>
+}
+
+@if(Model.ImageUrl != ""){
+<div>
+    <img src="@Url.Content(Model.ImageUrl)" id="uploadImage" />
+</div>
+}
+

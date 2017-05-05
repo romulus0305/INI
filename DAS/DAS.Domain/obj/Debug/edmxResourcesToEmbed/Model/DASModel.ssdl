@@ -1,0 +1,443 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DASModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="DASModelStoreContainer">
+    <EntitySet Name="AppFormLocationActivity" EntityType="DASModel.Store.AppFormLocationActivity" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ApplicationForm" EntityType="DASModel.Store.ApplicationForm" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ApplicationFormCatagory" EntityType="DASModel.Store.ApplicationFormCatagory" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Archive" EntityType="DASModel.Store.Archive" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Archive_News" EntityType="DASModel.Store.Archive_News" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Certificate" EntityType="DASModel.Store.Certificate" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Client" EntityType="DASModel.Store.Client" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Document" EntityType="DASModel.Store.Document" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Labels" EntityType="DASModel.Store.Labels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Language" EntityType="DASModel.Store.Language" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="News" EntityType="DASModel.Store.News" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status" EntityType="DASModel.Store.Status" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Status_Lng" EntityType="DASModel.Store.Status_Lng" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="User" EntityType="DASModel.Store.User" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="vw_Clients" EntityType="DASModel.Store.vw_Clients" store:Type="Views" store:Schema="dbo" store:Name="vw_Clients">
+      <DefiningQuery>SELECT 
+      [vw_Clients].[ClientId] AS [ClientId], 
+      [vw_Clients].[Name] AS [Name], 
+      [vw_Clients].[Description] AS [Description], 
+      [vw_Clients].[Address] AS [Address], 
+      [vw_Clients].[Ord] AS [Ord], 
+      [vw_Clients].[CertificateId] AS [CertificateId], 
+      [vw_Clients].[Standard] AS [Standard], 
+      [vw_Clients].[CertificateName] AS [CertificateName], 
+      [vw_Clients].[StatusId] AS [StatusId]
+      FROM [dbo].[vw_Clients] AS [vw_Clients]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="vw_ClientsBackoffice" EntityType="DASModel.Store.vw_ClientsBackoffice" store:Type="Views" store:Schema="dbo" store:Name="vw_ClientsBackoffice">
+      <DefiningQuery>SELECT 
+      [vw_ClientsBackoffice].[ClientId] AS [ClientId], 
+      [vw_ClientsBackoffice].[Name] AS [Name], 
+      [vw_ClientsBackoffice].[Description] AS [Description], 
+      [vw_ClientsBackoffice].[Address] AS [Address], 
+      [vw_ClientsBackoffice].[Ord] AS [Ord], 
+      [vw_ClientsBackoffice].[CertificateId] AS [CertificateId], 
+      [vw_ClientsBackoffice].[Standard] AS [Standard], 
+      [vw_ClientsBackoffice].[CertificateName] AS [CertificateName], 
+      [vw_ClientsBackoffice].[StatusId] AS [StatusId]
+      FROM [dbo].[vw_ClientsBackoffice] AS [vw_ClientsBackoffice]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="ApplicationId" Association="DASModel.Store.ApplicationId">
+      <End Role="ApplicationForm" EntitySet="ApplicationForm" />
+      <End Role="ApplicationFormCatagory" EntitySet="ApplicationFormCatagory" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AppFormLocationCategory_ApplicationForm" Association="DASModel.Store.FK_AppFormLocationCategory_ApplicationForm">
+      <End Role="ApplicationForm" EntitySet="ApplicationForm" />
+      <End Role="AppFormLocationActivity" EntitySet="AppFormLocationActivity" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Archive_News_News" Association="DASModel.Store.FK_Archive_News_News">
+      <End Role="News" EntitySet="News" />
+      <End Role="Archive_News" EntitySet="Archive_News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ArchiveNews_Archive" Association="DASModel.Store.FK_ArchiveNews_Archive">
+      <End Role="Archive" EntitySet="Archive" />
+      <End Role="Archive_News" EntitySet="Archive_News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Certificate_Client" Association="DASModel.Store.FK_Certificate_Client">
+      <End Role="Client" EntitySet="Client" />
+      <End Role="Certificate" EntitySet="Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Certificate_Status" Association="DASModel.Store.FK_Certificate_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Certificate" EntitySet="Certificate" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Document_Language" Association="DASModel.Store.FK_Document_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="Document" EntitySet="Document" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Labels_Language" Association="DASModel.Store.FK_Labels_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="Labels" EntitySet="Labels" />
+    </AssociationSet>
+    <AssociationSet Name="FK_News_Language" Association="DASModel.Store.FK_News_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="News" EntitySet="News" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_Lng_Language" Association="DASModel.Store.FK_Status_Lng_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="Status_Lng" EntitySet="Status_Lng" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Status_Lng_Status" Association="DASModel.Store.FK_Status_Lng_Status">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Status_Lng" EntitySet="Status_Lng" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="AppFormLocationActivity">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="Location" Type="nvarchar" MaxLength="50" />
+    <Property Name="Activity" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApplicationId" Type="int" />
+  </EntityType>
+  <EntityType Name="ApplicationForm">
+    <Key>
+      <PropertyRef Name="ApllicationId" />
+    </Key>
+    <Property Name="ApllicationId" Type="int" Nullable="false" />
+    <Property Name="ISO9001" Type="bit" />
+    <Property Name="ISO14001" Type="bit" />
+    <Property Name="BSOHSAS18001" Type="bit" />
+    <Property Name="ISO27001" Type="bit" />
+    <Property Name="Other" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyName" Type="nvarchar" MaxLength="50" />
+    <Property Name="Adress" Type="nvarchar" MaxLength="50" />
+    <Property Name="Place" Type="nvarchar" MaxLength="50" />
+    <Property Name="Telephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="Email" Type="nvarchar" MaxLength="50" />
+    <Property Name="CompanyWebsite" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrimaryContactForAuditPurposes" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrimaryContactTelephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="NatureOfBusiness" Type="nvarchar" MaxLength="500" />
+    <Property Name="NumberOfYearsAtThisSite" Type="nvarchar" MaxLength="50" />
+    <Property Name="PrincipleServicesOrProducts" Type="nvarchar" MaxLength="50" />
+    <Property Name="ActivitiesOnClientsSites" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameOfPresentCertificationBody" Type="nvarchar" MaxLength="50" />
+    <Property Name="CertificateExpiryDate" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalNumberOfEmployees" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalNumberOfCompanyDirectors" Type="nvarchar" MaxLength="50" />
+    <Property Name="NumberOfLocations" Type="nvarchar" MaxLength="50" />
+    <Property Name="AllSitesMainActivites" Type="nvarchar" MaxLength="500" />
+    <Property Name="SalesTotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="SalesTotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="MarketingTotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="MarketingTotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdministrationTotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="AdministrationTotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesignTotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="DesignTotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManufacturingTotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManufacturingTotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherTotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="OtherTotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="Applicant" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISO22301" Type="bit" />
+    <Property Name="OtherIso" Type="bit" />
+    <Property Name="Extension" Type="nvarchar" MaxLength="50" />
+    <Property Name="ManagementRepresentativeName" Type="nvarchar" MaxLength="50" />
+    <Property Name="JobTitle" Type="nvarchar" MaxLength="50" />
+    <Property Name="NameOfConsultant" Type="nvarchar" MaxLength="50" />
+    <Property Name="ConsultantTelephone" Type="nvarchar" MaxLength="50" />
+    <Property Name="ISO9001_2" Type="bit" />
+    <Property Name="ISO14001_2" Type="bit" />
+    <Property Name="BSOHSAS18001_2" Type="bit" />
+    <Property Name="ISO27001_2" Type="bit" />
+    <Property Name="ISO22301_2" Type="bit" />
+    <Property Name="OtherIso_2" Type="bit" />
+    <Property Name="StandardTransferred" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateNextCertificationBodyVisit" Type="nvarchar" MaxLength="50" />
+    <Property Name="Other_2" Type="nvarchar" MaxLength="50" />
+    <Property Name="DateCreated" Type="datetime" />
+  </EntityType>
+  <EntityType Name="ApplicationFormCatagory">
+    <Key>
+      <PropertyRef Name="CategoryId" />
+    </Key>
+    <Property Name="CategoryId" Type="int" Nullable="false" />
+    <Property Name="Category" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalPermanent" Type="nvarchar" MaxLength="50" />
+    <Property Name="TotalTemporary" Type="nvarchar" MaxLength="50" />
+    <Property Name="ApplicationId" Type="int" />
+  </EntityType>
+  <EntityType Name="Archive">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+    </Key>
+    <Property Name="ArchiveId" Type="int" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Archive_News">
+    <Key>
+      <PropertyRef Name="ArchiveId" />
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="ArchiveId" Type="int" Nullable="false" />
+    <Property Name="NewsId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Certificate">
+    <Key>
+      <PropertyRef Name="CertificateId" />
+    </Key>
+    <Property Name="CertificateId" Type="int" Nullable="false" />
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Standard" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CertificateName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Client">
+    <Key>
+      <PropertyRef Name="ClientId" />
+    </Key>
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="200" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ord" Type="int" Nullable="false" />
+    <Property Name="DateChange" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Document">
+    <Key>
+      <PropertyRef Name="DocId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="DocId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Path" Type="nvarchar" Nullable="false" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Labels">
+    <Key>
+      <PropertyRef Name="ViewId" />
+      <PropertyRef Name="ElementId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="ViewId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="ElementId" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="News">
+    <Key>
+      <PropertyRef Name="NewsId" />
+    </Key>
+    <Property Name="NewsId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Text" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Year" Type="int" Nullable="false" />
+    <Property Name="Ord" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Archive" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Status_Lng">
+    <Key>
+      <PropertyRef Name="StatusId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="StatusId" Type="int" Nullable="false" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="Username" Type="nvarchar" Nullable="false" MaxLength="50" />
+    <Property Name="Password" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'DAS.dbo.vw_Clients' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_Clients">
+    <Key>
+      <PropertyRef Name="ClientId" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Ord" />
+      <PropertyRef Name="CertificateId" />
+      <PropertyRef Name="Standard" />
+      <PropertyRef Name="CertificateName" />
+      <PropertyRef Name="StatusId" />
+    </Key>
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ord" Type="int" Nullable="false" />
+    <Property Name="CertificateId" Type="int" Nullable="false" />
+    <Property Name="Standard" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="CertificateName" Type="nvarchar" Nullable="false" MaxLength="100" />
+    <Property Name="StatusId" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+      warning 6002: The table/view 'DAS.dbo.vw_ClientsBackoffice' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
+      -->
+  <EntityType Name="vw_ClientsBackoffice">
+    <Key>
+      <PropertyRef Name="ClientId" />
+      <PropertyRef Name="Description" />
+      <PropertyRef Name="Ord" />
+    </Key>
+    <Property Name="ClientId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" />
+    <Property Name="Description" Type="nvarchar" Nullable="false" MaxLength="2000" />
+    <Property Name="Address" Type="nvarchar" MaxLength="200" />
+    <Property Name="Ord" Type="int" Nullable="false" />
+    <Property Name="CertificateId" Type="int" />
+    <Property Name="Standard" Type="nvarchar" MaxLength="100" />
+    <Property Name="CertificateName" Type="nvarchar" MaxLength="100" />
+    <Property Name="StatusId" Type="int" />
+  </EntityType>
+  <Association Name="ApplicationId">
+    <End Role="ApplicationForm" Type="DASModel.Store.ApplicationForm" Multiplicity="0..1" />
+    <End Role="ApplicationFormCatagory" Type="DASModel.Store.ApplicationFormCatagory" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationForm">
+        <PropertyRef Name="ApllicationId" />
+      </Principal>
+      <Dependent Role="ApplicationFormCatagory">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AppFormLocationCategory_ApplicationForm">
+    <End Role="ApplicationForm" Type="DASModel.Store.ApplicationForm" Multiplicity="0..1" />
+    <End Role="AppFormLocationActivity" Type="DASModel.Store.AppFormLocationActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ApplicationForm">
+        <PropertyRef Name="ApllicationId" />
+      </Principal>
+      <Dependent Role="AppFormLocationActivity">
+        <PropertyRef Name="ApplicationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Archive_News_News">
+    <End Role="News" Type="DASModel.Store.News" Multiplicity="1" />
+    <End Role="Archive_News" Type="DASModel.Store.Archive_News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="News">
+        <PropertyRef Name="NewsId" />
+      </Principal>
+      <Dependent Role="Archive_News">
+        <PropertyRef Name="NewsId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ArchiveNews_Archive">
+    <End Role="Archive" Type="DASModel.Store.Archive" Multiplicity="1" />
+    <End Role="Archive_News" Type="DASModel.Store.Archive_News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Archive">
+        <PropertyRef Name="ArchiveId" />
+      </Principal>
+      <Dependent Role="Archive_News">
+        <PropertyRef Name="ArchiveId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Certificate_Client">
+    <End Role="Client" Type="DASModel.Store.Client" Multiplicity="1" />
+    <End Role="Certificate" Type="DASModel.Store.Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Client">
+        <PropertyRef Name="ClientId" />
+      </Principal>
+      <Dependent Role="Certificate">
+        <PropertyRef Name="ClientId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Certificate_Status">
+    <End Role="Status" Type="DASModel.Store.Status" Multiplicity="1" />
+    <End Role="Certificate" Type="DASModel.Store.Certificate" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Certificate">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Document_Language">
+    <End Role="Language" Type="DASModel.Store.Language" Multiplicity="1" />
+    <End Role="Document" Type="DASModel.Store.Document" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Document">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Labels_Language">
+    <End Role="Language" Type="DASModel.Store.Language" Multiplicity="1" />
+    <End Role="Labels" Type="DASModel.Store.Labels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Labels">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_News_Language">
+    <End Role="Language" Type="DASModel.Store.Language" Multiplicity="1" />
+    <End Role="News" Type="DASModel.Store.News" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="News">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_Lng_Language">
+    <End Role="Language" Type="DASModel.Store.Language" Multiplicity="1" />
+    <End Role="Status_Lng" Type="DASModel.Store.Status_Lng" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Status_Lng">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Status_Lng_Status">
+    <End Role="Status" Type="DASModel.Store.Status" Multiplicity="1" />
+    <End Role="Status_Lng" Type="DASModel.Store.Status_Lng" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="StatusId" />
+      </Principal>
+      <Dependent Role="Status_Lng">
+        <PropertyRef Name="StatusId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

@@ -1,0 +1,180 @@
+﻿@using DAS.Backoffice
+@{
+   DAS.Backoffice.Shared.DASUser user= DAS.Backoffice.Shared.DASUser.GetLogggedUser();
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>DAS SEE - @ViewBag.Title</title>
+
+    @using DAS.Backoffice.AppLogic._Global
+    @using DAS.Backoffice.AppLogic.Caching
+    @using DAS.Backoffice.Helpers
+
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryui")
+    @Scripts.Render("~/bundles/jqueryval")
+    <script type="text/javascript" src="@Url.Content("~/Scripts/common.js")"></script>  
+    <script type="text/javascript" src="@Url.Content("~/Scripts/tinymce/tinymce.min.js")"></script>  
+    <script type="text/javascript">
+        var actionExample = '@Url.Action("Example","Home")';
+
+        $(document).ready(function () {
+            $("#link_" + @ViewBag.Link).attr("class", "active");
+        });
+
+        function ChangeLang(LanguageId) {
+            $.post('@(Url.Action("ChangeLanguage", "Home"))', { languageId: LanguageId }, function (result) {
+                if (result.success) {
+                    window.location.reload(true);
+                }
+            });
+        }
+    </script>  
+     @RenderSection("scripts", required: false)
+</head>
+<body>
+    <div id="container">
+    <span id="link1" runat="server"></span><span id="link2" runat="server"></span>
+      
+    
+    
+    <table id="table_logo" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0" style="background-image:url(@Url.Content("~/Content/Images/head.jpg"))">
+        
+            <tr>
+                <td style="width:448px">
+                    <table style="width:156px;border:0">
+                        <tr>
+                            <td style="width:150px">
+                                <a href="@(Url.Action("Index", "Home"))">
+                                    <img src="~/Content/Images/DAS-Logo-2014.png"  alt="DAS" width="215" height="104" hspace="0" vspace="0"
+                                        border="0" runat="server"/></a></td>
+                        </tr>
+                        
+                    </table>
+                 </td>
+                    
+                       
+                 <td class="zastave" >
+                 <table style="margin-right:10px; margin-bottom:10px">
+                   <tr>
+ 
+                               <td> <a href="#">
+                                    <img ID="idBosnian" onclick="ChangeLang(3)" src="~/Content/Images/nav/FlagBosnian.png" runat="server" border="0" />
+                                </a>
+
+                            </td>
+                         <td>
+                                <a href="#">
+                                    <img ID="idMacedonian" onclick="ChangeLang(2)" src="~/Content/Images/nav/FlagMacedonia.png" runat="server" border="0" />
+                                </a>
+
+                            </td>
+                             <td>
+                                <a href="#">
+                                <img ID="idSerbian" onclick="ChangeLang(1)" src="~/Content/Images/nav/FlagSerbian.png" runat="server" border="0"/>
+                                </a>
+                            </td>
+                        <td>
+                                <a href="#">
+                                    <img ID="idGB" onclick="ChangeLang(4)" src="~/Content/Images/nav/FlagGB.png" runat="server" border="0" />
+                                </a>
+
+                            </td>
+                        
+                           </tr>
+                          
+                       
+                    </table>
+                 </td>
+                      </tr>   
+        
+           </table>
+      
+
+    <table id="table_logout" width="810" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF">
+       
+            <td align="right" >
+                          
+                         <a id="logout" style="color: #000" font-size: "40px;"   href="@Url.Action("Login", "Login")">Logout: @user.UserName</a> 
+                       </td> </tr>
+     </table>  
+
+    <table width="810" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
+            <tbody>
+                <tr>
+                    <td style="width:10px"> &nbsp;</td>
+                    
+                    <td style="font-size:11px; background-color:#003399; height:26px; width:810px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;border-top-left-radius:5px;border-top-right-radius:5px;">
+                        <nav><div id="headmenu" style="width: 80%; margin:0 auto; text-align: center; ">
+                            <ul>
+                                <li style="font-size:11px"><a id="link_1" href="@Url.Action("Index", "Home")">@Html.PTPLabel("Home", "lblMain")</a></li>
+                                <li><a id="link_2" href="@Url.Action("Offers", "Home")">@Html.PTPLabel("Home", "lblOffers")</a></li>
+                                <li><a id="link_3" href="@Url.Action("Clients", "Home")">@Html.PTPLabel("Home", "lblClients")</a></li>
+                                <li><a id="link_4" href="@Url.Action("News", "Home")">@Html.PTPLabel("Home", "lblNews")</a></li>
+                                <li><a id="link_5" href="@Url.Action("About", "Home")">@Html.PTPLabel("Home", "lblAbout")</a></li>
+                                <li><a id="link_6" href="@Url.Action("ApplicationForm", "Home")">@Html.PTPLabel("Home", "lblApplication")</a></li>
+                                <li><a id="link_7" href="@Url.Action("Services", "Home")">@Html.PTPLabel("Home", "lblServices")</a></li>
+                                <li><a id="link_8" href="@Url.Action("Contact", "Home")">@Html.PTPLabel("Home", "lblContact")</a></li>
+                                
+                                
+                            </ul>
+                           
+                        </div> </nav>
+                    </td>
+                    
+                    <td style="width:10px"> &nbsp;</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+   
+
+   
+
+    @RenderBody()
+
+
+
+
+     <table width="810" border="0" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF" >
+            <tbody>
+                <tr>
+                    <td style="width:10px"> &nbsp;</td>
+                    
+                    <td style="background-color:#003399; height:26px; width:810px; border-bottom-left-radius:5px; border-bottom-right-radius:5px;border-top-left-radius:5px;border-top-right-radius:5px;">
+                        <div id="footer" style="width: 50%; margin: 0 auto; text-align: left; color:white;">@Html.PTPLabel("Home", "lblCopyright")
+                                                    </div>
+                    </td>
+                    
+                    
+                    <td style="width:10px"> &nbsp;</td>
+
+                </tr>
+
+            </tbody>
+        </table>
+    <table width="810" align="center" cellpadding="0" cellspacing="0" bgcolor="#FFFFFF"> 
+    <!-- Empty space -->    
+      <tr>
+    <td bgcolor="#FFFFFF"><img src="~/Content/Images/nav/spacer.gif" width="10" height="10"></td>
+    <td colspan="3"></td>
+    <td></td>
+    <td></td>
+    <td></td>
+  </tr>
+  </table>
+
+
+        </div>
+  </body>
+</html>
+
+
+
+
+

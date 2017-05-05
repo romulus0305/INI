@@ -1,0 +1,38 @@
+﻿@model DAS.Backoffice.Models.Home.EditNewsModel
+@Html.HiddenFor( model => model.newsId, new { id = "newsId" })
+
+<script type="text/javascript">
+
+    tinymce.init({
+        selector: 'textarea',
+        height: 500,
+        theme_advanced_buttons3_add: "save",
+        save_enablewhendirty: false,
+        save_onsavecallback: "mysave",
+        plugins: [
+          'advlist autolink lists link imageuploader charmap print preview anchor',
+          'searchreplace visualblocks code fullscreen',
+          'insertdatetime media table contextmenu paste code save'
+        ],
+
+
+        toolbar: 'insertfile undo redo save | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link imageuploader',
+
+        file_browser_callback: function (field_name, url, type, win) {
+            if (type == 'image') $('#my_form input').click();
+        }
+    })
+   
+</script>
+
+<table>
+ <tr>
+@*    <td>Naziv: @Html.SKFTextAreaFor(model => model.Name, 50, 1, new Dictionary<string,object>() { {"id", "newsName"} })</td>*@
+     <td>@Html.PTPLabel("News","lblName"):@Html.SKFTextBoxFor(TextBoxType.TEXT,model => model.Name, new Dictionary<string, object>() { {"id", "newsName"} })</td>
+@*      <td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m => m.Name, new Dictionary<string, object>() { { "style", "width:617px;" } })</td>*@
+    </tr>
+    <tr>
+        <td>@Html.PTPLabel("News","lblYear"): @Html.DropDownListFor(model=>model.Year, new SelectList(Enumerable.Range(DateTime.Now.Year-5, 10).ToList()), "--"+Html.PTPLabel("News","lblSelYear")+"--")</td> 
+   </tr>
+</table>
+ @Html.TextAreaFor(model => model.ContentTextEditor, new { id = "contentTextEditor" })

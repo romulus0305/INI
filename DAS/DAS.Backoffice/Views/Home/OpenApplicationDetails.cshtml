@@ -1,0 +1,350 @@
+﻿@model DAS.Backoffice.Models.Application.ApplicationForm
+<script type="text/javascript">
+    function submitApplicationForm() {
+        var $form = $('#form-application');
+        if ($form.valid()) {
+            showProgressIndicator('form-application');
+            ini.ajax.post('@(Url.Action("SubmitApplication","Home"))', ini.ajax.contentType.UrlEncoded,
+                $form.serialize(),
+                function (result) {
+                    hideProgressIndicator();
+                    showAlert('Message', result);
+                },
+                function (error) {
+                    hideProgressIndicator();
+                    showAlert('Error', error);
+                });
+        }
+        else showErrorTooltip($form);
+    }
+
+    //$('body').on('keypress', function (event) {
+    //    if (event.keyCode == 13) {
+    //        $("#btn-search-App").click();
+    //    }
+    //});
+
+    if (document.getElementById('ActivitiesOnClientsSites').value != "" && document.getElementById('ActivitiesOnClientsSites').value !=null ){
+        document.getElementById('yesCheck').checked = true;
+        document.getElementById('ifYes').style.display = 'block';
+       
+
+  }
+
+  
+</script>
+<div style="float:right;margin-right:20px;">
+     <a href="@Url.Action("ApplicationWord", "Home", new  { appId = Model.ApplicationId })"><img src="@(Url.Content("~/Content/images/nav/word_2.gif"))" /></a>
+</div>
+@using (Html.BeginForm("SubmitApplication", "Home", FormMethod.Post, new { id = "form-application" })) {
+    @Html.HiddenFor(mod => mod.LanguageId)
+ <table id="application" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+            <tr>
+                <td style="width:448px; text-align :center; font-size:14px ">
+                    <b>@Html.PTPLabel("ApplicationForm", "lblHeader1")</b>
+                 </td>
+           
+
+             </tr>
+        <tr>
+                <td style="width:448px; text-align :center; font-size:12px ">
+                    <b>@Html.PTPLabel("ApplicationForm", "lblHeader2")</b>
+                 </td>
+           
+
+             </tr>
+
+        </table>
+ <table id="section1" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+            <tr>
+         
+  
+              <td>
+                    <table style="width:720px;border:1px solid; margin-left:45px">
+                   <tr><td style="font-size:11px">@Html.PTPLabel("ApplicationForm", "lblQuestion")</td></tr>
+                   <tr>
+                       <td style="font-size:13px ">@Html.CheckBoxFor(m => m.ISO9001, new Dictionary<string, object>() { { "id", "ISO9001" } ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO1")</b>
+                           @Html.CheckBoxFor(m => m.ISO22301, new Dictionary<string, object>() { { "id", "ISO22301" } ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO5")</b> 
+                           @Html.CheckBoxFor(m => m.ISO14001, new Dictionary<string, object>() { { "id", "ISO14001" },{"disabled","disabled"} })<b>@Html.PTPLabel("ApplicationForm", "ISO2")</b>
+                           @Html.CheckBoxFor(m => m.BSOHSAS18001, new Dictionary<string, object>() { { "id", "BSOHSAS18001" } ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO3")</b><br>              
+                           @Html.CheckBoxFor(m => m.ISO27001, new Dictionary<string, object>() { { "id", "ISO27001" },{"disabled","disabled"} })<b>@Html.PTPLabel("ApplicationForm", "ISO4")</b>
+                           @Html.CheckBoxFor(m => m.OtherIso, new Dictionary<string, object>() { { "id", "OtherIso" },{"disabled","disabled"} })<b>@Html.PTPLabel("ApplicationForm", "ISOOther")</b> @Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Other, new Dictionary<string, object>() { { "style", "width:320px"} ,{"disabled","disabled"}})
+                       </td>
+                    </table>
+             </td>
+           
+             </tr>
+           
+
+        </table>
+
+
+      <table id="section2Name" runat="server" width="810" height="40" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+               
+           <tr> <td style="width:448px; text-align :center; font-size:12px ">
+                    <b>@Html.PTPLabel("ApplicationForm", "GeneralInformation")</b>
+                 </td>
+           
+
+             </tr>
+          </table>
+ <table id="section2" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+            <tr>
+         
+  
+              <td>
+                    <table style="width:720px;border:1px solid; margin-left:45px">
+
+                
+               
+                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "CompanyName")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.CompanyName, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "CompanyName" },{"disabled","disabled"} })</td></tr>
+                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "Adress")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Adress, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "Adress" },{"disabled","disabled"}})</td></tr>
+@*                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "Place")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Place, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "Place" }})</td></tr>*@
+                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "Telephone")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Telephone, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "Telephone" },{"disabled","disabled"}})</td>
+                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "Extension")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Extension, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "Extension" },{"disabled","disabled"}})</td></tr>
+                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "Email")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Email, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "Email" },{"disabled","disabled"}})</td></tr>
+                   <tr><td style="width:200px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "CompanyWebsite")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.CompanyWebsite, new Dictionary<string, object>() { { "style", "width:500px"},{ "id", "CompanyWebsite" },{"disabled","disabled"}})</td></tr>
+            
+                       </table>   
+
+                    <table style="width:720px;border:1px solid; margin-left:45px">
+                    <tr>
+
+                        <td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "ManagementRepresentativeName")</b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.ManagementRepresentativeName, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+
+                        <td style="width:400px; background-color:#dbd8d8" ><b>@Html.PTPLabel("ApplicationForm", "JobTitle")&nbsp;&nbsp;&nbsp; </b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.JobTitle, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+                  </tr>   
+                  <tr>       
+                        <td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "PrimaryContact")</b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.PrimaryContactForAuditPurposes, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+
+                       <td style="width:400px; background-color:#dbd8d8" ><b>@Html.PTPLabel("ApplicationForm", "Telephone2") &nbsp;&nbsp;&nbsp; </b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.PrimaryContactTelephone, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+                   </tr>
+                   <tr>       
+                        <td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "NameOfConsultant")</b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.NameOfConsultant, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+
+                       <td style="width:400px; background-color:#dbd8d8" ><b>@Html.PTPLabel("ApplicationForm", "Telephone2") &nbsp;&nbsp;&nbsp; </b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.ConsultantTelephone, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+                   </tr>
+
+                  <tr>
+                       <td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "NatureofBusiness") &nbsp;&nbsp;</b>@Html.SKFTextAreaFor(m => m.NatureOfBusiness, 45, 4 , new Dictionary<string, object>() { { "id", "NatureOfBusiness"},{"disabled","disabled"} })</td>
+                                                                                                                                                       
+
+
+                       <td style="width:400px; background-color:#dbd8d8" ><b>@Html.PTPLabel("ApplicationForm", "NumberOfYears")</b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.NumberOfYearsAtThisSite, new Dictionary<string, object>() { { "style", "width:300px"},{"disabled","disabled"}})</td>
+                   </tr>
+                   </table>
+
+                    
+                  <table style="width:720px;border:1px solid; margin-left:45px">
+
+                   <tr><td style="width:600px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "lblActivities")</b><br>
+                   <input type="radio" onclick="javascript: yesnoCheck();" name="yesno" id="yesCheck"/><b>@Html.PTPLabel("ApplicationForm", "Yes")</b>
+                        
+                      <input type="radio" onclick="javascript: yesnoCheck();" name="yesno" id="noCheck"/><b>@Html.PTPLabel("ApplicationForm", "No")</b></td></tr>
+
+                          <tr id="ifYes"  style="display:none">  <td>@Html.SKFTextAreaFor(m => m.ActivitiesOnClientsSites, 96, 5 , new Dictionary<string, object>() { { "id", "ActivitiesOnClientsSites" } ,{"disabled","disabled"}})</td></tr>
+
+ 
+
+                  </table>  
+
+                  <table style="width:720px;border:1px solid; margin-left:45px">
+
+                   <tr><td style="width:420px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "ManagementSystems")</b></td>
+                       <td style="font-size:13px ">@Html.CheckBoxFor(m => m.ISO9001_2, new Dictionary<string, object>() { { "id", "ISO9001_2" } ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO1")</b><br>
+                           @Html.CheckBoxFor(m => m.ISO22301_2, new Dictionary<string, object>() { { "id", "ISO22301_2" } ,{"disabled","disabled"} })<b>@Html.PTPLabel("ApplicationForm", "ISO5")</b> <br>
+                           @Html.CheckBoxFor(m => m.ISO14001_2, new Dictionary<string, object>() { { "id", "ISO14001_2" }  ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO2")</b><br>
+                           @Html.CheckBoxFor(m => m.BSOHSAS18001_2, new Dictionary<string, object>() { { "id", "BSOHSAS18001_2" }  ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO3")</b><br>
+                           @Html.CheckBoxFor(m => m.ISO27001_2, new Dictionary<string, object>() { { "id", "ISO27001_2" }  ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISO4")</b><br>
+                           @Html.CheckBoxFor(m => m.OtherIso_2, new Dictionary<string, object>() { { "id", "OtherIso_2" }  ,{"disabled","disabled"}})<b>@Html.PTPLabel("ApplicationForm", "ISOOther")</b><br>
+                           @Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Other_2, new Dictionary<string, object>() { { "style", "width:300px"} ,{"disabled","disabled"}})
+                       </td>
+
+            </tr>
+                  </table> 
+
+                  <tr> 
+                      <td >
+                  
+                  <table style="width:720px; margin-left:45px; background-color:#dbd8d8; text-align:center"> 
+                    <tr>
+                        <td>
+                      <b>@Html.PTPLabel("ApplicationForm", "Transfer")</b>
+                       </td>
+                            </tr>  
+                  </table > 
+                 </td>
+                      </tr>
+              
+                      <tr> 
+                      <td >
+                  <table style="width:720px;border:1px solid; margin-left:45px"> 
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "Standard(s)")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.StandardTransferred, new Dictionary<string, object>() { { "style", "width:400px"} ,{"disabled","disabled"}})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "NameofPresentCertificationBody")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.NameOfPresentCertificationBody, new Dictionary<string, object>() { { "style", "width:400px"} ,{"disabled","disabled"}})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "CertificateExpiryDate(s)")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.CertificateExpiryDate, new Dictionary<string, object>() { { "style", "width:400px"} ,{"disabled","disabled"}})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "DateNextCertificationBody ")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.DateNextCertificationBodyVisit, new Dictionary<string, object>() { { "style", "width:400px"} ,{"disabled","disabled"}})</td></tr>
+                  </table>
+                  <table style="width:720px; margin-left:45px;background-color:#dbd8d8"> 
+                    <tr><td><b>@Html.PTPLabel("ApplicationForm", "PleaseSend")</b></td></tr>
+                  </table>
+                     </td>
+           </tr>
+             
+
+                    </table>
+                 <table id="section3Name" runat="server" width="810" height="30" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+               
+
+           <tr> <td >
+                  
+                  <table style="width:720px; margin-left:45px; background-color:#dbd8d8; text-align:center"> 
+                    <tr>
+                        <td>
+                      <b>@Html.PTPLabel("ApplicationForm", "MultiSite")</b>
+                       </td>
+                            </tr>  
+                  </table > 
+                 </td>
+           
+
+             </tr>
+          </table>
+       <table id="section3" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+       <tr>
+  
+              <td>
+                  <table style="width:720px;border:1px solid; margin-left:45px">
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "NumberofLocations")  &nbsp;</b>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.NumberOfLocations, new Dictionary<string, object>() { { "style", "width:530px"} ,{"disabled","disabled"}})</td></tr>
+            
+                       </table> 
+
+              </td>
+           </tr>
+            <tr>           
+                <td> 
+      <table style="width:720px;border:1px solid; margin-left:45px">      
+             <tr><td style="width:400px; background-color:#dbd8d8">
+                 <b>@Html.PTPLabel("ApplicationForm", "lblAllSites")</b> </td></tr> 
+
+
+      </table>  </td></tr>
+          <tr>
+      <td colspan="2"><div id="divLocationActivites">@Html.Partial("ApplicationLocationActivities", Model.locationActivities)</div></td>
+    
+        
+                  </tr>
+              <tr>
+     <td>
+     <table style="width:720px;border:0px solid; margin-left:45px ">
+     <tr>
+         <td>
+   </td>
+             </tr> 
+
+         </table>
+     </td>
+ 
+    </tr>
+                       </table>
+             
+        
+
+               
+           
+ <table id="section4Name" runat="server" width="810" height="40" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+               
+           <tr> <td style="width:448px; text-align :center; font-size:12px ">
+                    <b>@Html.PTPLabel("ApplicationForm", "CategoryDescription") </b>
+                 </td>
+           
+
+             </tr>
+          </table>
+ <table id="section4" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+         @*   <tr>
+         
+
+              <td>
+                    
+         <table style="width:720px;border:1px solid; margin-left:45px">
+                   <tr><td style="width:400px; background-color:#a79c9c"><b>@Html.PTPLabel("ApplicationForm", "CompanyEmployees")</b></td><td style="width:100px; text-align:center; background-color:#a79c9c"><b>@Html.PTPLabel("ApplicationForm", "TotalPermanent")</b></td><td style="width:100px; text-align:center;  background-color:#a79c9c"><b>@Html.PTPLabel("ApplicationForm", "TotalTemporary")</b></td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>&bull; &nbsp;@Html.PTPLabel("ApplicationForm", "Sales")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.SalesTotalPermanent, new Dictionary<string, object>() { {"onfocusout",  "sumTotalP()"},{ "style", "width:160px"},{ "id", "sum1" },{ "name", "sum1"}})</td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.SalesTotalTemporary, new Dictionary<string, object>() {{"onfocusout",  "sumTotalT()"}, { "style", "width:160px"},{ "id", "sum11" }})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>&bull; &nbsp;@Html.PTPLabel("ApplicationForm", "Marketing")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.MarketingTotalPermanent, new Dictionary<string, object>() {{"onfocusout",  "sumTotalP()"},{ "style", "width:160px"},{ "id", "sum2" },{ "name", "sum2"}})</td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.MarketingTotalTemporary, new Dictionary<string, object>() {{"onfocusout",  "sumTotalT()"}, { "style", "width:160px"},{ "id", "sum22" }})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>&bull; &nbsp;@Html.PTPLabel("ApplicationForm", "Administration")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.AdministrationTotalPermanent, new Dictionary<string, object>() {{"onfocusout",  "sumTotalP()"},{ "style", "width:160px"},{ "id", "sum3" },{ "name", "sum3"}})</td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.AdministrationTotalTemporary, new Dictionary<string, object>() {{"onfocusout",  "sumTotalT()"}, { "style", "width:160px"},{ "id", "sum33" }})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>&bull; &nbsp;@Html.PTPLabel("ApplicationForm", "Design")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.DesignTotalPermanent, new Dictionary<string, object>() {{"onfocusout",  "sumTotalP()"},{ "style", "width:160px"},{ "id", "sum4" },{ "name", "sum4"}})</td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.DesignTotalTemporary, new Dictionary<string, object>() { {"onfocusout",  "sumTotalT()"},{ "style", "width:160px"},{ "id", "sum44" }})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>&bull; &nbsp;@Html.PTPLabel("ApplicationForm", "Manufacturing")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.ManufacturingTotalPermanent, new Dictionary<string, object>() {{"onfocusout",  "sumTotalP()"}, { "style", "width:160px"},{ "id", "sum5" },{ "name", "sum5"}})</td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.ManufacturingTotalTemporary, new Dictionary<string, object>() {{"onfocusout",  "sumTotalT()"}, { "style", "width:160px"},{ "id", "sum55" }})</td></tr>
+                   <tr><td style="width:400px; background-color:#dbd8d8"><b>&bull; &nbsp;@Html.PTPLabel("ApplicationForm", "Other")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.OtherTotalPermanent, new Dictionary<string, object>() {{"onfocusout",  "sumTotalP()"}, { "style", "width:160px"},{ "id", "sum6" },{ "name", "sum6"}})<td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.OtherTotalTemporary, new Dictionary<string, object>() { {"onfocusout",  "sumTotalT()"},{ "style", "width:160px"},{ "id", "sum66"}})</td></tr>
+
+                         <tr><td style="width:400px; text-align:right"><b>@Html.PTPLabel("ApplicationForm", "Total")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.TotalPermanent, new Dictionary<string, object>() { { "style", "width:160px;"},{ "id", "totalP" },{ "name", "totalP"}})<td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.TotalTemporary, new Dictionary<string, object>() {{ "style", "width:160px"},{ "id", "totalT"}})</td></tr>
+
+           </table>
+                     
+                     </td>
+           </tr>*@
+
+
+     <tr >
+         <td>
+        <table style="width:720px;border:1px solid; margin-left:45px">
+        <tr>
+        <td style="width:150px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "CategoryDescription")</b></td>
+        <td style="width:150px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "TotalPermanent")</b></td>
+        <td style="width:150px; background-color:#dbd8d8"><b>@Html.PTPLabel("ApplicationForm", "TotalTemporary")</b></td>
+         </tr>
+        </table>
+        </td>
+    </tr>
+      
+
+
+      <tr>
+      <td colspan="2"><div id="divCategories">@Html.Partial("ApplicationCategory", Model.Categories)</div></td>
+    </tr>
+
+     <tr>
+     <td>
+     <table style="width:720px;border:0px solid; margin-left:45px ">
+     <tr>
+         <td>
+   </td>
+             </tr>
+         <tr>
+          <td style="width:300px; background-color:#dbd8d8; text-align:right"><b>@Html.PTPLabel("ApplicationForm", "Total")</b></td>
+        <td style="width:235px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.TotalPermanent, new Dictionary<string, object>() {{"id", "totalP" }, { "style", "width:220px"},{"disabled","disabled"}})</td>
+        <td style="width:235px; background-color:#dbd8d8">@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.TotalTemporary, new Dictionary<string, object>() {{"id", "totalT"}, { "style", "width:220px"},{"disabled","disabled"}})</td>
+         </tr> 
+         </table>
+     </td>
+ 
+    </tr>
+
+                    </table>
+
+
+ 
+
+
+
+ <table id="section5" runat="server" width="810" height="70" border="0" align="center" cellpadding="0" cellspacing="0"  style="background-color:#fff">
+            <tr>
+         
+  
+              <td>
+                    <table style="width:720px;border:1px solid; margin-left:45px">
+                   <tr><td style="width:400px;"><b>*@Html.PTPLabel("ApplicationForm", "Applicant")</b></td><td>@Html.SKFTextBoxFor(TextBoxType.TEXT, m=>m.Applicant, new Dictionary<string, object>() { { "id", "Applicant" },{ "style", "width:500px"},{"disabled","disabled"}})<td></tr>
+                  
+                  
+
+                  </table>
+                     
+                     </td>
+
+                
+           </tr>
+
+                    </table>
+   
+    <div id="container-category" style="display:none"></div>  
+    <div id="container-locact" style="display:none"></div>  
+
+}

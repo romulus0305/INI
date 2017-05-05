@@ -1,0 +1,40 @@
+﻿@model DAS.UI.Models.Home.ClientModel
+   
+<div>
+    <table>
+        <tr>
+    <td style="color:#000; font-size:12px; width:320px;float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblName")):</b></td>
+    <td style="color:#000; font-size:12px; width:120px;float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblAddress")):</b></td>
+            </tr>
+
+
+            <tr>
+                <td style="width:320px;float:left">
+                 
+                         @Model.ClientName
+              
+                   
+                </td>
+                 <td style="width:120px;float:left">
+                 
+                   @Model.Address
+                   
+                </td>
+            
+            </tr>
+        <tr style="height:20px"><td></td></tr> 
+                <tr>
+        <td colspan="2"><div id="divCertifictes">@Html.Partial("Certificate", Model.Certificates)</div></td>
+    </tr>
+
+        <tr style="height:20px"><td></td></tr> 
+
+        <tr><td style="color:#000; font-size:12px; float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblDescription")):</b></td></tr>
+        <tr><td style="text-wrap:none; float:left">
+               @Html.Raw(@Model.Description)
+               
+                </td></tr>
+               
+</table>
+</div>
+

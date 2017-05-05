@@ -1,0 +1,43 @@
+﻿@model DAS.Backoffice.Models.Offers.OffersModel
+@{
+    ViewBag.Title = Html.PTPLabel("Home", "lblOffers");
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div style="width:810px;background-color:white;margin: 0 auto; overflow:auto; ">
+    <div style="width:590px;background-color:white;display:block;text-align:left; float:left; padding-top:2em;padding-bottom:2em;">
+        <table style="text-align:left;vertical-align:text-top;padding-left:10px;">
+             <tr><td>@Html.Raw(Model.ContentLeft)</td></tr>
+        <tr><td>@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Home","lblEdit"), new Dictionary<string, string>() { {"onclick", "editText('Offers','ContentLeft');"}})</td></tr></table>
+        </div>
+    <div style="width:200px;background-color:white;text-align:left; float:left; padding-top:2em;padding-bottom:2em">
+    <table style="width:200px;background-color:#FFCC00;border-bottom-left-radius:10px;border-bottom-right-radius:10px;border-top-left-radius:10px;border-top-right-radius:10px;text-align:left;font-size:95%;vertical-align:text-top;padding:10px;">
+         <tr><td>@Html.Raw(Model.ContentRight)</td></tr>
+        <tr><td>@Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Home","lblEdit"), new Dictionary<string, string>() { {"onclick", "editText('Offers','ContentRight');"}})</td></tr></table>
+
+        </div>
+    </div>
+
+<div id="dialog"></div>
+
+<script type="text/javascript">
+   
+    function editText(viewId, elementId) {
+       
+        ini.ajax.post('@(Url.Action("EditText", "Home"))', ini.ajax.contentType.Json, { viewId: viewId, elementId: elementId },
+   function (result) {
+       $("#dialog").html(result.html);
+       $("#dialog").dialog({
+           height: 600,
+           width: 900,
+           maxwidth:800,
+           modal: true,
+           closeText: "",
+           title: ""
+            });
+    });
+    }
+
+
+</script>

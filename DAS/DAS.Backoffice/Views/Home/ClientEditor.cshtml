@@ -1,0 +1,54 @@
+﻿@model DAS.Backoffice.Models.Home.ClientModel
+@using SkfCore.Web.Mvc.Helpers;
+   
+
+
+<div>
+<table>
+    <tr>
+    <td style="color:#000; font-size:12px; width:320px;float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblName")):</b></td>
+    <td style="color:#000; font-size:12px; width:120px;float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblAddress")):</b></td>
+            </tr>
+
+
+            <tr>
+                <td style="width:320px;float:left">
+                 
+                        @Html.SKFTextBoxFor(TextBoxType.TEXT,m => m.ClientName, new Dictionary<string, object>() { {"id", "clientName"} })
+              
+                   
+                </td>
+                 <td style="width:120px;float:left">               
+                      @Html.SKFTextBoxFor(TextBoxType.TEXT,m => m.Address, new Dictionary<string, object>() { {"id", "adress"} })
+ 
+                </td>
+            
+            </tr>
+        <tr style="height:20px"><td></td></tr> 
+        <tr><td style="color:#000; font-size:12px; float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblDescription")):</b></td></tr>
+        <tr><td style="text-wrap:none; width:600px; float:left">
+               @Html.SKFTextAreaFor(m => m.Description, 90, 5 , new Dictionary<string, object>() { { "id", "description" } })
+   
+                </td></tr>
+
+
+
+        <tr style="height:30px;"><td >
+            <div id="addCertBtn" style="display:none">
+        @Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","AddCertificate"), new Dictionary<string, string>()  { { "onclick", " addCertificatePopup('" + Url.Action("AddCertificateEditor", "Home") + "'); return false;"} })
+         
+                </div> @Html.HiddenFor( model => model.ClientId, new { id = "clientId" }) 
+                                  </td>
+         
+              </tr>
+
+    @if (Model.Certificates !=null && Model.Certificates.Count > 0){
+           <tr>
+   
+        <td colspan="2"><div id="certificates">@Html.Partial("Certificate", Model.Certificates)</div> </td>
+    </tr>
+    }
+ 
+</table>
+    </div>
+    @* <div id="container-certificate" style="display:none"></div> *@ 

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>SKF Sverige AB</LicensedTo>
+    <LicenseType>Developer OEM</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>111124044712</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Pdf for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>a7d06ce8-d16f-438b-bdf7-2ad15189d7fd</SerialNumber>
+    <SubscriptionExpiry>20121124</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>YmWqRFf6XEfWcSbSpI6XNMGosUThMbK+Oc6N+W+7dU1tvU86FskJvkdT46UlVH2Uk21VKe4bhkFoPMijKVz4KJV3PM6USE4/HzKbic/2J2H+NlgKewpc8L3vH/2+K5n33YZA7zs+6XOzH0FOEk0KAW3texMWBiC5QqWE+469trk=</Signature>
+</License>

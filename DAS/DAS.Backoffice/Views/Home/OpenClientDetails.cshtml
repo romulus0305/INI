@@ -1,0 +1,65 @@
+﻿@model DAS.Backoffice.Models.Home.ClientModel
+@Html.HiddenFor( model => model.ClientId, new { id = "clientId" }) 
+@using (Html.BeginForm("SaveClient", "Home", FormMethod.Post, new { id = "form-save-client" })){
+
+ 
+<div>
+    <table>
+        <tr>
+    <td style="color:#000; font-size:12px;"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblName")):</b></td>
+    <td style="color:#000; font-size:12px;"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblAddress")):</b></td>
+    <td style="color:#000; font-size:12px;"><b>@Html.Raw(Html.PTPLabel("Clients","UpdateTheDate")):</b></td>
+            </tr>
+
+
+            <tr>
+                <td>
+                 
+                        @Html.SKFTextBoxFor(TextBoxType.TEXT,m => m.ClientName, new Dictionary<string, object>() { {"id", "clientName"} })
+              
+                   
+                </td>
+                 <td>               
+                      @Html.SKFTextBoxFor(TextBoxType.TEXT,m => m.Address, new Dictionary<string, object>() { {"id", "adress"} })
+ 
+                </td>
+                 <td>               
+             @Html.CheckBox("DateChange", false, new { id = "DateChange" })</td>
+              
+            </tr>
+        <tr style="height:20px"><td colspan="3"></td></tr> 
+        <tr><td colspan="3" style="color:#000; font-size:12px; float:left"><b>@Html.Raw(Html.PTPLabel("ClientDetails","lblDescription")):</b></td></tr>
+        <tr><td colspan="3">
+               @Html.SKFTextAreaFor(m => m.Description, 100, 5 , new Dictionary<string, object>() { { "id", "description" } })
+   
+                </td></tr>
+        </table>
+    <table>
+          <tr style="height:30px"><td>
+        @Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","AddCertificate"), new Dictionary<string, string>()  { { "onclick", " addCertificatePopup('" + Url.Action("AddCertificateEditor", "Home") + "'); return false;"} })
+
+                                  </td>
+         
+              </tr>
+        <tr>
+        <td>
+        <div id="divCertificates">
+        @if (Model.Certificates !=null && Model.Certificates.Count > 0){
+           @Html.Partial("Certificate", Model.Certificates)
+    
+        }
+      </div></td></tr>
+        <tr style="height:20px"><td></td></tr>   
+      <tr style="height:30px; margin-right:30px;"><td style="float:left"> @Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Clients","btnSave"), new Dictionary<string, string>() { { "onclick", "saveClient('" + Url.Action("SaveClient", "Home") + "'); return false;"  } })
+     <td style="float:left"> @Html.SKFButtonPrimary(ButtonType.BUTTON, Html.PTPLabel("Home","lblDelete"), new Dictionary<string, string>() { { "id" , "deleteClient_" + Model.ClientId }, {"onclick", "deleteClient(this, " +Model.ClientId+ "); return false;"} })
+
+</td></tr>
+  
+</table>
+
+    <div id="container-certificate" style="display:none"></div>  
+
+</div>
+
+ }  
+

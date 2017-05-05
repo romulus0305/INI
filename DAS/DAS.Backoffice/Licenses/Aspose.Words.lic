@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<License>
+  <Data>
+    <LicensedTo>SKF Sverige AB</LicensedTo>
+    <LicenseType>Developer OEM</LicenseType>
+    <LicenseNote>Limited to 1 developer.</LicenseNote>
+    <OrderID>111124044712</OrderID>
+    <OEM>This is a redistributable license</OEM>
+    <Products>
+      <Product>Aspose.Words for .NET</Product>
+    </Products>
+    <EditionType>Enterprise</EditionType>
+    <SerialNumber>68229acd-f296-48de-9a99-a871f3bcbff5</SerialNumber>
+    <SubscriptionExpiry>20121124</SubscriptionExpiry>
+    <LicenseVersion>2.2</LicenseVersion>
+  </Data>
+  <Signature>rA4tC1z+sgVCpCStOAPBsmFKqpRdAm9z47xm2o733LHsl6/XyKYcfWIPxRRQ3S1haDhixLmXs7TqInAYoODRlOtNuK1UtzTtUd4GEpNANWAtbbXvq6BDJZwx54u811N3ZQ6eICb2HrjkVsiG3fwiPEiHb75dHO5n3b/DpXlOerQ=</Signature>
+</License>

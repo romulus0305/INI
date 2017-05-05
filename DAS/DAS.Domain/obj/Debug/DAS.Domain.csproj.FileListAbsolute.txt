@@ -1,0 +1,7 @@
+D:\Projects\DAS\DAS.Domain\bin\Debug\DAS.Domain.dll.config
+D:\Projects\DAS\DAS.Domain\bin\Debug\DAS.Domain.dll
+D:\Projects\DAS\DAS.Domain\bin\Debug\DAS.Domain.pdb
+D:\Projects\DAS\DAS.Domain\bin\Debug\EntityFramework.dll
+D:\Projects\DAS\DAS.Domain\bin\Debug\EntityFramework.xml
+D:\Projects\DAS\DAS.Domain\obj\Debug\DAS.Domain.dll
+D:\Projects\DAS\DAS.Domain\obj\Debug\DAS.Domain.pdb

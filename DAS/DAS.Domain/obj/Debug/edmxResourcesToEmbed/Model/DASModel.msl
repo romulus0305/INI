@@ -1,0 +1,224 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DASModelStoreContainer" CdmEntityContainer="DASEntities">
+    <EntitySetMapping Name="AppFormLocationActivities">
+      <EntityTypeMapping TypeName="DASModel.AppFormLocationActivity">
+        <MappingFragment StoreEntitySet="AppFormLocationActivity">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Location" ColumnName="Location" />
+          <ScalarProperty Name="Activity" ColumnName="Activity" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationForms">
+      <EntityTypeMapping TypeName="DASModel.ApplicationForm">
+        <MappingFragment StoreEntitySet="ApplicationForm">
+          <ScalarProperty Name="ApllicationId" ColumnName="ApllicationId" />
+          <ScalarProperty Name="ISO9001" ColumnName="ISO9001" />
+          <ScalarProperty Name="ISO14001" ColumnName="ISO14001" />
+          <ScalarProperty Name="BSOHSAS18001" ColumnName="BSOHSAS18001" />
+          <ScalarProperty Name="ISO27001" ColumnName="ISO27001" />
+          <ScalarProperty Name="Other" ColumnName="Other" />
+          <ScalarProperty Name="CompanyName" ColumnName="CompanyName" />
+          <ScalarProperty Name="Adress" ColumnName="Adress" />
+          <ScalarProperty Name="Place" ColumnName="Place" />
+          <ScalarProperty Name="Telephone" ColumnName="Telephone" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="CompanyWebsite" ColumnName="CompanyWebsite" />
+          <ScalarProperty Name="PrimaryContactForAuditPurposes" ColumnName="PrimaryContactForAuditPurposes" />
+          <ScalarProperty Name="PrimaryContactTelephone" ColumnName="PrimaryContactTelephone" />
+          <ScalarProperty Name="NatureOfBusiness" ColumnName="NatureOfBusiness" />
+          <ScalarProperty Name="NumberOfYearsAtThisSite" ColumnName="NumberOfYearsAtThisSite" />
+          <ScalarProperty Name="PrincipleServicesOrProducts" ColumnName="PrincipleServicesOrProducts" />
+          <ScalarProperty Name="ActivitiesOnClientsSites" ColumnName="ActivitiesOnClientsSites" />
+          <ScalarProperty Name="NameOfPresentCertificationBody" ColumnName="NameOfPresentCertificationBody" />
+          <ScalarProperty Name="CertificateExpiryDate" ColumnName="CertificateExpiryDate" />
+          <ScalarProperty Name="TotalNumberOfEmployees" ColumnName="TotalNumberOfEmployees" />
+          <ScalarProperty Name="TotalNumberOfCompanyDirectors" ColumnName="TotalNumberOfCompanyDirectors" />
+          <ScalarProperty Name="NumberOfLocations" ColumnName="NumberOfLocations" />
+          <ScalarProperty Name="AllSitesMainActivites" ColumnName="AllSitesMainActivites" />
+          <ScalarProperty Name="SalesTotalPermanent" ColumnName="SalesTotalPermanent" />
+          <ScalarProperty Name="SalesTotalTemporary" ColumnName="SalesTotalTemporary" />
+          <ScalarProperty Name="MarketingTotalPermanent" ColumnName="MarketingTotalPermanent" />
+          <ScalarProperty Name="MarketingTotalTemporary" ColumnName="MarketingTotalTemporary" />
+          <ScalarProperty Name="AdministrationTotalPermanent" ColumnName="AdministrationTotalPermanent" />
+          <ScalarProperty Name="AdministrationTotalTemporary" ColumnName="AdministrationTotalTemporary" />
+          <ScalarProperty Name="DesignTotalPermanent" ColumnName="DesignTotalPermanent" />
+          <ScalarProperty Name="DesignTotalTemporary" ColumnName="DesignTotalTemporary" />
+          <ScalarProperty Name="ManufacturingTotalPermanent" ColumnName="ManufacturingTotalPermanent" />
+          <ScalarProperty Name="ManufacturingTotalTemporary" ColumnName="ManufacturingTotalTemporary" />
+          <ScalarProperty Name="OtherTotalPermanent" ColumnName="OtherTotalPermanent" />
+          <ScalarProperty Name="OtherTotalTemporary" ColumnName="OtherTotalTemporary" />
+          <ScalarProperty Name="TotalPermanent" ColumnName="TotalPermanent" />
+          <ScalarProperty Name="TotalTemporary" ColumnName="TotalTemporary" />
+          <ScalarProperty Name="Applicant" ColumnName="Applicant" />
+          <ScalarProperty Name="ISO22301" ColumnName="ISO22301" />
+          <ScalarProperty Name="OtherIso" ColumnName="OtherIso" />
+          <ScalarProperty Name="Extension" ColumnName="Extension" />
+          <ScalarProperty Name="ManagementRepresentativeName" ColumnName="ManagementRepresentativeName" />
+          <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
+          <ScalarProperty Name="NameOfConsultant" ColumnName="NameOfConsultant" />
+          <ScalarProperty Name="ConsultantTelephone" ColumnName="ConsultantTelephone" />
+          <ScalarProperty Name="ISO9001_2" ColumnName="ISO9001_2" />
+          <ScalarProperty Name="ISO14001_2" ColumnName="ISO14001_2" />
+          <ScalarProperty Name="BSOHSAS18001_2" ColumnName="BSOHSAS18001_2" />
+          <ScalarProperty Name="ISO27001_2" ColumnName="ISO27001_2" />
+          <ScalarProperty Name="ISO22301_2" ColumnName="ISO22301_2" />
+          <ScalarProperty Name="OtherIso_2" ColumnName="OtherIso_2" />
+          <ScalarProperty Name="StandardTransferred" ColumnName="StandardTransferred" />
+          <ScalarProperty Name="DateNextCertificationBodyVisit" ColumnName="DateNextCertificationBodyVisit" />
+          <ScalarProperty Name="Other_2" ColumnName="Other_2" />
+          <ScalarProperty Name="DateCreated" ColumnName="DateCreated" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ApplicationFormCatagories">
+      <EntityTypeMapping TypeName="DASModel.ApplicationFormCatagory">
+        <MappingFragment StoreEntitySet="ApplicationFormCatagory">
+          <ScalarProperty Name="CategoryId" ColumnName="CategoryId" />
+          <ScalarProperty Name="Category" ColumnName="Category" />
+          <ScalarProperty Name="TotalPermanent" ColumnName="TotalPermanent" />
+          <ScalarProperty Name="TotalTemporary" ColumnName="TotalTemporary" />
+          <ScalarProperty Name="ApplicationId" ColumnName="ApplicationId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Archives">
+      <EntityTypeMapping TypeName="DASModel.Archive">
+        <MappingFragment StoreEntitySet="Archive">
+          <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Certificates">
+      <EntityTypeMapping TypeName="DASModel.Certificate">
+        <MappingFragment StoreEntitySet="Certificate">
+          <ScalarProperty Name="CertificateId" ColumnName="CertificateId" />
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="CertificateName" ColumnName="CertificateName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Clients">
+      <EntityTypeMapping TypeName="DASModel.Client">
+        <MappingFragment StoreEntitySet="Client">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="DateChange" ColumnName="DateChange" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Documents">
+      <EntityTypeMapping TypeName="DASModel.Document">
+        <MappingFragment StoreEntitySet="Document">
+          <ScalarProperty Name="DocId" ColumnName="DocId" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Path" ColumnName="Path" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Labels">
+      <EntityTypeMapping TypeName="DASModel.Label">
+        <MappingFragment StoreEntitySet="Labels">
+          <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+          <ScalarProperty Name="ElementId" ColumnName="ElementId" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Languages">
+      <EntityTypeMapping TypeName="DASModel.Language">
+        <MappingFragment StoreEntitySet="Language">
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="News">
+      <EntityTypeMapping TypeName="DASModel.News">
+        <MappingFragment StoreEntitySet="News">
+          <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Text" ColumnName="Text" />
+          <ScalarProperty Name="Year" ColumnName="Year" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Archive" ColumnName="Archive" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="DASModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status_Lng">
+      <EntityTypeMapping TypeName="DASModel.Status_Lng">
+        <MappingFragment StoreEntitySet="Status_Lng">
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+          <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="DASModel.User">
+        <MappingFragment StoreEntitySet="User">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_Clients">
+      <EntityTypeMapping TypeName="DASModel.vw_Clients">
+        <MappingFragment StoreEntitySet="vw_Clients">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="CertificateId" ColumnName="CertificateId" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="CertificateName" ColumnName="CertificateName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="vw_ClientsBackoffice">
+      <EntityTypeMapping TypeName="DASModel.vw_ClientsBackoffice">
+        <MappingFragment StoreEntitySet="vw_ClientsBackoffice">
+          <ScalarProperty Name="ClientId" ColumnName="ClientId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Address" ColumnName="Address" />
+          <ScalarProperty Name="Ord" ColumnName="Ord" />
+          <ScalarProperty Name="CertificateId" ColumnName="CertificateId" />
+          <ScalarProperty Name="Standard" ColumnName="Standard" />
+          <ScalarProperty Name="CertificateName" ColumnName="CertificateName" />
+          <ScalarProperty Name="StatusId" ColumnName="StatusId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="Archive_News" TypeName="DASModel.Archive_News" StoreEntitySet="Archive_News">
+      <EndProperty Name="News">
+        <ScalarProperty Name="NewsId" ColumnName="NewsId" />
+      </EndProperty>
+      <EndProperty Name="Archive">
+        <ScalarProperty Name="ArchiveId" ColumnName="ArchiveId" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

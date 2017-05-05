@@ -1,0 +1,42 @@
+﻿@model DAS.UI.Models.Home.FilterModel
+@using SkfCore.Web.Mvc.Helpers
+@using (Html.BeginForm("FindClients", "Home", FormMethod.Post, new { id = "form-search-filters" })) {
+<div style="margin-left:20px">
+<div style="height:30px"></div>
+<h2> @Html.PTPLabel("Clients","lblTitle")</h2>
+<div style="height:30px"></div>
+<table>
+    <tr>
+        <td id="NameSearch">@Html.Raw(Html.PTPLabel("Clients","lblNaziv")):</td>
+        <td>@Html.SKFTextBoxFor(TextBoxType.TEXT, mod => mod.Name, new Dictionary<string, object>() { { "style", "width:160px;"}})</td>
+         <td id="StandardSearch">@Html.Raw(Html.PTPLabel("Clients","lblStand")):</td>
+         <td>@Html.SKFTextBoxFor(TextBoxType.TEXT, mod => mod.Standard, new Dictionary<string, object>() { { "style", "width:160px;"}})</td>
+        </tr>
+    <tr>
+         <td style="">@Html.Raw(Html.PTPLabel("Clients","lblStatus")):</td>
+        <td>@Html.DropDownListFor(mod => mod.SelectedStatusId,
+            Model.Statuses.Select(pt => new SelectListItem() { Value = pt.StatusId.ToString(), Text = pt.StatusName }), new { onchange = "findClients(); ", style = "min-width:170px;max-width:170px;" })</td>
+        <td>
+        </td>
+        <td>@Html.SKFButtonPrimary(ButtonType.BUTTON, @Html.PTPLabel("Clients","btnSearch"), new Dictionary<string, string>() { { "onclick", "findClients();" }, { "id", "btn-search" } })</td>
+    </tr>
+   
+</table>
+     </div>
+}<script>
+     $("#NameSearch").keyup(function (event) {
+         if (event.keyCode == 13) {
+             $("#btn-search").click();
+         }
+     });
+
+     $("#StandardSearch").keyup(function (event) {
+         if (event.keyCode == 13) {
+             $("#btn-search").click();
+         }
+     });
+ </script>
+
+        
+       
+

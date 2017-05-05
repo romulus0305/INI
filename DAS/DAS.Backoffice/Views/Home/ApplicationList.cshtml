@@ -1,0 +1,74 @@
+﻿@model DAS.Backoffice.Models.Application.ApplicationList
+@using SkfCore.Web.Mvc.Helpers
+
+
+<div>
+@using (Html.SKFTable(Model.Descriptor, new { style = "width:720px;max-width:720px;height:100%;" + (Model.ListOfApplication.Count > 0 ? "visibility:visible" : "visibility:hidden;") }, new { style = "width:720px;max-width:720px;height:100%;" }))
+{
+ 
+    <tr>
+        
+        @Html.SortHeader(Html.Raw(Html.PTPLabel("ApplicationList", "CompanyName")) + ", <br/>" + Html.Raw(Html.PTPLabel("ApplicationList", "Adress")),"CompanyName", Model.Descriptor.Sort)
+
+@*        <th>@Html.Raw(Html.PTPLabel("ApplicationList", "Place"))</th>*@
+        <th>@Html.Raw(Html.PTPLabel("ApplicationList", "Telephone"))</th>
+        <th>@Html.Raw(Html.PTPLabel("ApplicationList", "Email"))</th>  
+      @*   <th>@Html.Raw(Html.PTPLabel("ApplicationList", "Applicant"))</th>*@
+          @Html.SortHeader(Html.PTPLabel("ApplicationList", "Date"),"DateCreated", Model.Descriptor.Sort)
+        <th></th>
+
+    </tr>
+  
+  foreach (var application in Model.ListOfApplication) {
+   
+    <tr>
+       <td><a href="#" onclick="OpenApplicationDetails(@application.ApplicationId); return false;">@application.CompanyName, @application.Adress</a></td>      
+    @*   <td style="white-space: nowrap;">@{
+    
+          <text>@application.Place</text><br />
+      
+            
+            }
+        </td>*@
+        <td style="white-space: nowrap;">@{
+   
+                <text>@application.Telephone</text><br />
+          
+            }
+        </td>
+        <td style="white-space: nowrap;">@{
+         
+                <text>@application.Email</text><br />
+            
+            }
+        </td>
+         @*   <td style="white-space: nowrap;">@{
+         
+                <text>@application.Applicant</text><br />
+            
+            }
+        </td>*@
+               
+            <td style="white-space: nowrap;">@{
+         
+                <text>@application.date_created.ToString("dd/MM/yyy h:mm:ss tt")</text><br />
+            }
+        </td>
+           <td style="white-space: nowrap;">
+               @Html.SKFButtonPrimary(ButtonType.BUTTON, @Html.PTPLabel("Home","lblDelete"), new Dictionary<string, string>() { { "onclick", "deleteApplication(this,"+@application.ApplicationId+");return false;" }, { "id", "deleteApplication_"+@application.ApplicationId } })
+           </td>
+    </tr>
+    }
+    }
+ 
+ @if (Model.ListOfApplication.Count == 0 && Model.Descriptor.RequestType!=0)
+  {
+    
+     <tr><td><div style="width:50%; margin:0 auto; vertical-align:top;">@Html.Raw("Trenutno nema prijava.")</div></td></tr>
+  }
+    
+ </div>
+    
+<div id="dialog">
+</div>
+

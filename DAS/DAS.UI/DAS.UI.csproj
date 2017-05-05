@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DFED231-A875-4870-9FEE-D7BC7A957D64}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>DAS.UI</RootNamespace>
+    <AssemblyName>DAS.UI</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>false</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Antlr3.Runtime">
+      <HintPath>\\dili\D\Projects\DAS\DAS.UI\bin\Antlr3.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="IniCore">
+      <HintPath>\\DENVER\BuildData\DLL_Libraries\IniCore\3.0.2.0\IniCore.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="SkfCore">
+      <HintPath>\\DENVER\BuildData\DLL_Libraries\IniCore\3.0.2.0\SkfCore.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.1, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.40804.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Optimization">
+      <HintPath>\\dili\D\Projects\DAS\DAS.UI\bin\System.Web.Optimization.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Providers">
+      <HintPath>\\dili\D\Projects\DAS\DAS.UI\bin\System.Web.Providers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.30506.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.30506.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="WebGrease">
+      <HintPath>\\dili\D\Projects\DAS\DAS.UI\bin\WebGrease.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AppLogic\CacheModels\LanguageDTO.cs" />
+    <Compile Include="AppLogic\Caching\CacheHandler.cs" />
+    <Compile Include="AppLogic\Caching\GlobalCaching.cs" />
+    <Compile Include="AppLogic\Caching\LabelCache.cs" />
+    <Compile Include="AppLogic\Caching\LanguageCacheHandler.cs" />
+    <Compile Include="AppLogic\_Global\DASController.cs" />
+    <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Builders\Home\ClientDetailsBuilder.cs" />
+    <Compile Include="Builders\Home\HomeBuilder.cs" />
+    <Compile Include="Builders\Home\NewsBuilder.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Helpers\HelperExtensions.cs" />
+    <Compile Include="Mail\Mailer.cs" />
+    <Compile Include="Models\About\AboutModel.cs" />
+    <Compile Include="Models\Application\ApplicationCategory.cs" />
+    <Compile Include="Models\Application\ApplicationForm.cs" />
+    <Compile Include="Models\Application\ApplicationLocationActivities.cs" />
+    <Compile Include="Models\Application\ApplicationModel.cs" />
+    <Compile Include="Models\Home\CertModel.cs" />
+    <Compile Include="Models\Home\ClientList.cs" />
+    <Compile Include="Models\Home\ClientModel.cs" />
+    <Compile Include="Models\Home\ClientsModel.cs" />
+    <Compile Include="Models\Home\FilterModel.cs" />
+    <Compile Include="Models\Home\ServiceModel.cs" />
+    <Compile Include="Models\Home\StatusModel.cs" />
+    <Compile Include="Models\News\ArchiveModel.cs" />
+    <Compile Include="Models\News\NewsListModel.cs" />
+    <Compile Include="Models\News\NewsModel.cs" />
+    <Compile Include="Models\Offers\OffersModel.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="AppLogic\Caching\CacheVersion.txt" />
+    <Content Include="Content\common.css" />
+    <Content Include="Content\Images\1px_transparent.png" />
+    <Content Include="Content\Images\corner_bl.png" />
+    <Content Include="Content\Images\corner_br.png" />
+    <Content Include="Content\Images\corner_tl.png" />
+    <Content Include="Content\Images\corner_tr.png" />
+    <Content Include="Content\Images\DAS Logo 2014.jpg" />
+    <Content Include="Content\Images\DAS-Logo-2014 %282%29.png" />
+    <Content Include="Content\Images\DAS-Logo-2014.png" />
+    <Content Include="Content\Images\head.jpg" />
+    <Content Include="Content\Images\logo.gif" />
+    <Content Include="Content\Images\MainLogo.jpg" />
+    <Content Include="Content\Images\MainLogo.png" />
+    <Content Include="Content\Images\MainLogoTransp.gif" />
+    <Content Include="Content\Images\MainLogoTransp.png" />
+    <Content Include="Content\Images\navlogo1.jpg" />
+    <Content Include="Content\Images\nav\0005.gif" />
+    <Content Include="Content\Images\nav\111.gif" />
+    <Content Include="Content\Images\nav\14001.jpg" />
+    <Content Include="Content\Images\nav\333.gif" />
+    <Content Include="Content\Images\nav\4.gif" />
+    <Content Include="Content\Images\nav\5.gif" />
+    <Content Include="Content\Images\nav\arrow.png" />
+    <Content Include="Content\Images\nav\arrow3.gif" />
+    <Content Include="Content\Images\nav\arrow4.gif" />
+    <Content Include="Content\Images\nav\arrow_list_red2.gif" />
+    <Content Include="Content\Images\nav\arrow_red.gif" />
+    <Content Include="Content\Images\nav\background_generale_booking.gif" />
+    <Content Include="Content\Images\nav\bg10.gif" />
+    <Content Include="Content\Images\nav\bg22.gif" />
+    <Content Include="Content\Images\nav\bg33.gif" />
+    <Content Include="Content\Images\nav\bg44.gif" />
+    <Content Include="Content\Images\nav\bgcell07.gif" />
+    <Content Include="Content\Images\nav\bgcell08.gif" />
+    <Content Include="Content\Images\nav\bgright2.gif" />
+    <Content Include="Content\Images\nav\bgright23.gif" />
+    <Content Include="Content\Images\nav\bg_footer_tcm9-14102.gif" />
+    <Content Include="Content\Images\nav\bg_nav.jpg" />
+    <Content Include="Content\Images\nav\btn_emailpage.gif" />
+    <Content Include="Content\Images\nav\btn_printpage.gif" />
+    <Content Include="Content\Images\nav\btn_squareblue.gif" />
+    <Content Include="Content\Images\nav\btn_top.gif" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS UKAS EMS_HR.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS UKAS ISMS.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS UKAS QMS_HR.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-14001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-18001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-20000-1s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-22000s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-27001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-9001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-HACCPs.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-14001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-18001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-22301s.png" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-27001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-9001s.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-EMS_HR_mala.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-EMS_HR_mala1.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-ISMS_mala.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-QMS_HR_m.gif" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-QMS_HR_mala.jpg" />
+    <Content Include="Content\Images\nav\Cert_Logo_DAS-UKAS-QMS_HR_mala1.jpg" />
+    <Content Include="Content\Images\nav\close.png" />
+    <Content Include="Content\Images\nav\content-bgf.gif" />
+    <Content Include="Content\Images\nav\content-bgh.gif" />
+    <Content Include="Content\Images\nav\DAS-CertificatesSample574.jpg" />
+    <Content Include="Content\Images\nav\divider.gif" />
+    <Content Include="Content\Images\nav\down.gif" />
+    <Content Include="Content\Images\nav\d_arr_y.gif" />
+    <Content Include="Content\Images\nav\EMSCert.gif" />
+    <Content Include="Content\Images\nav\err0.gif" />
+    <Content Include="Content\Images\nav\FlagBosnian.png" />
+    <Content Include="Content\Images\nav\FlagGB.png" />
+    <Content Include="Content\Images\nav\FlagMacedonia.png" />
+    <Content Include="Content\Images\nav\FlagSerbian.png" />
+    <Content Include="Content\Images\nav\g1.gif" />
+    <Content Include="Content\Images\nav\g2.gif" />
+    <Content Include="Content\Images\nav\get_adobe_reader.gif" />
+    <Content Include="Content\Images\nav\head.jpg" />
+    <Content Include="Content\Images\nav\head_r2_c3.gif" />
+    <Content Include="Content\Images\nav\homeglobbg.gif" />
+    <Content Include="Content\Images\nav\iaf.gif" />
+    <Content Include="Content\Images\nav\IAF.tif" />
+    <Content Include="Content\Images\nav\IAFMLA.gif" />
+    <Content Include="Content\Images\nav\iaf_mala.jpg" />
+    <Content Include="Content\Images\nav\icon_arrow.gif" />
+    <Content Include="Content\Images\nav\icon_arrow1.gif" />
+    <Content Include="Content\Images\nav\icon_bludisc_ltbg2.gif" />
+    <Content Include="Content\Images\nav\icon_circlearrow.gif" />
+    <Content Include="Content\Images\nav\icon_home.gif" />
+    <Content Include="Content\Images\nav\icon_link.gif" />
+    <Content Include="Content\Images\nav\icon_new.gif" />
+    <Content Include="Content\Images\nav\icon_pdf.gif" />
+    <Content Include="Content\Images\nav\icon_pdf1.gif" />
+    <Content Include="Content\Images\nav\icon_site.gif" />
+    <Content Include="Content\Images\nav\ico_pdf.gif" />
+    <Content Include="Content\Images\nav\img_arrowdown.gif" />
+    <Content Include="Content\Images\nav\img_quoteclose.gif" />
+    <Content Include="Content\Images\nav\img_quoteopen.gif" />
+    <Content Include="Content\Images\nav\img_quote_01.gif" />
+    <Content Include="Content\Images\nav\img_quote_02.gif" />
+    <Content Include="Content\Images\nav\i_pdf.gif" />
+    <Content Include="Content\Images\nav\l1.gif" />
+    <Content Include="Content\Images\nav\l2.gif" />
+    <Content Include="Content\Images\nav\left_column_gradient.gif" />
+    <Content Include="Content\Images\nav\left_column_gradient_back.gif" />
+    <Content Include="Content\Images\nav\logo.gif" />
+    <Content Include="Content\Images\nav\menu-on1.gif" />
+    <Content Include="Content\Images\nav\navlogo.gif" />
+    <Content Include="Content\Images\nav\navlogo1.jpg" />
+    <Content Include="Content\Images\nav\next.gif" />
+    <Content Include="Content\Images\nav\nextarrow.gif" />
+    <Content Include="Content\Images\nav\o1.gif" />
+    <Content Include="Content\Images\nav\o2.gif" />
+    <Content Include="Content\Images\nav\pdf1.gif" />
+    <Content Include="Content\Images\nav\plus.png" />
+    <Content Include="Content\Images\nav\QMSCert.gif" />
+    <Content Include="Content\Images\nav\rite_column_gradient_back.gif" />
+    <Content Include="Content\Images\nav\spacer.gif" />
+    <Content Include="Content\Images\nav\UKAS EMS_HR.jpg" />
+    <Content Include="Content\Images\nav\UKAS ISMS_HR.jpg" />
+    <Content Include="Content\Images\nav\UKAS QMS_HR.jpg" />
+    <Content Include="Content\Images\nav\UKAS-EMS_HR_mala.jpg" />
+    <Content Include="Content\Images\nav\UKAS-EMS_HR_srednja.jpg" />
+    <Content Include="Content\Images\nav\UKAS-EMS_HR_srednja1.jpg" />
+    <Content Include="Content\Images\nav\UKAS-ISMS_HR_mala_test.jpg" />
+    <Content Include="Content\Images\nav\UKAS-ISMS_HR_srednja.jpg" />
+    <Content Include="Content\Images\nav\UKAS-ISMS_HR_srednja1.jpg" />
+    <Content Include="Content\Images\nav\UKAS-QMS_HR_mala.jpg" />
+    <Content Include="Content\Images\nav\UKAS-QMS_HR_srednja.jpg" />
+    <Content Include="Content\Images\nav\UKAS-QMS_HR_srednja1.jpg" />
+    <Content Include="Content\Images\nav\ukas.jpg" />
+    <Content Include="Content\Images\nav\UKAS_EMS.jpg" />
+    <Content Include="Content\Images\nav\UKAS_QMS.jpg" />
+    <Content Include="Content\Images\nav\word_2.gif" />
+    <Content Include="Content\Images\nav\y1.gif" />
+    <Content Include="Content\Images\nav\y2.gif" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\jquery-ui.css" />
+    <Content Include="Content\themes\base\jquery.ui.accordion.css" />
+    <Content Include="Content\themes\base\jquery.ui.all.css" />
+    <Content Include="Content\themes\base\jquery.ui.autocomplete.css" />
+    <Content Include="Content\themes\base\jquery.ui.base.css" />
+    <Content Include="Content\themes\base\jquery.ui.button.css" />
+    <Content Include="Content\themes\base\jquery.ui.core.css" />
+    <Content Include="Content\themes\base\jquery.ui.datepicker.css" />
+    <Content Include="Content\themes\base\jquery.ui.dialog.css" />
+    <Content Include="Content\themes\base\jquery.ui.progressbar.css" />
+    <Content Include="Content\themes\base\jquery.ui.resizable.css" />
+    <Content Include="Content\themes\base\jquery.ui.selectable.css" />
+    <Content Include="Content\themes\base\jquery.ui.slider.css" />
+    <Content Include="Content\themes\base\jquery.ui.tabs.css" />
+    <Content Include="Content\themes\base\jquery.ui.theme.css" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_0_aaaaaa_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_flat_75_ffffff_40x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="Content\themes\base\minified\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_222222_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_454545_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_888888_256x240.png" />
+    <Content Include="Content\themes\base\minified\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="Content\themes\base\minified\jquery-ui.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.accordion.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.autocomplete.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.button.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.core.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.datepicker.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.dialog.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.progressbar.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.resizable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.selectable.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
+    <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Content\Site.css" />
+    <Content Include="Scripts\common.js" />
+    <Content Include="Scripts\date.js" />
+    <Content Include="ClassDiagram1.cd" />
+    <Content Include="Content\Download\Download1\InfoUpitnik.doc" />
+    <Content Include="Content\Download\Download1\InfoUpitnik1.doc" />
+    <Content Include="Content\Download\Download1\InfoUpitnikWeb.doc" />
+    <Content Include="Content\Download\Download2\InfoUpitnik.doc" />
+    <Content Include="Content\Download\Download2\InfoUpitnik1.doc" />
+    <Content Include="Content\Download\Download3\InfoUpitnik.doc" />
+    <Content Include="Content\Download\Download3\InfoUpitnik1.doc" />
+    <Content Include="Content\Download\Download3\InfoUpitnikWeb.doc" />
+    <Content Include="Content\Download\Download3\PrilogPonQMS.pdf" />
+    <Content Include="Content\Download\Download3\PrilogPonEMS.pdf" />
+    <Content Include="Content\Download\Download2\PrilogPonQMS.pdf" />
+    <Content Include="Content\Download\Download2\PrilogPonEMS.pdf" />
+    <Content Include="Content\Download\Download1\PrilogPonQMS.pdf" />
+    <Content Include="Content\Download\Download1\PrilogPonEMS.pdf" />
+    <Content Include="Content\Download\Download2\InfoUpitnikWeb.doc" />
+    <None Include="Properties\PublishProfiles\ProfileIvona.pubxml" />
+    <None Include="Properties\PublishProfiles\ProfileMilano.pubxml" />
+    <None Include="Properties\PublishProfiles\ProfileMilena.pubxml" />
+    <None Include="Scripts\jquery-1.8.3-vsdoc.js" />
+    <Content Include="Scripts\jquery-1.8.3.js" />
+    <Content Include="Scripts\jquery-1.8.3.min.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.js" />
+    <Content Include="Scripts\jquery-ui-1.9.2.custom.min.js" />
+    <Content Include="Scripts\jquery.limit-1.2.source.js" />
+    <Content Include="Scripts\jquery.localScroll.js" />
+    <Content Include="Scripts\jquery.localScroll.min.js" />
+    <Content Include="Scripts\jquery.sc.js" />
+    <Content Include="Scripts\jquery.scrollTo.js" />
+    <Content Include="Scripts\jquery.scrollTo.min.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\_references.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\Error.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\Contact.cshtml" />
+    <Content Include="Views\Home\Offers.cshtml" />
+    <Content Include="Views\Home\Application.cshtml" />
+    <Content Include="Views\Home\Clients.cshtml" />
+    <Content Include="Views\Home\Filters.cshtml" />
+    <Content Include="Views\Home\ClientList.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Services.cshtml" />
+    <Content Include="Views\Home\OpenClientDetails.cshtml" />
+    <Content Include="Views\Home\OpenNews.cshtml" />
+    <Content Include="Web.config.uninstall.xdt" />
+    <Content Include="Web.config.install.xdt" />
+    <Content Include="Views\Home\Certificate.cshtml" />
+    <Content Include="Views\Home\ApplicationForm.cshtml" />
+    <Content Include="Views\Home\ApplicationCategory.cshtml" />
+    <Content Include="Views\Home\AddCategory.cshtml" />
+    <Content Include="Views\Home\Category.cshtml" />
+    <Content Include="Views\Home\ApplicationLocationActivities.cshtml" />
+    <Content Include="Views\Home\AddLocationActivity.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Models\Contact\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAS.Domain\DAS.Domain.csproj">
+      <Project>{317b8f57-d7ba-4c58-9230-c10120b2acdf}</Project>
+      <Name>DAS.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2243</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost/DAS</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>
