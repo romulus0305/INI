@@ -1,3 +1,29 @@
 ﻿body {
-  border:solid red 2px;
+ border:solid red 2px;
+ background-color:#f8f8f8;
+}
+
+#linkBox {
+    TEXT-DECORATION: none;    
+}
+
+nav li > ul > li {
+
+    text-align:right;
+   
+}
+
+#levelOne > a{
+    text-decoration:underline;
+    font-size:17px;
+}
+
+#redBorder {
+
+    border:solid red 1px;
+}
+
+#greenBorder {
+
+    border:solid green 1px;
 }
