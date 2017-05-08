@@ -4,6 +4,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+
+    @using INIGroup.AppLogic.Caching
+    @using INIGroup.Helpers
+
    @* @Styles.Render("~/Content/css")*@
    @* @Scripts.Render("~/bundles/modernizr")*@
     <script src="@Url.Content("~/Scripts/jquery-1.12.4.min.js")" type="text/javascript"></script>
@@ -36,7 +40,7 @@
     color: White; font-size: 22px;">  </span>
                  
                 
-
+                
             </div>
              
              @* <span style="float: right; line-height: 30px;
@@ -59,7 +63,7 @@
                            
                             </div>
                         </li>*@
-                <li><a href="@Url.Action("Index", "Home")" style="font-size:15px;" class="fa fa-home" >&nbsp; &nbsp;<label style="font-family:Arial;font-size:14px">HOME</label></a></li>
+                <li><a href="@Url.Action("Index", "Home")" style="font-size:15px;">&nbsp; &nbsp;<label style="font-family:Arial;font-size:14px">HOME</label></a></li>
  
                 <li id="levelOne"><a href="#">Softverska rešenja</a>
                     <ul class="nav nav-second-level">
@@ -85,7 +89,7 @@
                  <li  id="levelOne"><a href="#">O nama</a>
                     <ul class="nav nav-second-level">
                         <li><a href="#">Ko smo mi</a></li>
-                        <li><a href="#)">Kvalitet</a></li>
+                        <li><a href="@Url.Action("Quality", "Home")">Kvalitet</a></li>
                         <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
                     </ul>
               

@@ -1,0 +1,7 @@
+D:\Projects\INIGroup\INIGroup.Domain\bin\Debug\INIGroup.Domain.dll.config
+D:\Projects\INIGroup\INIGroup.Domain\bin\Debug\INIGroup.Domain.dll
+D:\Projects\INIGroup\INIGroup.Domain\bin\Debug\INIGroup.Domain.pdb
+D:\Projects\INIGroup\INIGroup.Domain\bin\Debug\EntityFramework.dll
+D:\Projects\INIGroup\INIGroup.Domain\bin\Debug\EntityFramework.xml
+D:\Projects\INIGroup\INIGroup.Domain\obj\Debug\INIGroup.Domain.dll
+D:\Projects\INIGroup\INIGroup.Domain\obj\Debug\INIGroup.Domain.pdb

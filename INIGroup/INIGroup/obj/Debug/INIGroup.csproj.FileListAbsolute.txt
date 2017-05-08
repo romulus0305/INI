@@ -2,6 +2,7 @@ D:\Projects\INIGroup\INIGroup\bin\INIGroup.dll
 D:\Projects\INIGroup\INIGroup\bin\INIGroup.pdb
 D:\Projects\INIGroup\INIGroup\bin\Antlr3.Runtime.dll
 D:\Projects\INIGroup\INIGroup\bin\EntityFramework.dll
+D:\Projects\INIGroup\INIGroup\bin\INIGroup.Domain.dll
 D:\Projects\INIGroup\INIGroup\bin\Microsoft.Web.Infrastructure.dll
 D:\Projects\INIGroup\INIGroup\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 D:\Projects\INIGroup\INIGroup\bin\Newtonsoft.Json.dll
@@ -13,6 +14,7 @@ D:\Projects\INIGroup\INIGroup\bin\System.Web.WebPages.Deployment.dll
 D:\Projects\INIGroup\INIGroup\bin\System.Web.WebPages.dll
 D:\Projects\INIGroup\INIGroup\bin\System.Web.WebPages.Razor.dll
 D:\Projects\INIGroup\INIGroup\bin\WebGrease.dll
+D:\Projects\INIGroup\INIGroup\bin\INIGroup.Domain.pdb
 D:\Projects\INIGroup\INIGroup\bin\EntityFramework.xml
 D:\Projects\INIGroup\INIGroup\bin\Newtonsoft.Json.xml
 D:\Projects\INIGroup\INIGroup\bin\System.Web.Mvc.xml

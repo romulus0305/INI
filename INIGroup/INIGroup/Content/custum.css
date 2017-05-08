@@ -3,15 +3,26 @@
  background-color:#f8f8f8;
 }
 
-#linkBox {
-    TEXT-DECORATION: none;    
+#linkBox  {
+   text-decoration: none;
 }
+.navs {
+     list-style: none;
+     font-size:11px;
+}
+   
 
+.iniBoxYellow {
+
+    width:422px;
+    background-color:#FFCC00;
+}
 nav li > ul > li {
 
     text-align:right;
    
 }
+
 
 #levelOne > a{
     text-decoration:underline;
@@ -20,7 +31,8 @@ nav li > ul > li {
 
 #redBorder {
 
-    border:solid red 1px;
+    
+    width:420px;
 }
 
 #greenBorder {

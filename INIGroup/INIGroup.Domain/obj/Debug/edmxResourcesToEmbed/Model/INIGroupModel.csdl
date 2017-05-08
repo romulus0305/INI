@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INIGroupModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="INIGroupEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="Labels" EntityType="INIGroupModel.Label" />
+    <EntitySet Name="Languages" EntityType="INIGroupModel.Language" />
+    <AssociationSet Name="FK_Labels_Language" Association="INIGroupModel.FK_Labels_Language">
+      <End Role="Language" EntitySet="Languages" />
+      <End Role="Labels" EntitySet="Labels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Label">
+    <Key>
+      <PropertyRef Name="ViewId" />
+      <PropertyRef Name="ElementId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="ViewId" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="ElementId" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Text" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Language" Relationship="INIGroupModel.FK_Labels_Language" FromRole="Labels" ToRole="Language" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="Int32" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Labels" Relationship="INIGroupModel.FK_Labels_Language" FromRole="Language" ToRole="Labels" />
+  </EntityType>
+  <Association Name="FK_Labels_Language">
+    <End Role="Language" Type="INIGroupModel.Language" Multiplicity="1" />
+    <End Role="Labels" Type="INIGroupModel.Label" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Labels">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

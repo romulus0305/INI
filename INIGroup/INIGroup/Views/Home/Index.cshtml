@@ -3,28 +3,31 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-
-<div style="margin:47px 0 0 220px; border:1px solid black;overflow:hidden;width:1200px;">
+<div style="margin:47px 0 0 400px;overflow:hidden;width:1200px;">
     <div>
-        <div style="float:left;  margin-right:10px">
-            <img class="img" src="http://www.ini.rs/cms_images/CEL_631_75_949_2275_4267_7.jpg" alt="solutions" />
-        </div>
+        
+        @Html.Raw(Html.INIGroupLabel("Index","lblSolutionImg"))
+        @*<div style="float:left;  margin-right:10px">
+            <img class="img" src="~/Content/cms_images/resenje.jpg" alt="solutions" />
+        </div>*@
         <div style="float:left;width:350px;font-size:13px; word-wrap: break-word;">
-            <div>
-                <img src="/img/news.gif" alt="news" style="width:350px" />
+            @Html.Raw(Html.INIGroupLabel("Index","lblNews1"))
+           @* <div>
+                <img src="~/Content/nav/news_rs.gif" alt="news" style="width:350px" />
                <p style="text-align:left;">
                    <a href="#">Nova INI vrhunska internet infrastruktura</a><br>
                     Pored šestostruko redudantnog pristupa preko Tier 1 globalnih provajdera i 100% dostupnosti, 
                    nova infrastruktura omogućava našim kupcima izuzetne performanse i siguran rad, 
                    i u uslovima vanrednih situacija, kroz našu bezbednu superstrukturu.
                </p>
-          </div>
-            <div>
+          </div>*@
+             @Html.Raw(Html.INIGroupLabel("Index","lblNews2"))
+            @*<div>
                <p>
                   <a href="#">INI u vrhunskom razvojnom projektu EU</a><br>    
                 Kao jedno od malog broja preduzeća iz regiona, INI učestvuje u vrhunskom razvojnom projektu iz šeme FP7 Evropske Unije.
                </p>
-          </div>
+          </div>*@
         </div>
     </div>
     <div style="clear:both;"></div>
@@ -32,7 +35,7 @@
     <div style="border:solid red 1px;float:left; width:auto;">
         <a href="#" id="linkBox">
         <div>
-            <img src="~/img/fokus_na_kompetenciji.jpg" alt="Alternate Text" />
+            <img src="~/Content/cms_images/fokus_na_kompetenciji.jpg" alt="Alternate Text" />
         </div>
         <div style="width:200px;">
             <p>

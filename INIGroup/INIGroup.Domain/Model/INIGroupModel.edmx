@@ -1,0 +1,137 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="INIGroupModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityContainer Name="INIGroupModelStoreContainer">
+          <EntitySet Name="Labels" EntityType="INIGroupModel.Store.Labels" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="Language" EntityType="INIGroupModel.Store.Language" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_Labels_Language" Association="INIGroupModel.Store.FK_Labels_Language">
+            <End Role="Language" EntitySet="Language" />
+            <End Role="Labels" EntitySet="Labels" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Labels">
+          <Key>
+            <PropertyRef Name="ViewId" />
+            <PropertyRef Name="ElementId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ViewId" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="ElementId" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Text" Type="nvarchar" MaxLength="1000" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="int" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+        </EntityType>
+        <Association Name="FK_Labels_Language">
+          <End Role="Language" Type="INIGroupModel.Store.Language" Multiplicity="1" />
+          <End Role="Labels" Type="INIGroupModel.Store.Labels" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="Labels">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="INIGroupModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="INIGroupEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="Labels" EntityType="INIGroupModel.Label" />
+          <EntitySet Name="Languages" EntityType="INIGroupModel.Language" />
+          <AssociationSet Name="FK_Labels_Language" Association="INIGroupModel.FK_Labels_Language">
+            <End Role="Language" EntitySet="Languages" />
+            <End Role="Labels" EntitySet="Labels" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Label">
+          <Key>
+            <PropertyRef Name="ViewId" />
+            <PropertyRef Name="ElementId" />
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="ViewId" Type="String" Nullable="false" MaxLength="30" Unicode="false" FixedLength="false" />
+          <Property Name="ElementId" Type="String" Nullable="false" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Text" Type="String" MaxLength="1000" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Language" Relationship="INIGroupModel.FK_Labels_Language" FromRole="Labels" ToRole="Language" />
+        </EntityType>
+        <EntityType Name="Language">
+          <Key>
+            <PropertyRef Name="LanguageId" />
+          </Key>
+          <Property Name="LanguageId" Type="Int32" Nullable="false" />
+          <Property Name="Name" Type="String" Nullable="false" MaxLength="50" Unicode="true" FixedLength="false" />
+          <NavigationProperty Name="Labels" Relationship="INIGroupModel.FK_Labels_Language" FromRole="Language" ToRole="Labels" />
+        </EntityType>
+        <Association Name="FK_Labels_Language">
+          <End Role="Language" Type="INIGroupModel.Language" Multiplicity="1" />
+          <End Role="Labels" Type="INIGroupModel.Label" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Language">
+              <PropertyRef Name="LanguageId" />
+            </Principal>
+            <Dependent Role="Labels">
+              <PropertyRef Name="LanguageId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="INIGroupModelStoreContainer" CdmEntityContainer="INIGroupEntities">
+          <EntitySetMapping Name="Labels">
+            <EntityTypeMapping TypeName="INIGroupModel.Label">
+              <MappingFragment StoreEntitySet="Labels">
+                <ScalarProperty Name="ViewId" ColumnName="ViewId" />
+                <ScalarProperty Name="ElementId" ColumnName="ElementId" />
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Text" ColumnName="Text" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Languages">
+            <EntityTypeMapping TypeName="INIGroupModel.Language">
+              <MappingFragment StoreEntitySet="Language">
+                <ScalarProperty Name="LanguageId" ColumnName="LanguageId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

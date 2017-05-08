@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="INIGroupModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="INIGroupModelStoreContainer">
+    <EntitySet Name="Labels" EntityType="INIGroupModel.Store.Labels" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Language" EntityType="INIGroupModel.Store.Language" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Labels_Language" Association="INIGroupModel.Store.FK_Labels_Language">
+      <End Role="Language" EntitySet="Language" />
+      <End Role="Labels" EntitySet="Labels" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Labels">
+    <Key>
+      <PropertyRef Name="ViewId" />
+      <PropertyRef Name="ElementId" />
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="ViewId" Type="varchar" Nullable="false" MaxLength="30" />
+    <Property Name="ElementId" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Text" Type="nvarchar" MaxLength="1000" />
+  </EntityType>
+  <EntityType Name="Language">
+    <Key>
+      <PropertyRef Name="LanguageId" />
+    </Key>
+    <Property Name="LanguageId" Type="int" Nullable="false" />
+    <Property Name="Name" Type="nvarchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Labels_Language">
+    <End Role="Language" Type="INIGroupModel.Store.Language" Multiplicity="1" />
+    <End Role="Labels" Type="INIGroupModel.Store.Labels" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Language">
+        <PropertyRef Name="LanguageId" />
+      </Principal>
+      <Dependent Role="Labels">
+        <PropertyRef Name="LanguageId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>
