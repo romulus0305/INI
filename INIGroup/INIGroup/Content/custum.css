@@ -1,18 +1,157 @@
 ﻿body {
- border:solid red 2px;
- background-color:#f8f8f8;
-}
-
-.wrapp {
-
-    margin:47px 0 0 400px;
-    overflow:hidden;
-    width:1200px;
+    border:solid red 2px;
 
 }
+h3 {
+margin:0 0 0 0;
+}
+
+
+#page-wrapper {
+   margin:47px 0 0 400px;
+   overflow:hidden;
+   width:850px;
+   padding: 10px 10px 10px 10px;
+}
+
+
+/*left Section Navigation*/
+
+.navSec {
+   
+    background-color:#ffffff;
+    width:205px;
+    height:700px;
+}
+
+.navSec div {
+/*padding:10px;*/    
+    }
+
+.subNav{
+    /*list-style:none;
+    padding-left:0px;*/
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    
+}
+
+    .subNav img {
+    width:203px;
+    }
+
+/*Middle section*/
+
+.midSec{
+
+    margin:0 10px 0 10px;
+    width:400px;
+    height:700px;
+}
+
+
+.CQimg0 {
+    
+    background-image:url('/INIGroup/Content/cms_images/STR_631_74_956_5.jpg');
+    height:160px;
+    background-repeat:no-repeat;
+}
+
+.CQTextBox {
+    background-color:#FFCC00;
+    text-align:left;
+    padding-left:4px;
+}
+
+.CQTextBox > p {
+    margin:0;    
+    }
+
+.CQBorder {
+ 
+    background-image:url('/INIGroup/Content/cms_images/f3.gif');
+    height:27px;
+    background-repeat:no-repeat;
+}
+
+/*about us  Right section  */
+.CQimg1 {
+    margin-top:20px;
+    background-image:url('/INIGroup/Content/nav/rs/certqual.gif');
+    height:27px;
+    background-repeat:no-repeat;
+}
+
+.CQBox {
+
+    background-color:#FFFFCB;
+    height:600px;
+}
+
+.CQBox div {
+    padding:10px;
+    font-size:11px;
+    font-family:Arial;
+}
+
+
+.CQBBottom {
+    background-image:url('/INIGroup/Content/nav/rs/certbottom.gif');
+    background-repeat:no-repeat;
+    /*background-size:cover;*/
+    height:37px;
+}
+
+
+/*Helper*/
+.left {
+    float:left;
+}
+
+.right {
+    float:right;
+}
+
+.clear {
+    clear:both;
+}
+
+.red{
+    width:205px;
+    height:700px;
+    border:solid red 1px;
+}
+
+.green{
+
+    border:solid green 1px;
+    width:400px;
+    height:700px;
+}
+
+.blue{
+    width:205px;
+    height:700px;
+    border:solid blue 1px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 #linkBox  {
    text-decoration: none;
+
 }
 .navs {
      list-style: none;
@@ -37,13 +176,3 @@ nav li > ul > li {
     font-size:17px;
 }
 
-#redBorder {
-
-    
-    width:420px;
-}
-
-#greenBorder {
-
-    border:solid green 1px;
-}
