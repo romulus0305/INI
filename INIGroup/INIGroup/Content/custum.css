@@ -3,6 +3,14 @@
  background-color:#f8f8f8;
 }
 
+.wrapp {
+
+    margin:47px 0 0 400px;
+    overflow:hidden;
+    width:1200px;
+
+}
+
 #linkBox  {
    text-decoration: none;
 }

@@ -3,14 +3,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="margin:47px 0 0 400px;overflow:hidden;width:1200px;">
+<div  @*style="margin:47px 0 0 400px;overflow:hidden;width:1200px;"*@>
     <div>
-        
         @Html.Raw(Html.INIGroupLabel("Index","lblSolutionImg"))
         @*<div style="float:left;  margin-right:10px">
             <img class="img" src="~/Content/cms_images/resenje.jpg" alt="solutions" />
         </div>*@
-        <div style="float:left;width:350px;font-size:13px; word-wrap: break-word;">
+        <div style="float:left;width:300px;font-size:13px; word-wrap: break-word;">
             @Html.Raw(Html.INIGroupLabel("Index","lblNews1"))
            @* <div>
                 <img src="~/Content/nav/news_rs.gif" alt="news" style="width:350px" />
@@ -31,8 +30,10 @@
         </div>
     </div>
     <div style="clear:both;"></div>
-    <div >
-    <div style="border:solid red 1px;float:left; width:auto;">
+    <div>
+
+     @Html.Raw(Html.INIGroupLabel("Index","lblFocusLink1"))
+    @*<div style="border:solid red 1px;float:left; width:auto;">
         <a href="#" id="linkBox">
         <div>
             <img src="~/Content/cms_images/fokus_na_kompetenciji.jpg" alt="Alternate Text" />
@@ -43,9 +44,10 @@
                 koji su ove korporacije opredelili za nas. I da iskustva i znanja stečena u saradnji sa svetskim liderima prenesemo i Vama, u zajedničkom radu. 
             </p>
         </div>
-    </a>
+    </a>*@
     </div>
-    <div style="border:solid red 1px;float:left; width:auto;">
+    @Html.Raw(Html.INIGroupLabel("Index","lblFocusLink2"))
+    @*<div style="border:solid red 1px;float:left; width:auto;">
         <a href="#" id="linkBox">
         <div>
             <img src="~/img/fokus_na_vasim_potrebama.jpg" alt="potrebe" />
@@ -57,7 +59,7 @@
             </p>
         </div>
        </a>
-    </div>
+    </div>*@
     <div style="border:solid red 1px;float:left; width:auto;">
         <a href="#" id="linkBox" >
         <div>
@@ -68,11 +70,11 @@
                 Mi radimo sa svim vrstama kompanija — od svetskih giganata Fortune 500, preko velikih, srednjih i malih, do mikro. 
                 Oni su došli u INI raznim putevima i iz različitih razloga,
                 ali ostaju sa nama pre svega zbog jednog: mi im dajemo vrhunski tretman od prvog dana i nikada ne prestajemo.
-            </p>
+           </p>
         </div>
        </a>
     </div>
-    </div>  
-</div>
+  </div>  
+
    
 
