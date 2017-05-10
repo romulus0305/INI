@@ -3,43 +3,39 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div style="margin:57px 0 0 350px;padding:40px; overflow:hidden;width:auto;">
-    <div style="float:left;">
-         @Html.Raw(Html.INIGroupLabel("Contact","lblSideNav-left"))
-      <ul class="navs" style="width:150px;">
-            <li><img src="../img/img/nav/t2-Onama_sr.gif" alt="nav" /></li>
-            <li><a href="#">Ko smo mi</a></li>
-            <li><a href="@Url.Action("Quality", "Home")">Kvalitet</a></li>
-            <li><a href="#">Kontakt</a></li>
-            <li><img src="../img/img/nav/2b.gif" alt="nav" /></li>
-        </ul>
-    </div>
-    <div style="float:left;margin: 0 75px 0 110px;">
-        <div class="iniBoxYellow">
-            @Html.Raw(Html.INIGroupLabel("Contact","lblContact-img"))
+
+ 
+    <div class="midSec red left">
+      <div class="CQTextBox">
+            <div class="Cntimg0">
+             </div>
+            <p>
+           Slobodno nas pozovite uvek kada Vam je potrebno dodatno obaveštenje.
+            </p>
+            <div class="CQBorder">
+            </div>
         </div>
-         <div>
-             @Html.Raw(Html.INIGroupLabel("Contact","lblContact"))
-         </div>
-        <br />
-        <div>
-
-              @Html.Raw(Html.INIGroupLabel("Contact","lblInfo"))
-          
-         </div>
-    </div>
-    <div>
-        <ul class="navs">
-            <li> <img src="~/img/img/nav/relatedlinks.gif" alt="Alternate Text" /></li>
-            <li><a href="#">ID obrazac</a></li>
-            <li><a href="#">PEPDV</a></li>
-             <li> <img src="~/img/img/nav/l2.gif" alt="Alternate Text" /></li>
-        </ul>
-
-    </div>
-    <script>
-
-
-    </script>
-
-</div>
+        <div class="cntinfo">
+          <p>Naša adresa, Vama na raspolaganju: </p>
+            <h3>INI Industrijski inženjering </h3>
+              <span>
+                    Danka Popovića 32<br>
+                    11000 Beograd<br>
+                    tel.: 011 20-88-666<br> 
+                    fax: 011 20-88-637<br>
+                  <a href="mailto:ini@ini.rs">ini@ini.rs</a>,<a href="mailto:office@das-serbia.com">office@das-serbia.com</a> 
+              </span>
+          </div>
+        </div>
+        <div class="navSec blue left">
+            <div class="ctnlinks">
+            </div>
+            <div class="linksBox">
+                <ul>
+                    <li>&raquo;&nbsp;&nbsp;<a href="#">ID Obrazac</a></li>
+                    <li>&raquo;&nbsp;&nbsp;<a href="#">PEPDV</a></li>
+               </ul>
+            </div>
+            <div class="linksBottom">
+            </div>
+        </div>

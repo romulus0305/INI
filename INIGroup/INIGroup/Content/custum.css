@@ -1,16 +1,16 @@
 ﻿body {
     border:solid red 2px;
-
+   
 }
 h3 {
-margin:0 0 0 0;
+/*margin:0 0 0 0;*/
 }
 
 
 #page-wrapper {
-   margin:47px 0 0 400px;
+   margin:0 0 0 600px;
    overflow:hidden;
-   width:850px;
+   width:648px;
    padding: 10px 10px 10px 10px;
 }
 
@@ -21,7 +21,9 @@ margin:0 0 0 0;
    
     background-color:#ffffff;
     width:205px;
-    height:700px;
+    height:auto;
+    font-size:12px;
+    font-family:Arial;
 }
 
 .navSec div {
@@ -32,40 +34,46 @@ margin:0 0 0 0;
     /*list-style:none;
     padding-left:0px;*/
     list-style-type: none;
-    margin: 0;
-    padding: 0;
+    margin:0;
+    padding:0;
     
 }
 
-    .subNav img {
-    width:203px;
-    }
 
-/*Middle section*/
+
+/* Middle section*/
 
 .midSec{
 
     margin:0 10px 0 10px;
     width:400px;
-    height:700px;
+    /*height:900px;*/
 }
 
 
-.CQimg0 {
+
+
+.CQTextBox {
+    background-color:#FFCC00;
+    text-align:left;
+    font-family:Arial;
+   
+}
+
+ .CQimg0 {
     
     background-image:url('/INIGroup/Content/cms_images/STR_631_74_956_5.jpg');
     height:160px;
     background-repeat:no-repeat;
 }
 
-.CQTextBox {
-    background-color:#FFCC00;
-    text-align:left;
-    padding-left:4px;
-}
+
 
 .CQTextBox > p {
-    margin:0;    
+    margin:0;
+    padding:4px 0 0 4px;
+    font-size:12px;
+      
     }
 
 .CQBorder {
@@ -75,34 +83,103 @@ margin:0 0 0 0;
     background-repeat:no-repeat;
 }
 
-/*about us  Right section  */
+/* Right section  */
+
 .CQimg1 {
     margin-top:20px;
     background-image:url('/INIGroup/Content/nav/rs/certqual.gif');
     height:27px;
     background-repeat:no-repeat;
+    margin-top:0px;
 }
 
 .CQBox {
 
     background-color:#FFFFCB;
-    height:600px;
+    /*height:600px;*/
+   
 }
 
 .CQBox div {
     padding:10px;
-    font-size:11px;
-    font-family:Arial;
 }
 
+
+.certImg1 {
+ margin-left:23px;
+ background-repeat:no-repeat;
+}
+
+
+.certImg2 {
+ margin-left:23px;
+ background-repeat:no-repeat;
+}
 
 .CQBBottom {
     background-image:url('/INIGroup/Content/nav/rs/certbottom.gif');
     background-repeat:no-repeat;
     /*background-size:cover;*/
     height:37px;
+    background-repeat:no-repeat;
+}
+/* Contact */
+
+.Cntimg0 {
+background-image:url('/INIGroup/Content/cms_images/cnt.jpg');
+height:160px;
+width:400px;
+background-repeat:no-repeat;
 }
 
+.cntinfo {
+margin-top:40px;
+}
+.ctnlinks {
+background-image:url('/INIGroup/Content/nav/rs/relatedlinks.gif');
+background-repeat:no-repeat;
+height:27px;
+}
+.linksBox {
+background-color:#d0e7fd;
+width:200px;
+
+}
+
+.linksBox ul {
+    text-decoration:underline;
+    list-style:none;
+    padding-left:20px;
+    margin-bottom:0;
+    }
+
+.linksBottom {
+background-image:url('/INIGroup/Content/nav/rs/l2.gif');
+height:31px;
+background-repeat:no-repeat;
+}
+
+
+/*About*/
+
+.AbtImg0 {
+
+background-image:url('/INIGroup/Content/cms_images/aboutus.jpg'); 
+height:160px;
+width:400px;
+background-repeat:no-repeat;
+}
+
+.abtmss {
+background-image:url('/INIGroup/Content/nav/rs/mission.gif');
+height:30px; 
+}
+
+.abtSideBox {
+background-color:#d0e7fd;
+width:200px;
+
+}
 
 /*Helper*/
 .left {
@@ -118,21 +195,18 @@ margin:0 0 0 0;
 }
 
 .red{
-    width:205px;
-    height:700px;
+
     border:solid red 1px;
 }
 
 .green{
 
     border:solid green 1px;
-    width:400px;
-    height:700px;
+
 }
 
 .blue{
-    width:205px;
-    height:700px;
+  
     border:solid blue 1px;
 }
 

@@ -26,7 +26,7 @@
 
 </head>
 <body>
-    <div style="margin:5px 5px 5px 5px; height:900px;">
+    <div style="margin:5px 5px 5px 5px; /*height:900px;*/">
  <div id="wrapper" style="background-color:#f8f8f8;z-index: 999;position: relative;">
          <nav class="navbar navbar-top navbar-static-top" role="navigation" style="margin-bottom: 0; height:62px">
             <div @*class="navbar-header"*@>
@@ -88,7 +88,7 @@
                  <li  id="levelOne"><a href="#">Novosti</a></li>       
                  <li  id="levelOne"><a href="#">O nama</a>
                     <ul class="nav nav-second-level">
-                        <li><a href="#">Ko smo mi</a></li>
+                        <li><a href="@Url.Action("About", "Home")">Ko smo mi</a></li>
                         <li><a href="@Url.Action("Quality", "Home")">Kvalitet</a></li>
                         <li><a href="@Url.Action("Contact", "Home")">Kontakt</a></li>
                     </ul>
@@ -99,12 +99,15 @@
          </nav>
        </div>
      
-         <div id="page-wrapper" style="background-color:#e1e1e1;">
+         <div id="page-wrapper" class="green"@* style="background-color:#e1e1e1;*@">
 
    
              
                @RenderBody()
+             
 
+
+             </div>
         </div>
               
         

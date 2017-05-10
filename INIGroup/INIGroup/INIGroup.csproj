@@ -143,6 +143,10 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cms_images\aboutus.jpg" />
+    <Content Include="Content\cms_images\cert1.jpg" />
+    <Content Include="Content\cms_images\cert2.jpg" />
+    <Content Include="Content\cms_images\cnt.jpg" />
     <Content Include="Content\cms_images\f3.gif" />
     <Content Include="Content\cms_images\fokus_na_kvalitetu.jpg" />
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama.jpg" />
@@ -155,8 +159,11 @@
     <Content Include="Content\custum.css" />
     <Content Include="Content\nav\news_rs.gif" />
     <Content Include="Content\nav\rs\2b.gif" />
+    <Content Include="Content\nav\rs\certbottom.gif" />
     <Content Include="Content\nav\rs\certqual.gif" />
+    <Content Include="Content\nav\rs\l2.gif" />
     <Content Include="Content\nav\rs\news_rs.gif" />
+    <Content Include="Content\nav\rs\relatedlinks.gif" />
     <Content Include="Content\nav\rs\t2-Onama_sr.gif" />
     <Content Include="Content\themes\base\accordion.css" />
     <Content Include="Content\themes\base\all.css" />
@@ -624,6 +631,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Quality.cshtml" />
+    <Content Include="Views\Home\About.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
