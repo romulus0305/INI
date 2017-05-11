@@ -1,16 +1,51 @@
 ﻿body {
-    border:solid red 2px;
-   
+    border: solid red 2px;
 }
-h3 {
-/*margin:0 0 0 0;*/
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 #page-wrapper {
    margin:0 0 0 600px;
    overflow:hidden;
-   width:648px;
+   /*width:648px;*/
    padding: 10px 10px 10px 10px;
 }
 
@@ -27,7 +62,7 @@ h3 {
 }
 
 .navSec div {
-/*padding:10px;*/    
+padding:10px;    
     }
 
 .subNav{
@@ -101,18 +136,18 @@ h3 {
 }
 
 .CQBox div {
-    padding:10px;
+    padding-left:10px;
 }
 
 
 .certImg1 {
- margin-left:23px;
+width:1px;
  background-repeat:no-repeat;
 }
 
 
 .certImg2 {
- margin-left:23px;
+ width:155px;
  background-repeat:no-repeat;
 }
 
@@ -162,6 +197,19 @@ background-repeat:no-repeat;
 
 /*About*/
 
+
+.abtSideBox{
+    background-color:#d0e7fd;
+    width:200px;
+}
+
+.abtSideBox ul{
+    background-color:#d0e7fd;
+    list-style:none;
+   padding-left:0;
+}
+
+
 .AbtImg0 {
 
 background-image:url('/INIGroup/Content/cms_images/aboutus.jpg'); 
@@ -173,13 +221,31 @@ background-repeat:no-repeat;
 .abtmss {
 background-image:url('/INIGroup/Content/nav/rs/mission.gif');
 height:30px; 
+background-repeat:no-repeat;
 }
 
-.abtSideBox {
-background-color:#d0e7fd;
-width:200px;
-
+.nwsBox {
+margin-bottom:40px;
 }
+
+.nwsBox  h3 {
+ 
+    color:#3F9AE3;
+    margin:40px 0 100px 0;
+}
+ul#basic li{
+padding-top: 0px;
+    padding-right: 5px;
+    padding-bottom: 5px;
+    padding-left: 20px;
+    background-image: url('/INIGroup/Content/nav/rs/icon_circlearrow.gif');
+    background-repeat: no-repeat;
+    background-position: 1px 5px;
+    margin-right: 5px;
+    margin-left: 5px;
+    list-style-type: none;
+}
+
 
 /*Helper*/
 .left {
@@ -249,4 +315,9 @@ nav li > ul > li {
     text-decoration:underline;
     font-size:17px;
 }
+
+
+
+
+
 

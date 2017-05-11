@@ -19,24 +19,33 @@ namespace INIGroup.Controllers
 
         public ActionResult Index()
         {
-            string temp = INIGroup.AppLogic.Caching.LabelCache.GetLabel("Contact", "lblContact");
             return View();
         }
 
         public ActionResult Contact()
         {
+            ViewBag.Link = 13;
             return View();
         }
 
         public ActionResult Quality()
         {
+            ViewBag.Link = 12;
             return View();
         }
 
         public ActionResult About()
         {
+            ViewBag.Link = 11;
             return View();
         }
+
+        public ActionResult News()
+        {
+            ViewBag.Link = 10;
+            return View();
+        }
+    
     
     
     

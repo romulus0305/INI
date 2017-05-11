@@ -150,8 +150,11 @@
     <Content Include="Content\cms_images\f3.gif" />
     <Content Include="Content\cms_images\fokus_na_kvalitetu.jpg" />
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama.jpg" />
+    <Content Include="Content\cms_images\image_ma.jpg" />
+    <Content Include="Content\cms_images\priznanje_vel.jpg" />
     <Content Include="Content\cms_images\resenje.jpg" />
     <Content Include="Content\cms_images\fokus_na_kompetenciji.jpg" />
+    <Content Include="Content\cms_images\Skopkom.jpg" />
     <Content Include="Content\cms_images\STR_631_74_956_5.jpg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
@@ -161,8 +164,11 @@
     <Content Include="Content\nav\rs\2b.gif" />
     <Content Include="Content\nav\rs\certbottom.gif" />
     <Content Include="Content\nav\rs\certqual.gif" />
+    <Content Include="Content\nav\rs\icon_circlearrow.gif" />
     <Content Include="Content\nav\rs\l2.gif" />
+    <Content Include="Content\nav\rs\mission.gif" />
     <Content Include="Content\nav\rs\news_rs.gif" />
+    <Content Include="Content\nav\rs\references_sz.gif" />
     <Content Include="Content\nav\rs\relatedlinks.gif" />
     <Content Include="Content\nav\rs\t2-Onama_sr.gif" />
     <Content Include="Content\themes\base\accordion.css" />
@@ -632,6 +638,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Quality.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Home\News.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

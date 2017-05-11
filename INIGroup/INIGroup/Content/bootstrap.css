@@ -13,7 +13,7 @@ body {
   margin: 0;
 }
 a#logo {
-	background-image:url('images/logo_TM.png');
+	background-image:url('cms_images/SAB_631_74_1.jpg');
 	background-position:center;
 	background-repeat:no-repeat;
 	float:left;
@@ -4548,7 +4548,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   }
 }
 .navbar-top {
-  background-color: #1E4C97;
+  background-color: #ffffff;
   border-color: #e7e7e7;
 }
 .navbar-default {
