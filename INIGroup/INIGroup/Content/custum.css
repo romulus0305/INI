@@ -1,17 +1,33 @@
-﻿body {
-    border: solid red 2px;
+﻿
+.navbar-custum {
+
+background-color:white;
+margin-top:0;
+
 }
 
+.panel-default > .panel-heading {
 
+    border-color:#E1E1E1;
+    background-color:#CFE7FF;
+    margin-bottom:0;
 
+}
 
+#novosti {
+background-image:url('/INIGroup/Content/nav/rs/nav.jpg');
+height:27px;
+background-repeat:no-repeat;
+}
 
+.noPadding {
+padding:0;
+}
 
+.font11 {
+font-size:11px;
 
-
-
-
-
+}
 
 
 

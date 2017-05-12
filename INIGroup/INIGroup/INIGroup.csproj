@@ -154,11 +154,11 @@
     <Content Include="Content\cms_images\priznanje_vel.jpg" />
     <Content Include="Content\cms_images\resenje.jpg" />
     <Content Include="Content\cms_images\fokus_na_kompetenciji.jpg" />
+    <Content Include="Content\cms_images\SAB_631_74_1.jpg" />
     <Content Include="Content\cms_images\Skopkom.jpg" />
     <Content Include="Content\cms_images\STR_631_74_956_5.jpg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
-    <Content Include="Content\metisMenu.css" />
     <Content Include="Content\custum.css" />
     <Content Include="Content\nav\news_rs.gif" />
     <Content Include="Content\nav\rs\2b.gif" />
@@ -167,7 +167,12 @@
     <Content Include="Content\nav\rs\icon_circlearrow.gif" />
     <Content Include="Content\nav\rs\l2.gif" />
     <Content Include="Content\nav\rs\mission.gif" />
+    <Content Include="Content\nav\rs\nav.jpg" />
+    <Content Include="Content\nav\rs\nav_arrow.jpg" />
+    <Content Include="Content\nav\rs\nav_corner.gif" />
+    <Content Include="Content\nav\rs\news_rs - Copy.gif" />
     <Content Include="Content\nav\rs\news_rs.gif" />
+    <Content Include="Content\nav\rs\news_rs2.jpg" />
     <Content Include="Content\nav\rs\references_sz.gif" />
     <Content Include="Content\nav\rs\relatedlinks.gif" />
     <Content Include="Content\nav\rs\t2-Onama_sr.gif" />

@@ -1,6 +1,5 @@
 D:\Projects\DAS\DAS.UI\bin\DAS.UI.dll
 D:\Projects\DAS\DAS.UI\bin\DAS.UI.pdb
-D:\Projects\DAS\DAS.UI\bin\Antlr3.Runtime.dll
 D:\Projects\DAS\DAS.UI\bin\DAS.Domain.dll
 D:\Projects\DAS\DAS.UI\bin\EntityFramework.dll
 D:\Projects\DAS\DAS.UI\bin\IniCore.dll
@@ -11,13 +10,10 @@ D:\Projects\DAS\DAS.UI\bin\System.Web.Helpers.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.Http.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.Http.WebHost.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.Mvc.dll
-D:\Projects\DAS\DAS.UI\bin\System.Web.Optimization.dll
-D:\Projects\DAS\DAS.UI\bin\System.Web.Providers.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.Razor.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.WebPages.Deployment.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.WebPages.dll
 D:\Projects\DAS\DAS.UI\bin\System.Web.WebPages.Razor.dll
-D:\Projects\DAS\DAS.UI\bin\WebGrease.dll
 D:\Projects\DAS\DAS.UI\bin\DAS.Domain.pdb
 D:\Projects\DAS\DAS.UI\bin\System.Web.Helpers.xml
 D:\Projects\DAS\DAS.UI\bin\System.Web.Mvc.xml

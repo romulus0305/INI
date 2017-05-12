@@ -1607,9 +1607,9 @@ pre code {
     width: 970px;
   }
 }
-@media (min-width: 1200px) {
+@media (min-width: 900px) {
   .container {
-    width: 1170px;
+    width: 870px;
   }
 }
 .container-fluid {
