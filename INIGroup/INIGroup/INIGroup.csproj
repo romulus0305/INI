@@ -149,6 +149,7 @@
     <Content Include="Content\cms_images\cert2.jpg" />
     <Content Include="Content\cms_images\cnt.jpg" />
     <Content Include="Content\cms_images\cnt.png" />
+    <Content Include="Content\cms_images\custumers.png" />
     <Content Include="Content\cms_images\f3.gif" />
     <Content Include="Content\cms_images\fokus_na_kompetenciji2.jpg" />
     <Content Include="Content\cms_images\fokus_na_kvalitetu.jpg" />
@@ -156,6 +157,7 @@
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama.jpg" />
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama2.jpg" />
     <Content Include="Content\cms_images\image_ma.jpg" />
+    <Content Include="Content\cms_images\news.png" />
     <Content Include="Content\cms_images\priznanje_vel.jpg" />
     <Content Include="Content\cms_images\qlt.png" />
     <Content Include="Content\cms_images\resenje.jpg" />
@@ -650,6 +652,7 @@
     <Content Include="Views\Home\Quality.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
+    <Content Include="Views\Home\Custumers.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,22 +6,60 @@ margin-top:0;
 }
 
 
-panel-custum {
-border-bottom:none;
-border-left:none;
-border-right:none;
+/*panel-custum {
+border-top:1px !important;
+}*/
+
+.mgn-btm-20 {
+margin-bottom:20px 
 }
-
-
 .mbottom {
-margin-bottom:15px;
+margin-bottom:40px;
 }
 
-#blue{
+.panel-default > .panel-heading {
+
+color:#6D7172 !important;
+font-weight:600;
+}
+
+#blue {
+   
+    background: #D0E7FD; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#D0E7FD, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#D0E7FD, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#D0E7FD, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#D0E7FD, white); /* Standard syntax (must be last) */
+    margin-bottom:0;
+}
+
+
+
+#yellow {
+   
+    background: #FFFFCC; /* For browsers that do not support gradients */
+    background: -webkit-linear-gradient(#FFFFCC, white); /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(#FFFFCC, white); /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(#FFFFCC, white); /* For Firefox 3.6 to 15 */
+    background: linear-gradient(#FFFFCC, white); /* Standard syntax (must be last) */
+    margin-bottom:0;
+}
+
+
+
+
+#yelloww {
+background-color:#FFFFCC;
+ margin-bottom:0;
+}
+
+
+
+#bluee{
 
     border-color:#E1E1E1;
     background-color:#CFE7FF;
-    margin-bottom:0;
+    
 }
 
 #novosti {
@@ -30,9 +68,10 @@ height:27px;
 background-repeat:no-repeat;
 }
 
-.noPaddingLR {
-padding-left:0px;
-padding-right:10px;
+
+
+.blueH {
+color:#3FA7EA;
 }
 
 .font11 {
@@ -43,11 +82,6 @@ font-size:11px;
 font-size:12px;
 }
 
-
-#yellow {
-background-color:#FFFFCC;
- margin-bottom:0;
-}
 
 
 

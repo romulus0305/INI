@@ -45,8 +45,12 @@ namespace INIGroup.Controllers
             ViewBag.Link = 10;
             return View();
         }
-    
-    
+
+        public ActionResult Custumers()
+        {
+            
+            return View();
+        }
     
     
     
