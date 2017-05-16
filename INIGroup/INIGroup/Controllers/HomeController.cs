@@ -46,18 +46,35 @@ namespace INIGroup.Controllers
             return View();
         }
 
-        public ActionResult Custumers()
+        public ActionResult Customers()
         {
             
             return View();
         }
+
+        public ActionResult Testimoni()
+        {
+
+            return View();
+        }
+
+        public ActionResult CaseStudies()
+        {
+
+            return View();
+        }
+         public ActionResult isoCert()
+        {
+
+            return View();
+        }
+         public ActionResult Education()
+         {
+
+             return View();
+         }
     
-    
-    
-    
-    
-    
-    
+
     
     
     

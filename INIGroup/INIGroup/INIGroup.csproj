@@ -149,7 +149,9 @@
     <Content Include="Content\cms_images\cert2.jpg" />
     <Content Include="Content\cms_images\cnt.jpg" />
     <Content Include="Content\cms_images\cnt.png" />
+    <Content Include="Content\cms_images\cs.png" />
     <Content Include="Content\cms_images\custumers.png" />
+    <Content Include="Content\cms_images\edu.png" />
     <Content Include="Content\cms_images\f3.gif" />
     <Content Include="Content\cms_images\fokus_na_kompetenciji2.jpg" />
     <Content Include="Content\cms_images\fokus_na_kvalitetu.jpg" />
@@ -157,6 +159,7 @@
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama.jpg" />
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama2.jpg" />
     <Content Include="Content\cms_images\image_ma.jpg" />
+    <Content Include="Content\cms_images\isocert.png" />
     <Content Include="Content\cms_images\news.png" />
     <Content Include="Content\cms_images\priznanje_vel.jpg" />
     <Content Include="Content\cms_images\qlt.png" />
@@ -166,10 +169,10 @@
     <Content Include="Content\cms_images\SAB_631_74_1.jpg" />
     <Content Include="Content\cms_images\Skopkom.jpg" />
     <Content Include="Content\cms_images\STR_631_74_956_5.jpg" />
+    <Content Include="Content\cms_images\testimoni.png" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
     <Content Include="Content\custum.css" />
-    <Content Include="Content\nav\news_rs.gif" />
     <Content Include="Content\nav\rs\2b.gif" />
     <Content Include="Content\nav\rs\certbottom.gif" />
     <Content Include="Content\nav\rs\certqual.gif" />
@@ -652,7 +655,11 @@
     <Content Include="Views\Home\Quality.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\News.cshtml" />
-    <Content Include="Views\Home\Custumers.cshtml" />
+    <Content Include="Views\Home\Customers.cshtml" />
+    <Content Include="Views\Home\Testimoni.cshtml" />
+    <Content Include="Views\Home\CaseStudies.cshtml" />
+    <Content Include="Views\Home\isoCert.cshtml" />
+    <Content Include="Views\Home\Education.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
