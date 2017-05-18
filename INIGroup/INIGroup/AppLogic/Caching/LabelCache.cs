@@ -62,7 +62,7 @@ namespace INIGroup.AppLogic.Caching
             string labelKey = elementId + "_" + HttpContext.Current.Session["lngId"];
             if (!viewLabels.ContainsKey(labelKey) && (int)HttpContext.Current.Session["lngId"] != 6)
             {
-                labelKey = elementId + "_1";
+                labelKey = elementId + "_6";
             }
             return viewLabels[labelKey];
         }

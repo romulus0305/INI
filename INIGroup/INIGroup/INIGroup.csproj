@@ -143,8 +143,20 @@
     <Content Include="Content\bootstrap-responsive.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\cms_images\1002_2.jpg" />
     <Content Include="Content\cms_images\aboutus.jpg" />
     <Content Include="Content\cms_images\abt.png" />
+    <Content Include="Content\cms_images\apps.png" />
+    <Content Include="Content\cms_images\benefit.png" />
+    <Content Include="Content\cms_images\CEL_608_44_572_1450_2636_7.jpg" />
+    <Content Include="Content\cms_images\CEL_608_44_572_1452_2640_7.jpg" />
+    <Content Include="Content\cms_images\CEL_608_44_572_1453_2641_7.jpg" />
+    <Content Include="Content\cms_images\CEL_609_44_572_1450_2636_7.jpg" />
+    <Content Include="Content\cms_images\CEL_609_44_572_1452_2640_7.jpg" />
+    <Content Include="Content\cms_images\CEL_610_44_572_1450_2636_7.jpg" />
+    <Content Include="Content\cms_images\CEL_610_44_572_1452_2640_7.jpg" />
+    <Content Include="Content\cms_images\CEL_611_44_572_1450_2636_7.jpg" />
+    <Content Include="Content\cms_images\CEL_611_44_572_1452_2640_7.jpg" />
     <Content Include="Content\cms_images\cert1.jpg" />
     <Content Include="Content\cms_images\cert2.jpg" />
     <Content Include="Content\cms_images\cnt.jpg" />
@@ -159,6 +171,8 @@
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama.jpg" />
     <Content Include="Content\cms_images\fokus_na_vasim_potrebama2.jpg" />
     <Content Include="Content\cms_images\image_ma.jpg" />
+    <Content Include="Content\cms_images\intranet.png" />
+    <Content Include="Content\cms_images\Intranet_scheme.jpg" />
     <Content Include="Content\cms_images\isocert.png" />
     <Content Include="Content\cms_images\news.png" />
     <Content Include="Content\cms_images\priznanje_vel.jpg" />
@@ -170,6 +184,7 @@
     <Content Include="Content\cms_images\Skopkom.jpg" />
     <Content Include="Content\cms_images\STR_631_74_956_5.jpg" />
     <Content Include="Content\cms_images\testimoni.png" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
     <Content Include="Content\img\glyphicons-halflings.png" />
     <Content Include="Content\custum.css" />
@@ -619,6 +634,17 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="img\img\nav.rar" />
+    <Content Include="Documents\ID_Obrazac.pdf" />
+    <Content Include="Documents\PEPDV.pdf" />
+    <Content Include="Documents\Praksa.pdf" />
+    <Content Include="Documents\WebSolutions.ppt" />
+    <Content Include="Documents\Compettest.ppt" />
+    <Content Include="Documents\PowerMessage.ppt" />
+    <Content Include="Documents\Zupa intranet.ppt" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\fonts\glyphicons-halflings-regular.woff2" />
     <None Include="Scripts\jquery-1.12.4.intellisense.js" />
     <Content Include="Scripts\jquery-1.12.4.js" />
     <Content Include="Scripts\jquery-1.12.4.min.js" />
@@ -660,6 +686,9 @@
     <Content Include="Views\Home\CaseStudies.cshtml" />
     <Content Include="Views\Home\isoCert.cshtml" />
     <Content Include="Views\Home\Education.cshtml" />
+    <Content Include="Views\Home\Benefit.cshtml" />
+    <Content Include="Views\Home\Apps.cshtml" />
+    <Content Include="Views\Home\Intranet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

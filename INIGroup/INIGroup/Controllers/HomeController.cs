@@ -16,7 +16,11 @@ namespace INIGroup.Controllers
 
         //
         // GET: /Home/
-
+        public ActionResult ChangeLanguage(int LanguageId)
+        {
+            HttpContext.Session["lngId"] = LanguageId;
+            return Json(new { success = true });
+        }
         public ActionResult Index()
         {
             return View();
@@ -73,9 +77,26 @@ namespace INIGroup.Controllers
 
              return View();
          }
-    
 
-    
+         public ActionResult Benefit()
+         {
+
+             return View();
+         }
+
+
+         public ActionResult Apps()
+         {
+
+             return View();
+         }
+
+         public ActionResult Intranet()
+         {
+
+             return View();
+         }
+
     
     
     }

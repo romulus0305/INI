@@ -16,14 +16,23 @@
     <script src="@Url.Content("~/Scripts/bootstrap.js")" type="text/javascript"></script>
     <link href="@Url.Content("~/Content/custum.css")" rel="stylesheet" type="text/css" />
 
-       
-
+       <script type="text/javascript">
+           function ChangeLang(LanguageId) {
+               $.post('@(Url.Action("ChangeLanguage", "Home"))', { languageId: LanguageId }, function (result) {
+                   if (result.success) {
+                       window.location.reload(true);
+                   }
+               });
+           }
+       </script>
 </head>
 <body>
     <div class="container">
-       @* <div class="col-sm-1">*@
+     
         <div class="raw">
- <img src="~/Content/cms_images/SAB_631_74_1.jpg" alt="logo" />                 
+            <a href="@Url.Action("Index","Home")">
+ <img src="~/Content/cms_images/SAB_631_74_1.jpg" alt="logo" />
+                </a>                 
  <nav class="navbar navbar-default navbar-custum">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
@@ -40,13 +49,13 @@
 
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-      <ul class="nav navbar-nav">
+      <ul class="nav navbar-nav ">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Softverska rešenja<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Pogodnosti za vas</a></li>
-            <li><a href="#">Web aplikacije</a></li>
-            <li><a href="#">Intranet platforma</a></li>
+            <li><a href="@Url.Action("Benefit","Home")">Pogodnosti za vas</a></li>
+            <li><a href="@Url.Action("Apps","Home")">Web aplikacije</a></li>
+            <li><a href="@Url.Action("Intranet","Home")">Intranet platforma</a></li>
           </ul>
         </li>
       </ul>
@@ -71,7 +80,9 @@
         </li>
       </ul>
         <ul class="nav navbar-nav justified">
+            @if ((int)HttpContext.Current.Session["lngId"] == 6){
             <li><a href="@Url.Action("News","Home")">Novosti</a></li>
+            }
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nama<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -86,18 +97,18 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">English<span></span></a></li>
-            <li><a href="#">Español</a></li>
-            <li><a href="#">Deutsch</a></li>
-            <li><a href="#">Italiano</a></li>
-            <li><a href="#">Francais</a></li>
-            <li><a href="#">Srpski</a></li>
+            <li><a onclick="ChangeLang(1);">English<span></span></a></li>
+            <li><a onclick="ChangeLang(2);">Español</a></li>
+            <li><a onclick="ChangeLang(3);">Deutsch</a></li>
+            <li><a onclick="ChangeLang(4);">Italiano</a></li>
+            <li><a onclick="ChangeLang(5);">Francais</a></li>
+            <li><a onclick="ChangeLang(6);">Srpski</a></li>
           </ul>
         </li>
       </ul>
      </div>
 
-  @*</div>*@  <!-- Navigacija centriranje-->
+ 
   </div><!-- /.container-fluid -->
 </nav>
   </div>   
@@ -108,6 +119,14 @@
 
   </div>
  </div><!-- /.container --> 
+    <footer class="footer" style="padding-top: 60px;">
+        <div class="container">
+            <hr />
+            <p class="text-muted">Copyright © 2017 INI Group. All rights reserved.  </p>
+           
+        </div>  
+        </footer>
+
 </body>
 </html>
 

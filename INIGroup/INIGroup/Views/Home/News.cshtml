@@ -8,15 +8,19 @@
 
 
 <div class="col-sm-12">
-    <h2>Novosti</h2>
+    @Html.Raw(Html.INIGroupLabel("News","lbl1"))
+    @*<h2>Novosti</h2>*@
     <div class="col-sm-8">
         <div class="row mbottom">
-            <img class="img-responsive" src="/INIGroup/Content/cms_images/news.png" alt="news.jpg" />
+            @Html.Raw(Html.INIGroupLabel("News","lbl2"))
+            @*<img class="img-responsive" src="/INIGroup/Content/cms_images/news.png" alt="news.jpg" />*@
         </div>
         <div class="row">
-            <h3  class="blueH mgn-btm-20">Novosti 2009</h3>
+            @Html.Raw(Html.INIGroupLabel("News","lbl3"))
+            @*<h3  class="blueH mgn-btm-20">Novosti 2009</h3>*@
             <div class="col-sm-9">
-                <p><b>E-poslovanje za SKF Mechatronics platformu (Novembar 2009) </b></p>
+                @Html.Raw(Html.INIGroupLabel("News","lbl4"))
+                @*<p><b>E-poslovanje za SKF Mechatronics platformu (Novembar 2009) </b></p>
                 <p>
                     Posle uspeha u realizaciji projekta SKF Power Transmission, koji se posle prvog 
                     lansiranja permanentno razvija od 2006. godine, 
@@ -56,8 +60,9 @@
                     Sertifikovan Sistem Menadžmenta Bezbednošću hrane 
                     organizacije DPTU Kola dooel 
                     iz Skopja, prema zahtevima standarda ISO 22000:2005. 
-                </p>
-                <p>
+                </p>*@
+                @Html.Raw(Html.INIGroupLabel("News","lbl5"))
+                @*<p>
                     Sertifikovan Sistem Menadžmenta Bezbednošću hrane 
                     organizacije DPTU Kola dooel 
                     iz Skopja, prema zahtevima standarda ISO 22000:2005. 
@@ -101,8 +106,9 @@
                     Sertifikovan Sistema Menadžmenta Kvalitetom i HACCP organizacije 
                     Iceberg Salat Centar doo iz Beograda, prema zahtevima standarda 
                     ISO 9001:2008 i zahtevima Codex Alimentarius CAC/RCP 1-1969 (Rev.4-2003). 
-                </p>
-                <p>
+                </p>*@
+                @Html.Raw(Html.INIGroupLabel("News","lbl6"))
+               @* <p>
                     Sertifikovan Sistema Menadžmenta Kvalitetom i HACCP organizacije 
                     Iceberg Salat Centar doo iz Beograda, prema zahtevima standarda 
                     ISO 9001:2008 i zahtevima Codex Alimentarius CAC/RCP 1-1969 (Rev.4-2003). 
@@ -144,18 +150,19 @@
                     U okviru naučnog projekta IntelLeo, koji traje do 2012. godine, INI je industrijski 
                     partner u okviru konzorcijuma koji čine nemački Volkswagen, španska softverska firma 
                     ATOS i istraživačke organizacije iz Nemačke, Austrije, Srbije i Estonije. 
-                </p>
+                </p>*@
 
             </div>
         </div>
-
+        <a href="#">Top of page</a>
 
     </div>
 
     <div class="col-sm-4">
         <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-default ">
+                @Html.Raw(Html.INIGroupLabel("News","lbl7"))
+           @*     <div class="panel panel-default ">
                     <div id="blue" class="panel-heading text-center">Značajni linkovi</div>
                     <div class="panel-body">
                         <ul class="list-unstyled text-center font12">
@@ -168,12 +175,13 @@
                             <li><a href="#">&rarr;&nbsp; &nbsp;Arhiva 2002</a></li>
                         </ul>
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
          <div class="row">
             <div class="col-sm-12">
-                <div class="panel panel-default">
+                @Html.Raw(Html.INIGroupLabel("News","lbl8"))
+        @*        <div class="panel panel-default">
                     <div id="yellow" class="panel-heading text-center">Reference</div>
                     <div class="panel-body text-justify font11">
                         <p><b>Specijalno priznanje za doprinos razvoju e-poslovanja u Makedoniji</b></p>
@@ -184,12 +192,12 @@
                         <p>Naše rešenje za upravljanje znanjem Business Test
                              System dobilo je veoma povoljnu recenziju u časopisu 
                             <b>Ekonomist.</b></p>
-                         <a href="Download/Praksa.pdf" target="_blank">Kliknite ovde za download članka u 
+                         <a href="/INIGroup/Documents/Praksa.pdf" target="_blank">Kliknite ovde za download članka u 
                         PDF formatu (200K)</a>.<br>
                         <img class="img-responsive center-block" src="~/Content/cms_images/image_ma.jpg" alt="image_ma.jpg" />
                         
                     </div>
-                </div>
+                </div>*@
             </div>
         </div>
     </div>
@@ -197,50 +205,6 @@
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

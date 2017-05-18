@@ -7,15 +7,17 @@
 
 
 <div class="col-sm-12">
-    <h2>Ko smo mi</h2>
+     @Html.Raw(Html.INIGroupLabel("About","lbl1"))
+@*    <h2>Ko smo mi</h2>*@
     <div class="col-sm-8">
         <div class="row mbottom">
-            <img class="img-responsive " src="/INIGroup/Content/cms_images/abt.png" alt="abt.png" />
+            @Html.Raw(Html.INIGroupLabel("About","lbl2"))
+           @* <img class="img-responsive " src="/INIGroup/Content/cms_images/abt.png" alt="abt.png" />*@
         </div>
 
         <div class="row">
-            
-             <h3 class="blueH">Poslovodstvo</h3>
+             @Html.Raw(Html.INIGroupLabel("About","lbl3"))
+            @* <h3 class="blueH">Poslovodstvo</h3>
             <div class="col-sm-9">
             <p><b>Viktor Pocajt</b></p>
             <p>Vlasnik i direktor preduzeća. Diplomirao na Mašinskom i Tehnološko-metalurškom fakultetu,
@@ -33,7 +35,7 @@
                 Više od 16 godina iskustva u razvoju softverskih sistema u Windows i Web okruženju. 
                 Vodi razvoj softvera.  </p>
             
-            </div>
+            </div>*@
             
         </div>
 
@@ -42,39 +44,44 @@
     <div class="col-sm-4 ">
         <div class="row">
            
-        <div class="panel panel-default">
-                        <div id="blue" class="panel-heading text-center panel-custum">Misija</div>
-                       <div class="panel-body font12">
-                            <p>Misija INI Grupe je razvoj i isporuka 
+            <div class="panel panel-default">
+                @Html.Raw(Html.INIGroupLabel("About", "lbl4"))
+                @*<div id="blue" class="panel-heading text-center panel-custum">Misija</div>
+                <div class="panel-body font12">
+                    <p>
+                        Misija INI Grupe je razvoj i isporuka 
                                 inovativnih Web-zasnovanih aplikacija 
                                 i rešenja za nastajući globalni 
                                 e-Engineering sektor
-                            </p>
-                            <ul class="list-unstyled">
-                    <li>&rsaquo;&nbsp;&nbsp;u internacionalnom, multijezičkom i multikulturnom okruženju</li>
-                    <li>&rsaquo;&nbsp;&nbsp;prema najvišim svetskim standardima</li>
-                    <li>&rsaquo;&nbsp;&nbsp;sa najvećom brigom za potreba naših kupaca.</li>
-               </ul>
-                       </div>
-                            
-                        </div>
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>&rsaquo;&nbsp;&nbsp;u internacionalnom, multijezičkom i multikulturnom okruženju</li>
+                        <li>&rsaquo;&nbsp;&nbsp;prema najvišim svetskim standardima</li>
+                        <li>&rsaquo;&nbsp;&nbsp;sa najvećom brigom za potreba naših kupaca.</li>
+                    </ul>
+                </div>*@
+
+
+
             </div>
-            <div class="row">
-                <div class="panel panel-default">
-                        <div id="yellow" class="panel-heading text-center panel-custum">Vizija</div>
-                        <div class="panel-body font12">
-                            <p>Naša vizija je da:
-                            </p>
-                            <ul class="list-unstyled">
-                                <li>
-                                    &rsaquo;&nbsp;&nbsp;Koristimo naše kompetencije da ponudimo Web aplikacije 
+            </div>
+        <div class="row">
+            <div class="panel panel-default">
+                @Html.Raw(Html.INIGroupLabel("About", "lbl5"))
+       @*         <div id="yellow" class="panel-heading text-center panel-custum">Vizija</div>
+                <div class="panel-body font12">
+                    <p>
+                        Naša vizija je da:
+                    </p>
+                    <ul class="list-unstyled">
+                        <li>&rsaquo;&nbsp;&nbsp;Koristimo naše kompetencije da ponudimo Web aplikacije 
                                     vrhunskog kvaliteta industriji širom sveta preko naših partnera u Evropi, Americi i Aziji.
 
-                                </li>
-                            </ul>
-                        </div>
-                </div>
-            </div>        
+                        </li>
+                    </ul>
+                </div>*@
+            </div>
+        </div>        
         </div>
                         
     </div>

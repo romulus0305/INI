@@ -3,7 +3,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>CaseStudies</h2>
+
 
 <div class="col-sm-12">
     <h2>Primeri projekata</h2>
@@ -143,7 +143,7 @@ Developing intelligent online survey with fewer questions and deeper analysis.
                 </p>
             </div>
         </div>
-        <hr />
+        <a href="#">Top of page</a>
 
 
 
@@ -160,9 +160,9 @@ Developing intelligent online survey with fewer questions and deeper analysis.
                 <div class="panel panel-default ">
                     <div id="blue" class="panel-heading text-center">Značajni linkovi</div>
                     <div class="panel-body">
-                        <ul class="list-unstyled text-center font12">
-                            <li><a href="#">&rarr;&nbsp; &nbsp;Pogledajte šta naši kupci kažu o radu sa nama</a></li>
-                            <li><a href="#">&rarr;&nbsp; &nbsp;Javite nam se, da zajedno pronađemo najbolje rešenje za Vas</a></li>
+                        <ul class="list-unstyled  font12">
+                            <li ><a href="@Url.Action("Testimoni","Home")">&rarr;&nbsp; &nbsp;Pogledajte šta naši kupci kažu o radu sa nama</a></li>
+                            <li><a href="@Url.Action("Contact","Home")">&rarr;&nbsp; &nbsp;Javite nam se, da zajedno pronađemo najbolje rešenje za Vas</a></li>
                         </ul>
                     </div>
                 </div>

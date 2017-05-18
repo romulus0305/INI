@@ -5,35 +5,44 @@
      
 
         <div class="col-sm-12 ">
-          <h2>Kontakt</h2> 
+            @Html.Raw(Html.INIGroupLabel("Contact","lbl3"))
+          @*<h2>Kontakt</h2> *@
        <div class="col-sm-8">
            <div class="row">
                 <div class="col-sm-12">
-                   
-                    <img class="img-responsive" src="/INIGroup/Content/cms_images/cnt.png" alt="cnt.jpg" />
-                    
-                   
+                   @Html.Raw(Html.INIGroupLabel("Contact","lbl1"))
+                    @*<img class="img-responsive" src="/INIGroup/Content/cms_images/cnt.png" alt="cnt.jpg" />*@
                 </div>
             </div>
            <div class="row">
                <div class="col-sm-12">
-
-<p>Naša adresa, Vama na raspolaganju: </p>
-  <h3> <b>INI Industrijski inženjering</b></h3>
+                   @Html.Raw(Html.INIGroupLabel("Contact","lbl2"))
+                   @*
+                   <h3><b>INI Industrijski inženjering</b></h3>
                    <address>
-  <br>
-  Danka Popovića 32<br>
-   11000 Beograd<br>
-  <abbr title="Phone">Tel:</abbr>  011 20-88-666<br> 
-  <abbr title="Fax">Fax:</abbr>  011 20-88-637
-</address>
+                       <br>
+                       Danka Popovića 32<br>
+                       11000 Beograd<br>
+                       <abbr title="Phone">Tel:</abbr>
+                       011 20-88-666<br>
+                       <abbr title="Fax">Fax:</abbr>
+                       011 20-88-637
+                   </address>
 
-<address>
-  <a href="mailto:ini@ini.rs">ini@ini.rs</a>,<a href="mailto:office@das-serbia.com">office@das-serbia.com</a>
-</address>
+                   <address>
+                       <a href="mailto:ini@ini.rs">ini@ini.rs</a>,<a href="mailto:office@das-serbia.com">office@das-serbia.com</a>
+                   </address>
+                <h3><b>Poslovne Informacije</b></h3>
+                   <span>
+                       <b>INI doo </b> <br />
+                     Matični broj:    <b>17099736</b> <br />  
+                       PIB:  <b> SR 102181527</b> <br /> 
+                       Poslovni račun:   <b>160-81326-53,</b> <br /> 
+                       Intesa bankacontent 
 
-       
-            </div>
+                   </span>
+                   
+               </div>
 
            </div>
         </div>
@@ -41,11 +50,12 @@
             <div class="panel panel-default">
                         <div id="blue" class="panel-heading text-center panel-custum">Značajni linkovi</div>
                             <ul style="list-style:none;">
-                                <li>&raquo;&nbsp;&nbsp;<a href="#">ID Obrazac</a></li>
-                                <li>&raquo;&nbsp;&nbsp;<a href="#">PEPDV</a></li>
+                                <li>&raquo;&nbsp;&nbsp;<a href="/INIGroup/Documents/ID_Obrazac.pdf" target="_blank">ID Obrazac</a></li>
+                                <li>&raquo;&nbsp;&nbsp;<a href="/INIGroup/Documents/PEPDV.pdf" target="_blank">PEPDV</a></li>
                             </ul>
                         </div>
                     </div>
+                   *@
         </div>
     </div>
 
