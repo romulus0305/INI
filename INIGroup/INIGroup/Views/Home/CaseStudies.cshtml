@@ -6,15 +6,20 @@
 
 
 <div class="col-sm-12">
-    <h2>Primeri projekata</h2>
+    @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl1"))
+ @*   <h2>Primeri projekata</h2>*@
     <div class="col-sm-8">
         <div class="row mbottom">
-            <img class="img-responsive" src="/INIGroup/Content/cms_images/cs.png" alt="news.jpg" />
+                @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl2"))
+
+            @*<img class="img-responsive" src="/INIGroup/Content/cms_images/cs.png" alt="news.jpg" />*@
         </div>
         <div class="row">
             <div class="col-sm-9">
-            <h4  class="blueH mgn-btm-20">B2B Search Engine for Power Transmission for SKF, Sweden
- </h4>  
+ @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl3"))
+
+@*            <h3  class="blueH mgn-btm-20">B2B Search Engine for Power Transmission for SKF, Sweden
+ </h3>  
                 <p>
                     <b>The Challenge</b><br />
 Entering into the European market with completely new line of over 27000 power transmission products. Promoting SKF as a leader in the newly entered power transmission area by providing value-added information to end-users and detailed product information to over 2000 distributors.
@@ -32,14 +37,17 @@ Web portal in 20 languages, powered by custom-developed search engine with 6 dif
                 </p>
                 <p>
                     Atop of that, a desktop version of the system was developed, and it included all key features and complete data scope of the main Web site. 
-                </p>
+                </p>*@
+
+
             </div>
         </div>
         <hr />
 
         <div class="row">
             <div class="col-sm-9">
-            <h3  class="blueH mgn-btm-20">e-Engineering for itp GmbH, Germany
+                 @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl4"))
+           @* <h3  class="blueH mgn-btm-20">e-Engineering for itp GmbH, Germany
  </h3>  
                 <p>
                     <b>The Challenge</b><br />
@@ -58,13 +66,14 @@ The initial and core point of the solution is custom-developed 15-lingual styli 
                 </p>
                 <p>
                     Atop of that, a desktop version of the system was developed, and it included all key features and complete data scope of the main Web site. 
-                </p>
+                </p>*@
             </div>
         </div>
         <hr />
          <div class="row">
             <div class="col-sm-9">
-            <h3  class="blueH mgn-btm-20">Extranet and B2D solution for Keeway Motors, Italy
+                 @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl5"))
+           @* <h3  class="blueH mgn-btm-20">Extranet and B2D solution for Keeway Motors, Italy
  </h3>  
                 <p>
                     <b>The Challenge</b><br />
@@ -88,13 +97,15 @@ Finally, we implemented SPIM, Spare Parts Information Management application, to
                 </p>
                 <p>
 "Although we had an excellent sales increase in the second year of our business from 1000 to 3000 units, without this system we would face a limit impossible to overcome," says Massimo Ascari, CEO of Keeway Motors. "Now, with these powerful tools and a strong network of distributors, we are heading toward 10000 units and a role of a major player on the Italian and other markets. 
-                </p>
+                </p>*@
             </div>
         </div>
         <hr />
          <div class="row">
             <div class="col-sm-9">
-            <h3  class="blueH mgn-btm-20">Sales Tool for itp GmbH, Germany
+
+                 @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl6"))
+           @* <h3  class="blueH mgn-btm-20">Sales Tool for itp GmbH, Germany
  </h3>  
                 <p>
                     <b>The Challenge</b><br />
@@ -112,13 +123,14 @@ To take advantage of more favorable price and quality <b>itp</b> , its sales for
                 </p>
                 <p>
                     Atop of that, a desktop version of the system was developed, and it included all key features and complete data scope of the main Web site. 
-                </p>
+                </p>*@
             </div>
         </div>
         <hr />
          <div class="row">
             <div class="col-sm-9">
-            <h3  class="blueH mgn-btm-20">Customer Satisfaction Survey for SKF, Sweden
+                 @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl7"))
+           @* <h3  class="blueH mgn-btm-20">Customer Satisfaction Survey for SKF, Sweden
  </h3>  
                 <p>
                     <b>The Challenge</b><br />
@@ -140,7 +152,7 @@ Developing intelligent online survey with fewer questions and deeper analysis.
                 </p>
                 <p>
                     In the back office, there are 10 types of reports, analyzing various aspects of customer satisfaction, loyalty and position versus competitors, for different products and services, and processes. All reports are sortable by groups, areas and countries, this way providing an excellent tool and metric for planning and implementing improvements. 
-                </p>
+                </p>*@
             </div>
         </div>
         <a href="#">Top of page</a>
@@ -158,20 +170,22 @@ Developing intelligent online survey with fewer questions and deeper analysis.
         <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-default ">
-                    <div id="blue" class="panel-heading text-center">Značajni linkovi</div>
+                     @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl8"))
+                  @*  <div id="blue" class="panel-heading text-center">Značajni linkovi</div>
                     <div class="panel-body">
                         <ul class="list-unstyled  font12">
                             <li ><a href="@Url.Action("Testimoni","Home")">&rarr;&nbsp; &nbsp;Pogledajte šta naši kupci kažu o radu sa nama</a></li>
                             <li><a href="@Url.Action("Contact","Home")">&rarr;&nbsp; &nbsp;Javite nam se, da zajedno pronađemo najbolje rešenje za Vas</a></li>
                         </ul>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
          <div class="row">
             <div class="col-sm-12">
                 <div class="panel panel-default">
-                    <div id="yellow" class="panel-heading text-center">Utisci Kupaca</div>
+                     @Html.Raw(Html.INIGroupLabel("CaseStudies","lbl9"))
+     @*               <div id="yellow" class="panel-heading text-center">Utisci Kupaca</div>
                     <div class="panel-body text-justify font11">
                         <p>U seriji naših projekata, vaš tim je pokazao veliko razumevanje našeg poslovanja i vertikalnog tržišta, stvarnu empatiju i brzo vreme reagovanja. </p>
                         <p>
@@ -182,12 +196,9 @@ Developing intelligent online survey with fewer questions and deeper analysis.
 Keeway Motors, Italija
 
                         </p>
-                    </div>
+                    </div>*@
                 </div>
             </div>
         </div>
     </div>
-
-
-
 </div>

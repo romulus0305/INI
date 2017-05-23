@@ -20,7 +20,7 @@
            function ChangeLang(LanguageId) {
                $.post('@(Url.Action("ChangeLanguage", "Home"))', { languageId: LanguageId }, function (result) {
                    if (result.success) {
-                       window.location.reload(true);
+                       window.location = '@Url.Action("Index","Home")';
                    }
                });
            }
@@ -51,44 +51,57 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav ">
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Softverska rešenja<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Html.INIGroupLabel("_Layout","lbl1")<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="@Url.Action("Benefit","Home")">Pogodnosti za vas</a></li>
-            <li><a href="@Url.Action("Apps","Home")">Web aplikacije</a></li>
-            <li><a href="@Url.Action("Intranet","Home")">Intranet platforma</a></li>
+            <li><a href="@Url.Action("Benefit","Home")">@Html.INIGroupLabel("_Layout","lbl2")</a></li>
+               @if((int)HttpContext.Current.Session["LngId"]==6 ){
+            <li><a href="@Url.Action("Apps","Home")">@Html.INIGroupLabel("_Layout","lblrs")</a></li>
+            <li><a href="@Url.Action("Intranet","Home")">@Html.INIGroupLabel("_Layout","lblrs1")</a></li>
+               }
+               else
+               {
+                    <li><a href="@Url.Action("E_engeniring","Home")">@Html.INIGroupLabel("_Layout","lbl3")</a></li>
+                    <li><a href="@Url.Action("App_examples","Home")">@Html.INIGroupLabel("_Layout","lbl4")</a></li>
+                    <li><a href="@Url.Action("Infrastructure","Home")">@Html.INIGroupLabel("_Layout","lbl5")</a></li>
+               }
+              
           </ul>
         </li>
       </ul>
+        @if ((int)HttpContext.Current.Session["LngId"] == 6)
+        {
         <ul class="nav navbar-nav">
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Usluge<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="@Url.Action("isoCert","Home")">ISO Sertifikacija</a></li>
-            <li><a href="@Url.Action("Education","Home")">Obuka i prenos znanja</a></li>
+            <li><a href="@Url.Action("isoCert", "Home")">ISO Sertifikacija</a></li>
+            <li><a href="@Url.Action("Education", "Home")">Obuka i prenos znanja</a></li>
           </ul>
         </li>
       </ul>
+        }
         <ul class="nav navbar-nav">
              
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Kupci<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Html.INIGroupLabel("_Layout","lbl6")<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="@Url.Action("Customers","Home")">Lista kupaca</a></li>
-            <li><a href="@Url.Action("Testimoni","Home")">Utisci kupaca</a></li>
-            <li><a href="@Url.Action("CaseStudies","Home")">Primeri projekta</a></li>
+            <li><a href="@Url.Action("Customers", "Home")">@Html.INIGroupLabel("_Layout","lbl7")</a></li>
+            <li><a href="@Url.Action("Testimoni", "Home")">@Html.INIGroupLabel("_Layout","lbl8")</a></li>
+            <li><a href="@Url.Action("CaseStudies", "Home")">@Html.INIGroupLabel("_Layout","lbl9")</a></li>
           </ul>
         </li>
       </ul>
         <ul class="nav navbar-nav justified">
-            @if ((int)HttpContext.Current.Session["lngId"] == 6){
-            <li><a href="@Url.Action("News","Home")">Novosti</a></li>
+            @if ((int)HttpContext.Current.Session["lngId"] == 6)
+            {
+            <li><a href="@Url.Action("News", "Home")">Novosti</a></li>
             }
         <li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">O nama<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">@Html.INIGroupLabel("_Layout","lbl10")<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="@Url.Action("About","Home")">Ko smo mi</a></li>
-            <li><a href="@Url.Action("Quality","Home")">Kvalitet</a></li>
-            <li><a href="@Url.Action("Contact","Home")">Kontakt</a></li>
+            <li><a href="@Url.Action("About", "Home")">@Html.INIGroupLabel("_Layout","lbl11")</a></li>
+            <li><a href="@Url.Action("Quality", "Home")">@Html.INIGroupLabel("_Layout","lbl13")</a></li>
+            <li><a href="@Url.Action("Contact", "Home")">@Html.INIGroupLabel("_Layout","lbl12")</a></li>
           </ul>
         </li>
       </ul>
@@ -97,7 +110,7 @@
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Language<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a onclick="ChangeLang(1);">English<span></span></a></li>
+            <li><a onclick="ChangeLang(1);">English</a></li>
             <li><a onclick="ChangeLang(2);">Español</a></li>
             <li><a onclick="ChangeLang(3);">Deutsch</a></li>
             <li><a onclick="ChangeLang(4);">Italiano</a></li>
@@ -117,8 +130,8 @@
                @RenderBody()
     </div>
 
-  </div>
- </div><!-- /.container --> 
+  </div><!-- /.container --> 
+ @*</div>*@
     <footer class="footer" style="padding-top: 60px;">
         <div class="container">
             <hr />

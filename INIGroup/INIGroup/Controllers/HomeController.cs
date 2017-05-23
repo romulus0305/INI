@@ -23,6 +23,7 @@ namespace INIGroup.Controllers
         }
         public ActionResult Index()
         {
+            string temp = LabelCache.GetLabel("Customers", "lbl3");
             return View();
         }
 
@@ -97,8 +98,25 @@ namespace INIGroup.Controllers
              return View();
          }
 
-    
-    
+         public ActionResult E_engeniring() 
+         {
+             return View(); 
+         }
+
+
+         public ActionResult App_examples() 
+         {
+             return View();
+         }
+
+         public ActionResult Infrastructure()
+         {
+             return View();
+         }
+
+
+
+
     }
 
 

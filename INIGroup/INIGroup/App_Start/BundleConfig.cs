@@ -20,8 +20,8 @@ namespace INIGroup
 
             bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include(
                         "~/Scripts/bootstrap.js",
-                        "~/Scripts/bootstrap.min.js",
-                        "~/Scripts/metisMenu.js"
+                        "~/Scripts/bootstrap.min.js"
+                        //"~/Scripts/metisMenu.js"
                         ));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're

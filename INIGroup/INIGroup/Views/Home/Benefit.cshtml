@@ -6,17 +6,20 @@
 
 
 <div class="col-sm-12">
-    <h2>Pogodnosti za vas</h2>
+    @Html.Raw(Html.INIGroupLabel("Benefit","lbl1"))
+@*    <h2>Pogodnosti za vas</h2>*@
     <div class="col-sm-8">
         <div class="row mbottom">
-            <img class="img-responsive " src="/INIGroup/Content/cms_images/benefit.png" alt="abt.png" />
+            @Html.Raw(Html.INIGroupLabel("Benefit", "lbl2"))
+            @*<img class="img-responsive " src="/INIGroup/Content/cms_images/benefit.png" alt="abt.png" />*@
         </div>
 
         <div class="row">
-            
-           
+
+
             <div class="col-sm-9">
-                  <h3 class="blueH">Rešenja za svetske lidere dostupna su i Vama </h3>
+                @Html.Raw(Html.INIGroupLabel("Benefit", "lbl3"))
+                @* <h3 class="blueH">Rešenja za svetske lidere dostupna su i Vama </h3>
             <ul id="basic">
                     <li><b>Internacionalna kompetencija u razvoju</b> sofisticiranih Web aplikacije, za globalna vertikalna tržišta. Imamo korisnike iz više od 100 zemalja širom sveta, što je jedinstveno na našim prostorima.</li>
                     <li><b>Bogato iskustvo</b> u elektronskom poslovanju, Internet marketingu i prodaji, potpuno spremno da bude u funkciji Vašeg poslovanja.</li>
@@ -25,53 +28,63 @@
                     <li><b>Fleksibilni modeli</b> rada i vođenja projekata, koji se u potpunosti prilagođavaju Vašim potrebama.</li>
                 <li><b>Pravi odnos cena/korist (cost/benefit)</b> za specijalizovan softver i Web rešenja po Vašoj narudžbini.</li>
                 </ul>
-                Pogledajte <a href="@Url.Action("Testimoni","Home")">našu listu referenci</a>,<a href="@Url.Action("CaseStudies","Home")"> primeri realizovanih projekata</a> ili saznajte više o našim <a href="@Url.Action("Apps","Home")">Web aplikacijama</a>, i <a href="@Url.Action("Education","Home")">programima obuke i prenosa znanja.</a> Ili, jednostavno,<a href="@Url.Action("Contact","Home")">javite se da porazgovaramo.</a>
+                Pogledajte <a href="@Url.Action("Testimoni","Home")">našu listu referenci</a>,<a href="@Url.Action("CaseStudies","Home")"> primeri realizovanih projekata</a> ili saznajte više o našim <a href="@Url.Action("Apps","Home")">Web aplikacijama</a>, i <a href="@Url.Action("Education","Home")">programima obuke i prenosa znanja.</a> Ili, jednostavno,<a href="@Url.Action("Contact","Home")">javite se da porazgovaramo.</a>*@
 
 
 
-            
+
             </div>
-            
+
         </div>
 
     </div>
 
     <div class="col-sm-4 ">
         <div class="row">
-           
-        <div class="panel panel-default">
-                        <div id="blue" class="panel-heading text-center panel-custum">Znacajni linkovi</div>
-                       <div class="panel-body font12">
-                           <a href="@Url.Action("Contact","Home")">Javite nam se, da zajedno pronađemo najbolje rešenje za Vas. </a>
-                       </div>
-                            
-                        </div>
+            @Html.Raw(Html.INIGroupLabel("Benefit", "lbl4"))
+            @*<div class="panel panel-default">
+                <div id="blue" class="panel-heading text-center panel-custum">Znacajni linkovi</div>
+                <div class="panel-body font12">
+                    <a href="@Url.Action("Contact", "Home")">Javite nam se, da zajedno pronađemo najbolje rešenje za Vas. </a>
+                </div>*@
+
             </div>
-            <div class="row">
-                <div class="panel panel-default">
-                        <div id="yellow" class="panel-heading text-center panel-custum">Utisci kupaca</div>
-                        <div class="panel-body font12">
-                            <p>Svi moji zahtevi su bili shvaćeni vrlo ozbiljno, i zatim detaljno razmotreni i implementirani. 
-                            </p>
-                            <p>Nastavite sa unapređenjima. Radite odličan posao. </p>
-                            <p>M.J.L. Ostergaard <br />  
-Haldor Topsoe, Danska</p>
-                        </div>
-                </div>
-                 <div class="panel panel-default">
-                        <div id="yellow" class="panel-heading text-center panel-custum">Reference</div>
-                        <div class="panel-body font12">
-                            <p>
-                                <b>Neka znanje svetskih lidera radi za Vas</b> 
-Vi znate da danas u našoj zemlji bez problema možete pronaći zastupnike najvećih svetskih kompanija, koji će Vam prodati njihove proizvode i rešenja. Ali mi Vam nudimo nešto sasvim drukčije… 
- 
-                            </p>
-                            <p><b>Vodeće svetske kompanije</b>,
-kao što su Ford, Hyundai, SKF, Valbruna, ESAB, Boeing, Algoma, Technion, KSA, BHP, ThyssenKrupp, Shell, ChevronTexaco, Stanford University i druge,spadaju u naše kupce. </p>
-                            <p>Biće nam zadovoljstvo da i Vama ponudimo vrhunska rešenja, kvalitet i kompetenciju, koji su ove korporacije opredili za nas. I da iskustva i znanja stečena u saradnji sa svetskim liderima prenesemo i Vama, u zajedničkom radu.</p>
-                        </div>
-                </div>
-            </div>        
         </div>
+        <div class="row">
+            <div class="panel panel-default">
+                  @Html.Raw(Html.INIGroupLabel("Benefit", "lbl5"))
+
+                @*<div id="yellow" class="panel-heading text-center panel-custum">Utisci kupaca</div>
+                <div class="panel-body font12">
+                    <p>
+                        Svi moji zahtevi su bili shvaćeni vrlo ozbiljno, i zatim detaljno razmotreni i implementirani. 
+                    </p>
+                    <p>Nastavite sa unapređenjima. Radite odličan posao. </p>
+                    <p>
+                        M.J.L. Ostergaard
+                        <br />
+                        Haldor Topsoe, Danska
+                    </p>
+                </div>*@
+            </div>
+            <div class="panel panel-default">
+
+                 @Html.Raw(Html.INIGroupLabel("Benefit", "lbl6"))
+@*                <div id="yellow" class="panel-heading text-center panel-custum">Reference</div>
+                <div class="panel-body font12">
+                    <p>
+                        <b>Neka znanje svetskih lidera radi za Vas</b>
+                        Vi znate da danas u našoj zemlji bez problema možete pronaći zastupnike najvećih svetskih kompanija, koji će Vam prodati njihove proizvode i rešenja. Ali mi Vam nudimo nešto sasvim drukčije… 
+ 
+                    </p>
+                    <p>
+                        <b>Vodeće svetske kompanije</b>,
+kao što su Ford, Hyundai, SKF, Valbruna, ESAB, Boeing, Algoma, Technion, KSA, BHP, ThyssenKrupp, Shell, ChevronTexaco, Stanford University i druge,spadaju u naše kupce.
+                    </p>
+                    <p>Biće nam zadovoljstvo da i Vama ponudimo vrhunska rešenja, kvalitet i kompetenciju, koji su ove korporacije opredili za nas. I da iskustva i znanja stečena u saradnji sa svetskim liderima prenesemo i Vama, u zajedničkom radu.</p>
+                </div>*@
+            </div>
+        </div>
+    </div>
                         
     </div>
